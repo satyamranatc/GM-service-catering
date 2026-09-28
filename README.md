@@ -1,42 +1,66 @@
-# GM Service Catering Indore — Digital Visiting Card (vCard)
+# GM Cuisine Factory Indore — Official Digital Visiting Card & Portal
 
-A true **`[100vh, 100vw]` non-scrolling Digital Visiting Card** designed for **GM Service Catering (Indore)**.
+A modern, luxury **Digital Visiting Card & Mini-Website** engineered for **GM Cuisine Factory (GM Service Caterers Indore)**.
 
----
-
-## 📱 Canvas Architecture (`100vh` / `100dvh` Non-Scrolling)
-
-* **Zero Page Scroll:** Engineered to fit completely inside the active screen viewport without vertical page scrolling.
-* **Mobile View:** Edge-to-edge native digital visiting card experience formatted for instant one-handed use on all smartphone screens.
-* **Desktop View:** An elegant luxury card framed on a warm ambient bokeh backdrop with subtle gold border accents.
-* **In-Canvas Modal Sheets:** Features like the QR Code scanner, Signature Catering Menu preview, and Indore Client Reviews expand seamlessly inside the viewport without page jumping.
+Inspired by the comprehensive multi-section digital card format (similar to Jainshree Digital / Smart vCard), elevated with high-end luxury aesthetics: **Deep Obsidian (#0D0C08)**, **Burnished Gold (#DFA753 / #CB9837)**, and **Warm Champagne Linen (#FAF7F2 / #F3ECE1)**.
 
 ---
 
-## 💎 Visual Design & Principles
+## 📱 Page Architecture & Sections
 
-* **Ivory & Forest Foundation:** Warm ivory base (`#FAF8F5`) and deep royal forest green (`#1E2E22`, `#142017`).
-* **Gold Foil & Spice Accents:** Refined royal gold (`#C49A52`) and appetite spice terracotta (`#803F30`).
-* **Food Heroism:** High-resolution banquet feast cover slice featuring steaming hammered copper handis, paneer, and celebration glow.
-* **100% Pure Vegetarian Hallmark:** Prominent green veg hallmark badge with Jain options.
+1. **Profile / Hero Card (`#homesection`):**
+   - High-resolution banquet cover photography with Indore live status badge.
+   - Official GM Cuisine Factory cutlery crest and Didone gold-framed emblem.
+   - 5-button direct contact quick bar (Call, WhatsApp, Alt Line, QR Pay, Instagram).
+   - Detailed contact list with phone numbers, base location, and Justdial verification.
+   - **Direct WhatsApp Input:** Send the card or message instantly to any 10-digit number.
+   - **Tactile Action Buttons:** "Add to Phone Book" (.vcf export) and "Share Profile".
+
+2. **About Us (`#AboutUsSection`):**
+   - Brand story of GM Cuisine Factory and GM Service Caterers Indore.
+   - 100% Pure Vegetarian & strict Jain preparation commitment.
+   - Core value cards: dedicated Jain cookware, live counters, royal hammered copper presentation, and uncompromised hygiene.
+   - Executive Banquet Management contact line.
+
+3. **Signature Feasts & Menus (`#ProductsServicesSection`):**
+   - Royal Wedding Banquets (multi-course royal thalis, Shahi Paneer, Dal Makhani).
+   - Live Event Counters & Smoke Shot Pan.
+   - Indori Street Food & Regional Stalls (Pani Puri, Dahi Papdi, butter Dosas, Chhole Bhature).
+   - Royal Mithai & Artisanal Sweets (silver-leaf Kaju Katli, saffron Rasmalai, hot Jalebi Rabdi).
+   - 1-tap "Enquire on WhatsApp" on every feast card.
+
+4. **Payment Options (`#PaymentOptionsSection`):**
+   - Scannable UPI / WhatsApp QR code.
+   - UPI Number & ID: `9399231772` / `9399231772@upi`.
+   - Badges for Google Pay, PhonePe, Paytm, BHIM UPI, IMPS / NEFT, and Cash.
+
+5. **Photo Gallery (`#gallerysection`):**
+   - Interactive 6-photo masonry grid featuring real event setups and feasts.
+   - Tap-to-zoom Lightbox Image Modal (`#imageModal`) with high-resolution preview and captions.
+
+6. **Client Feedback & Reviews (`#feedbacksection`):**
+   - Real testimonials from Saket, Bypass Road, and Vijay Nagar clients.
+   - Interactive 5-star rating widget with review submission.
+
+7. **Quick Enquiry Form (`#enquirysection`):**
+   - Form fields: Name, Phone, Event Type, Guest Count, Event Date, Requirements.
+   - Instant WhatsApp dispatch with preformatted quote request sent directly to `+91 9399231772`.
+
+8. **Fixed Bottom Navigation Bar (`.footer-menu`):**
+   - App-like sticky bottom bar with 7 tabs: `HOME`, `ABOUT US`, `MENU`, `PAYMENT`, `GALLERY`, `FEEDBACK`, `ENQUIRY`.
+   - Smooth scroll with real-time active ScrollSpy indicators.
 
 ---
 
-## ⚡ Direct Touch Actions
+## ⚡ Direct Touch Actions & Modals
 
-1. **Save Contact to Phone (.vcf):** Generates and downloads an RFC-6350 compliant `GM_Service_Catering_Indore.vcf` file that opens directly in iOS Contacts and Android Contacts.
-2. **Call Now:** Direct dial to `+91 9399231772`.
-3. **WhatsApp:** Instant pre-formatted chat with GM Catering.
-4. **Instagram:** Direct link to [@gm_service_caterers](https://www.instagram.com/gm_service_caterers/).
-5. **Instant QR Code Sheet:** In-canvas scannable vector QR code for other devices.
-6. **Share Visiting Card:** Uses native Web Share API with automatic clipboard copy fallback and toast confirmation.
-7. **Interactive Specialty Chips & Menu Preview:** 1-tap view of live Indore chaat, royal gravies, and artisanal mithai.
+- **Save Contact (.vcf):** Downloads `GM_Cuisine_Factory_Indore.vcf` formatted to Apple iOS & Android Contacts standards.
+- **Share Modal:** Web Share API with fallbacks to WhatsApp, SMS, Facebook, and clipboard copy.
+- **Image Lightbox:** Modal for viewing high-res gallery images.
 
 ---
 
 ## 🚀 How to Run Locally
-
-Open `index.html` directly in any web browser, or run:
 
 ```bash
 cd "/Users/satyamrana/Desktop/GM service catering"
