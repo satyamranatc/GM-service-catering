@@ -740,6 +740,7 @@ body {
   border-radius: var(--radius-full);
   border: 2px solid var(--color-gold);
   background-color: #000;
+  object-fit: cover;
 }
 
 .team-mini-row strong {
@@ -764,6 +765,64 @@ body {
 
 .call-team-link:hover {
   text-decoration: underline;
+}
+
+/* Instagram Social Banner in About Us */
+.insta-social-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.08) 0%, rgba(223, 167, 83, 0.12) 100%);
+  border: 1px solid rgba(225, 48, 108, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.insta-social-banner:hover {
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.14) 0%, rgba(223, 167, 83, 0.18) 100%);
+  border-color: #E1306C;
+  transform: translateY(-1px);
+}
+
+.insta-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.insta-avatar {
+  border-radius: var(--radius-full);
+  border: 2px solid #E1306C;
+  object-fit: cover;
+}
+
+.insta-tag {
+  display: block;
+  font-size: 0.65625rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.insta-handle {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: #C13584;
+}
+
+.insta-follow-btn {
+  font-size: 0.71875rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 6px rgba(225, 48, 108, 0.3);
+  white-space: nowrap;
 }
 
 /* ==========================================================================
@@ -793,14 +852,16 @@ body {
 .product-img-wrap {
   position: relative;
   width: 100%;
-  height: 160px;
+  height: 220px;
   overflow: hidden;
+  background-color: #FAF7F2;
 }
 
 .product-thumb {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 .product-badge {
@@ -967,25 +1028,32 @@ body {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  gap: 10px;
 }
 
 .gallery-item {
   position: relative;
   width: 100%;
-  height: 130px;
+  height: 155px;
   border-radius: var(--radius-sm);
   overflow: hidden;
   border: 1px solid var(--color-border);
   cursor: pointer;
   background-color: var(--color-surface-subtle);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.gallery-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-gold);
+  box-shadow: 0 4px 14px rgba(223, 167, 83, 0.22);
 }
 
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease;
 }
 
 .gallery-item:hover img {
