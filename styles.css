@@ -75,6 +75,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   background-color: var(--color-canvas-bg);
+  overflow-x: hidden;
 }
 
 body {
@@ -86,29 +87,42 @@ body {
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Desktop Ambient Backdrop */
+img {
+  max-width: 100%;
+}
+
+/* Ambient Backdrop: Strictly hidden on mobile, enabled ONLY on desktop displays >= 768px */
 .desktop-ambient-bg {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
+  display: none;
 }
 
-.desktop-bg-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(65px) brightness(0.22) saturate(1.4);
-  transform: scale(1.15);
-}
+@media (min-width: 768px) {
+  .desktop-ambient-bg {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
 
-.desktop-bg-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 25%, rgba(223, 167, 83, 0.16) 0%, rgba(9, 9, 7, 0.95) 75%);
+  .desktop-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(65px) brightness(0.22) saturate(1.4);
+    transform: scale(1.15);
+  }
+
+  .desktop-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 25%, rgba(223, 167, 83, 0.16) 0%, rgba(9, 9, 7, 0.95) 75%);
+  }
 }
 
 /* Main Digital Card Wrapper (Mobile App View / Desktop Luxury Frame) */
@@ -133,7 +147,7 @@ body {
     border-radius: var(--radius-xl) var(--radius-xl) 0 0;
     border: 1px solid rgba(223, 167, 83, 0.3);
     border-bottom: none;
-    overflow: hidden;
+    /* overflow must NOT be hidden here so scrolling works on all screens */
   }
 }
 
@@ -151,15 +165,18 @@ body {
   position: relative;
   width: 100%;
   height: 180px;
+  max-height: 180px;
   overflow: hidden;
   border-bottom: 2px solid rgba(223, 167, 83, 0.45);
 }
 
 .hero-cover-img {
   width: 100%;
-  height: 100%;
+  height: 180px;
+  max-height: 180px;
   object-fit: cover;
   object-position: center 35%;
+  display: block;
 }
 
 .hero-cover-gradient {
@@ -668,17 +685,16 @@ body {
   scroll-margin-top: 10px;
 }
 
-/* Subtle Scroll Entrance */
+/* Content Visibility & Micro Entrance */
 .reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-on-scroll.revealed {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 .section-header {
@@ -904,30 +920,68 @@ body {
 .product-img-wrap {
   position: relative;
   width: 100%;
-  height: 220px;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   background-color: #FAF7F2;
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
 }
 
 .product-thumb {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
+  display: block;
+  transition: transform var(--transition-normal);
+}
+
+.product-card:hover .product-thumb {
+  transform: scale(1.025);
 }
 
 .product-badge {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 12px;
+  left: 12px;
   background: rgba(13, 12, 8, 0.82);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   color: var(--color-gold-light);
-  font-size: 0.65625rem;
+  font-size: 0.6875rem;
   font-weight: 800;
   letter-spacing: 0.4px;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(223, 167, 83, 0.4);
+  border: 1px solid rgba(223, 167, 83, 0.45);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.product-zoom-hint {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-full);
+  background: rgba(13, 12, 8, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(223, 167, 83, 0.45);
+  z-index: 2;
+  transition: all var(--transition-fast);
+}
+
+.product-card:hover .product-zoom-hint {
+  background: var(--color-obsidian);
+  color: var(--color-gold);
+  transform: scale(1.1);
+  border-color: var(--color-gold);
 }
 
 .product-info {

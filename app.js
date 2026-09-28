@@ -253,12 +253,14 @@ function initGalleryLightbox() {
   const modal = document.getElementById('imageModal');
   const imgEl = document.getElementById('lightboxImg');
   const capEl = document.getElementById('lightboxCaption');
-  const items = document.querySelectorAll('.gallery-item');
+  const items = document.querySelectorAll('.gallery-item, .product-img-wrap');
 
   if (!modal || !imgEl) return;
 
   items.forEach(item => {
-    item.addEventListener('click', () => {
+    item.addEventListener('click', (e) => {
+      // Don't open if clicked on a direct link
+      if (e.target.closest('a')) return;
       const src = item.getAttribute('data-src') || item.querySelector('img')?.src;
       const caption = item.getAttribute('data-caption') || item.querySelector('img')?.alt || '';
 
