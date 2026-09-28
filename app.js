@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initStarRating();
   initGalleryLightbox();
   initShareModal();
+  initCopyableElements();
+  initScrollEntrance();
 });
 
 /**
@@ -49,6 +51,18 @@ function initVCardDownloader() {
       tempLink.click();
       document.body.removeChild(tempLink);
       URL.revokeObjectURL(downloadUrl);
+
+      // Micro-interaction: tactile feedback on button
+      const origHtml = saveBtn.innerHTML;
+      saveBtn.classList.add('btn-saved-success');
+      saveBtn.innerHTML = `
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        <span>Contact Saved! ✓</span>
+      `;
+      setTimeout(() => {
+        saveBtn.classList.remove('btn-saved-success');
+        saveBtn.innerHTML = origHtml;
+      }, 2000);
 
       showToast('GM Cuisine Factory (.vcf) saved to phone contacts!');
     } catch (err) {
@@ -175,16 +189,44 @@ function initEnquiryForm() {
 function initStarRating() {
   const stars = document.querySelectorAll('.star-item');
   const form = document.getElementById('feedbackForm');
+  const msgEl = document.getElementById('ratingFeedbackMsg');
   let selectedScore = 5;
 
+  const scoreLabels = {
+    1: '⭐ Need improvement',
+    2: '⭐⭐ Fair experience',
+    3: '⭐⭐⭐ Good Food & Service',
+    4: '⭐⭐⭐⭐ Great Experience!',
+    5: '⭐⭐⭐⭐⭐ Outstanding Luxury Feast!'
+  };
+
+  const updateStarVisuals = (score) => {
+    stars.forEach(s => {
+      const sVal = parseInt(s.getAttribute('data-val') || '1', 10);
+      s.classList.toggle('active', sVal <= score);
+    });
+    if (msgEl) {
+      msgEl.textContent = scoreLabels[score] || '⭐⭐⭐⭐⭐ Tap stars to rate';
+    }
+  };
+
   stars.forEach(star => {
+    star.addEventListener('mouseenter', () => {
+      const val = parseInt(star.getAttribute('data-val') || '5', 10);
+      updateStarVisuals(val);
+    });
+
+    star.addEventListener('mouseleave', () => {
+      updateStarVisuals(selectedScore);
+    });
+
     star.addEventListener('click', () => {
       const val = parseInt(star.getAttribute('data-val') || '5', 10);
       selectedScore = val;
-      stars.forEach(s => {
-        const sVal = parseInt(s.getAttribute('data-val') || '1', 10);
-        s.classList.toggle('active', sVal <= val);
-      });
+      updateStarVisuals(selectedScore);
+
+      star.classList.add('pop');
+      setTimeout(() => star.classList.remove('pop'), 320);
     });
   });
 
@@ -196,9 +238,10 @@ function initStarRating() {
 
       if (!name || !text) return;
 
-      showToast(`Thank you ${name}! Your ${selectedScore}-star rating was recorded.`);
+      showToast(`Thank you ${name}! Your ${selectedScore}-star review was recorded.`);
       form.reset();
-      stars.forEach(s => s.classList.add('active'));
+      selectedScore = 5;
+      updateStarVisuals(5);
     });
   }
 }
@@ -293,7 +336,13 @@ function initShareModal() {
   if (btnCopy) {
     btnCopy.addEventListener('click', () => {
       copyToClipboard(cardUrl);
-      closeModal(shareModal);
+      const span = btnCopy.querySelector('span');
+      if (span) {
+        const orig = span.textContent;
+        span.textContent = 'Copied! ✓';
+        setTimeout(() => { span.textContent = orig; }, 1800);
+      }
+      setTimeout(() => closeModal(shareModal), 700);
     });
   }
 
@@ -324,34 +373,92 @@ function closeModal(modalEl) {
   modalEl.setAttribute('aria-hidden', 'true');
 }
 
-function copyToClipboard(text) {
+function copyToClipboard(text, customSuccessMsg) {
+  const successText = customSuccessMsg || 'Visiting card link copied to clipboard!';
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(text)
-      .then(() => showToast('Visiting card link copied to clipboard!'))
-      .catch(() => execCopy(text));
+      .then(() => showToast(successText))
+      .catch(() => execCopy(text, successText));
   } else {
-    execCopy(text);
+    execCopy(text, successText);
   }
 }
 
-function execCopy(text) {
+function execCopy(text, successText) {
   const input = document.createElement('input');
   input.value = text;
   document.body.appendChild(input);
   input.select();
   document.execCommand('copy');
   document.body.removeChild(input);
-  showToast('Visiting card link copied to clipboard!');
+  showToast(successText || 'Visiting card link copied to clipboard!');
 }
 
+let toastTimer = null;
 function showToast(msg) {
   const toast = document.getElementById('canvas-toast');
   if (!toast) return;
 
+  if (toastTimer) clearTimeout(toastTimer);
+
   toast.textContent = msg;
   toast.removeAttribute('hidden');
 
-  setTimeout(() => {
+  toastTimer = setTimeout(() => {
     toast.setAttribute('hidden', '');
-  }, 3200);
+  }, 2800);
+}
+
+/**
+ * 8. ONE-TAP COPYABLE ELEMENTS (UPI, Phone, etc.)
+ */
+function initCopyableElements() {
+  const copyables = document.querySelectorAll('.copyable-val');
+  copyables.forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const val = el.getAttribute('data-copy') || el.innerText.replace(/copy/i, '').trim();
+      const badge = el.querySelector('.copy-badge');
+
+      copyToClipboard(val, `Copied ${val} to clipboard!`);
+
+      if (badge) {
+        const orig = badge.textContent;
+        badge.textContent = 'Copied! ✓';
+        badge.classList.add('copied');
+        setTimeout(() => {
+          badge.textContent = orig;
+          badge.classList.remove('copied');
+        }, 1800);
+      }
+    });
+  });
+}
+
+/**
+ * 9. RESTRAINED SCROLL ENTRANCE REVEAL (IntersectionObserver)
+ */
+function initScrollEntrance() {
+  const elements = document.querySelectorAll('.section-container, .product-card');
+  if (!('IntersectionObserver' in window)) {
+    elements.forEach(el => el.classList.add('revealed'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -20px 0px'
+  });
+
+  elements.forEach(el => {
+    el.classList.add('reveal-on-scroll');
+    observer.observe(el);
+  });
 }
