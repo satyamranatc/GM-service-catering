@@ -1,22 +1,206 @@
 /**
  * GM CUISINE FACTORY & GM SERVICE CATERERS INDORE
- * Multi-Section Digital Card Controller
+ * Award-Winning Luxury Catering Landing Page & Interactive Concierge Controller
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initVCardDownloader();
-  initBottomNavScrollSpy();
+  initDualNavScrollSpy();
+  initEventPlannerCalculator();
+  initFeastFilters();
+  initStoryHighlights();
   initDirectWhatsappInput();
   initEnquiryForm();
   initStarRating();
   initGalleryLightbox();
   initShareModal();
   initCopyableElements();
-  initScrollEntrance();
 });
 
 /**
- * 1. ONE-TAP VCARD (.VCF) GENERATOR & DOWNLOADER
+ * 1. BESPOKE FEAST PLANNER & ESTIMATOR CALCULATOR (The Showstopper Widget)
+ */
+function initEventPlannerCalculator() {
+  const occasionChips = document.querySelectorAll('#occasionChips .occasion-chip');
+  const slider = document.getElementById('guestSlider');
+  const guestDisplay = document.getElementById('guestCountDisplay');
+  const titleDisplay = document.getElementById('plannerRecommendationTitle');
+  const metricChefs = document.getElementById('metricChefs');
+  const metricCounters = document.getElementById('metricCounters');
+  const metricCourses = document.getElementById('metricCourses');
+  const stationLabels = document.querySelectorAll('#stationBoxes .station-checkbox-pill');
+  const btnSendWa = document.getElementById('btnSendCustomPlanWa');
+
+  if (!slider || !btnSendWa) return;
+
+  let currentOccasion = 'Grand Royal Wedding';
+  let currentGuests = parseInt(slider.value, 10) || 450;
+
+  // Occasion selection
+  occasionChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      occasionChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      currentOccasion = chip.getAttribute('data-occasion') || chip.textContent.trim();
+      updateEstimator();
+    });
+  });
+
+  // Slider change
+  slider.addEventListener('input', () => {
+    currentGuests = parseInt(slider.value, 10);
+    if (guestDisplay) guestDisplay.textContent = `${currentGuests.toLocaleString()} Guests`;
+    updateEstimator();
+  });
+
+  // Station checkbox toggle visual feedback
+  stationLabels.forEach(label => {
+    const input = label.querySelector('input');
+    if (!input) return;
+    input.addEventListener('change', () => {
+      label.classList.toggle('active', input.checked);
+      updateEstimator();
+    });
+  });
+
+  function updateEstimator() {
+    // Dynamic calculation formula based on guest count & selected live stations
+    const activeStations = Array.from(document.querySelectorAll('#stationBoxes input:checked')).map(i => i.value);
+    const stationCount = activeStations.length;
+
+    // Chef brigade: base 10 + 1 chef per 18 guests + 3 per active live station
+    const chefCount = Math.max(8, Math.round(10 + (currentGuests / 18) + (stationCount * 3)));
+    
+    // Total courses: 14 base + 2 per station
+    const coursesCount = Math.min(38, Math.max(16, 14 + (stationCount * 2)));
+
+    if (titleDisplay) {
+      titleDisplay.textContent = `${currentOccasion} Feast — ${currentGuests.toLocaleString()} Guests`;
+    }
+
+    if (metricChefs) metricChefs.textContent = `${chefCount} Chefs`;
+    if (metricCounters) metricCounters.textContent = `${stationCount} Live Stations`;
+    if (metricCourses) metricCourses.textContent = `${coursesCount} Delicacies`;
+  }
+
+  // Initial calculation
+  updateEstimator();
+
+  // WhatsApp Blueprint Dispatch
+  btnSendWa.addEventListener('click', () => {
+    const activeStations = Array.from(document.querySelectorAll('#stationBoxes input:checked')).map(i => i.value);
+    const stationsText = activeStations.length > 0 ? activeStations.map(s => `  • ${s}`).join('\n') : '  • Standard Royal Spread';
+
+    const waText = [
+      `*BESPOKE CATERING INQUIRY — GM CUISINE FACTORY*`,
+      `---------------------------------------`,
+      `👑 *Event Occasion:* ${currentOccasion}`,
+      `👥 *Estimated Guests:* ${currentGuests.toLocaleString()}`,
+      `✨ *Selected Stations & Styles:*`,
+      `${stationsText}`,
+      `---------------------------------------`,
+      `Please share customized menu options, chef availability, and quotation for Indore.`,
+      `Sent via Official GM Cuisine Factory Portal`
+    ].join('\n');
+
+    const waUrl = `https://wa.me/919399231772?text=${encodeURIComponent(waText)}`;
+    window.open(waUrl, '_blank');
+    showToast('Event blueprint prepared! Opening WhatsApp...');
+  });
+}
+
+/**
+ * 2. SIGNATURE FEASTS CATEGORY FILTER TABS
+ */
+function initFeastFilters() {
+  const filterBtns = document.querySelectorAll('#feastsFilterBar .filter-chip');
+  const cards = document.querySelectorAll('#productsGrid .product-card');
+
+  if (!filterBtns.length || !cards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter') || 'all';
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category') || '';
+        if (filter === 'all' || cat === filter) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+/**
+ * 3. INTERACTIVE STORY HIGHLIGHTS
+ */
+function initStoryHighlights() {
+  const storyBubbles = document.querySelectorAll('.story-bubble-item');
+  if (!storyBubbles.length) return;
+
+  storyBubbles.forEach(bubble => {
+    bubble.addEventListener('click', (e) => {
+      const filter = bubble.getAttribute('data-filter');
+      if (filter) {
+        // Activate matching filter chip in feasts section
+        const targetChip = document.querySelector(`#feastsFilterBar [data-filter="${filter}"]`);
+        if (targetChip) {
+          targetChip.click();
+        }
+      }
+    });
+  });
+}
+
+/**
+ * 4. DUAL NAVIGATION SCROLL-SPY (DESKTOP TOP NAV & MOBILE BOTTOM DOCK)
+ */
+function initDualNavScrollSpy() {
+  const desktopLinks = document.querySelectorAll('.nav-desktop-links .nav-link');
+  const mobileLinks = document.querySelectorAll('.footer-menu-link');
+
+  const sectionIds = ['homesection', 'ProductsServicesSection', 'eventPlannerSection', 'AboutUsSection', 'gallerysection', 'feedbacksection', 'PaymentOptionsSection', 'enquirysection'];
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+  const onScroll = () => {
+    const scrollPos = window.scrollY + 180;
+    let currentId = '';
+
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const sec = sections[i];
+      if (sec.offsetTop <= scrollPos) {
+        currentId = sec.id;
+        break;
+      }
+    }
+
+    if (currentId) {
+      desktopLinks.forEach(link => {
+        const href = link.getAttribute('href').replace('#', '');
+        link.classList.toggle('active', href === currentId);
+      });
+
+      mobileLinks.forEach(link => {
+        const targetId = link.getAttribute('data-nav') || link.getAttribute('href').replace('#', '');
+        link.classList.toggle('active', targetId === currentId);
+      });
+    }
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
+
+/**
+ * 5. ONE-TAP VCARD (.VCF) GENERATOR & DOWNLOADER
  */
 function initVCardDownloader() {
   const saveBtn = document.getElementById('save-vcard-btn');
@@ -26,7 +210,7 @@ function initVCardDownloader() {
     'BEGIN:VCARD',
     'VERSION:3.0',
     'N:Cuisine Factory;GM;;;',
-    'FN:GM Cuisine Factory (GM Caterers)',
+    'FN:GM Cuisine Factory (GM Caterers Indore)',
     'ORG:GM Cuisine Factory · GM Service Caterers Indore',
     'TITLE:Luxury Pure Vegetarian Catering & Royal Feasts',
     'TEL;TYPE=CELL,VOICE,PREF:+919399231772',
@@ -34,7 +218,7 @@ function initVCardDownloader() {
     'ADR;TYPE=WORK,PREF:;;Indore;Madhya Pradesh;;India',
     'X-SOCIALPROFILE;type=instagram:https://www.instagram.com/gm_service_caterers/',
     'URL:https://www.justdial.com/Indore/GM-service-catering/0731PX731-X731-241208154150-I9E8_BZDET',
-    'NOTE:GM Cuisine Factory by GM Service Caterers Indore. Ordinary food has no place in extraordinary moments. Luxury Pure Veg Catering for Royal Weddings, Kitty Parties & Events in Indore. Call/WhatsApp: 9399231772 / 9425410558.',
+    'NOTE:GM Cuisine Factory by GM Service Caterers Indore. Ordinary food has no place in extraordinary moments. Luxury Pure Veg Catering for Royal Weddings, Grand Banquets & Events. Call/WhatsApp: +91 9399231772 / 9425410558.',
     'CATEGORIES:Catering,Event Services,Pure Vegetarian,Wedding Caterer,Indore',
     'END:VCARD'
   ].join('\r\n');
@@ -52,19 +236,7 @@ function initVCardDownloader() {
       document.body.removeChild(tempLink);
       URL.revokeObjectURL(downloadUrl);
 
-      // Micro-interaction: tactile feedback on button
-      const origHtml = saveBtn.innerHTML;
-      saveBtn.classList.add('btn-saved-success');
-      saveBtn.innerHTML = `
-        <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-        <span>Contact Saved! ✓</span>
-      `;
-      setTimeout(() => {
-        saveBtn.classList.remove('btn-saved-success');
-        saveBtn.innerHTML = origHtml;
-      }, 2000);
-
-      showToast('GM Cuisine Factory (.vcf) saved to phone contacts!');
+      showToast('GM Cuisine Factory contact card saved to phone!');
     } catch (err) {
       console.error('vCard download fallback:', err);
       window.location.href = 'tel:9399231772';
@@ -73,45 +245,7 @@ function initVCardDownloader() {
 }
 
 /**
- * 2. BOTTOM NAVIGATION SCROLL-SPY & SMOOTH SCROLL
- */
-function initBottomNavScrollSpy() {
-  const navLinks = document.querySelectorAll('.footer-menu-link');
-  if (!navLinks.length) return;
-
-  const sections = Array.from(navLinks)
-    .map(link => {
-      const id = link.getAttribute('data-nav') || link.getAttribute('href').replace('#', '');
-      return document.getElementById(id);
-    })
-    .filter(Boolean);
-
-  const onScroll = () => {
-    const scrollPos = window.scrollY + window.innerHeight * 0.35;
-    let currentId = '';
-
-    for (let i = sections.length - 1; i >= 0; i--) {
-      const sec = sections[i];
-      if (sec.offsetTop <= scrollPos) {
-        currentId = sec.id;
-        break;
-      }
-    }
-
-    if (currentId) {
-      navLinks.forEach(link => {
-        const targetId = link.getAttribute('data-nav') || link.getAttribute('href').replace('#', '');
-        link.classList.toggle('active', targetId === currentId);
-      });
-    }
-  };
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-}
-
-/**
- * 3. DIRECT WHATSAPP PHONE NUMBER SHARING (Reference Site Feature)
+ * 6. DIRECT WHATSAPP NUMBER SHARING
  */
 function initDirectWhatsappInput() {
   const btn = document.getElementById('btnSendWaCard');
@@ -129,7 +263,7 @@ function initDirectWhatsappInput() {
     const phone = rawVal.slice(-10);
     const cardUrl = window.location.href;
     const msg = encodeURIComponent(
-      `Hello! Here is the Official Digital Visiting Card for GM Cuisine Factory (GM Service Caterers Indore) — Luxury Pure Vegetarian Catering:\n\n${cardUrl}\n\nCall/WhatsApp: +91 9399231772 / 9425410558`
+      `Hello! Experience the Luxury Pure Vegetarian Catering & Royal Feasts of GM Cuisine Factory (GM Service Caterers Indore):\n\n${cardUrl}\n\nCall/WhatsApp: +91 9399231772 / 9425410558`
     );
 
     window.open(`https://wa.me/91${phone}?text=${msg}`, '_blank');
@@ -144,7 +278,7 @@ function initDirectWhatsappInput() {
 }
 
 /**
- * 4. QUICK ENQUIRY FORM DISPATCH VIA WHATSAPP
+ * 7. ENQUIRY FORM DISPATCH VIA WHATSAPP
  */
 function initEnquiryForm() {
   const form = document.getElementById('cateringEnquiryForm');
@@ -165,16 +299,16 @@ function initEnquiryForm() {
     }
 
     const waText = [
-      `*NEW CATERING ENQUIRY — GM CUISINE FACTORY*`,
+      `*NEW CATERING RESERVATION — GM CUISINE FACTORY*`,
       `---------------------------------`,
       `👤 *Name:* ${name}`,
       `📞 *Phone:* ${phone}`,
       `🎉 *Event:* ${eventType}`,
-      `👥 *Estimated Guests:* ${guests}`,
+      `👥 *Guests:* ${guests}`,
       `📅 *Date:* ${date}`,
-      `📝 *Notes/Requirements:* ${message}`,
+      `📝 *Requirements:* ${message}`,
       `---------------------------------`,
-      `Sent via Official Digital Visiting Card`
+      `Sent via Official GM Cuisine Factory Portal`
     ].join('\n');
 
     const waUrl = `https://wa.me/919399231772?text=${encodeURIComponent(waText)}`;
@@ -184,7 +318,7 @@ function initEnquiryForm() {
 }
 
 /**
- * 5. INTERACTIVE 5-STAR RATING & FEEDBACK
+ * 8. INTERACTIVE 5-STAR RATING & FEEDBACK
  */
 function initStarRating() {
   const stars = document.querySelectorAll('.star-item');
@@ -247,7 +381,7 @@ function initStarRating() {
 }
 
 /**
- * 6. IMAGE GALLERY LIGHTBOX MODAL
+ * 9. IMAGE GALLERY & FEASTS LIGHTBOX MODAL
  */
 function initGalleryLightbox() {
   const modal = document.getElementById('imageModal');
@@ -259,7 +393,6 @@ function initGalleryLightbox() {
 
   items.forEach(item => {
     item.addEventListener('click', (e) => {
-      // Don't open if clicked on a direct link
       if (e.target.closest('a')) return;
       const src = item.getAttribute('data-src') || item.querySelector('img')?.src;
       const caption = item.getAttribute('data-caption') || item.querySelector('img')?.alt || '';
@@ -274,7 +407,7 @@ function initGalleryLightbox() {
 }
 
 /**
- * 7. SHARE PROFILE MODAL & NATIVE SHARE
+ * 10. SHARE PROFILE MODAL & NATIVE SHARE
  */
 function initShareModal() {
   const shareModal = document.getElementById('shareModal');
@@ -282,7 +415,7 @@ function initShareModal() {
   const openBtn2 = document.getElementById('shareVCardBtn');
 
   const cardTitle = 'GM Cuisine Factory Indore';
-  const cardText = 'GM Cuisine Factory (GM Service Caterers Indore) — Luxury Pure Vegetarian Catering for Weddings, Kitty Parties & Events. Call/WhatsApp: +91 9399231772 / 9425410558.';
+  const cardText = 'GM Cuisine Factory (GM Service Caterers Indore) — Luxury Pure Vegetarian Catering for Royal Weddings, Live Paan Lounges & Events. Call/WhatsApp: +91 9399231772 / 9425410558.';
   const cardUrl = window.location.href;
 
   const handleShareTrigger = async () => {
@@ -307,7 +440,6 @@ function initShareModal() {
   if (openBtn1) openBtn1.addEventListener('click', handleShareTrigger);
   if (openBtn2) openBtn2.addEventListener('click', handleShareTrigger);
 
-  // Modal Share Button Handlers
   const btnWa = document.getElementById('shareBtnWhatsapp');
   const btnSms = document.getElementById('shareBtnSms');
   const btnFb = document.getElementById('shareBtnFb');
@@ -348,7 +480,6 @@ function initShareModal() {
     });
   }
 
-  // Generic Modal Close Triggers
   document.querySelectorAll('[data-close-modal]').forEach(trigger => {
     trigger.addEventListener('click', (e) => {
       const m = e.target.closest('.app-modal');
@@ -412,7 +543,7 @@ function showToast(msg) {
 }
 
 /**
- * 8. ONE-TAP COPYABLE ELEMENTS (UPI, Phone, etc.)
+ * 11. ONE-TAP COPYABLE ELEMENTS (UPI, Phone, etc.)
  */
 function initCopyableElements() {
   const copyables = document.querySelectorAll('.copyable-val');
@@ -434,33 +565,5 @@ function initCopyableElements() {
         }, 1800);
       }
     });
-  });
-}
-
-/**
- * 9. RESTRAINED SCROLL ENTRANCE REVEAL (IntersectionObserver)
- */
-function initScrollEntrance() {
-  const elements = document.querySelectorAll('.section-container, .product-card');
-  if (!('IntersectionObserver' in window)) {
-    elements.forEach(el => el.classList.add('revealed'));
-    return;
-  }
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.08,
-    rootMargin: '0px 0px -20px 0px'
-  });
-
-  elements.forEach(el => {
-    el.classList.add('reveal-on-scroll');
-    observer.observe(el);
   });
 }
