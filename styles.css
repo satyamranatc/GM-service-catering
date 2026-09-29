@@ -49,10 +49,16 @@
   --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
   --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.04);
 
-  /* Typography Hierarchy */
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Plus Jakarta Sans", "Helvetica Neue", sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-cinzel: 'Cinzel', Georgia, serif;
+  /* ==========================================================================
+     TYPOGRAPHY SYSTEM: 1 DISPLAY FONT + 1 UI FONT + LOGO ARTWORK
+     Display: Instrument Serif (Modern Editorial Luxury)
+     UI / Body: Inter (Clean MNC Precision)
+     ========================================================================== */
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-ui: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: var(--font-ui);
+  --font-serif: var(--font-display);
+  --font-cinzel: var(--font-ui);
 
   /* Controlled Geometry */
   --radius-xs: 6px;
@@ -91,7 +97,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-ui);
   color: var(--color-text-primary);
   background-color: var(--color-canvas-bg);
   -webkit-font-smoothing: antialiased;
@@ -100,6 +106,11 @@ body {
   position: relative;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
 }
 
 img {
@@ -264,21 +275,21 @@ img {
 }
 
 .firmname {
-  font-family: var(--font-serif);
-  font-size: 1.45rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 400;
   color: var(--color-obsidian);
-  line-height: 1.28;
-  letter-spacing: -0.2px;
-  margin: 0 auto 6px;
-  max-width: 380px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 auto 8px;
+  max-width: 390px;
 }
 
 .brand-subline {
-  font-family: var(--font-cinzel), var(--font-sans);
-  font-size: 0.78125rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-gold-deep);
   margin-bottom: 10px;
@@ -447,20 +458,22 @@ img {
 }
 
 .stat-num {
-  font-family: var(--font-serif);
-  font-size: 1.1875rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 400;
   color: var(--color-obsidian);
-  line-height: 1.15;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
 .stat-lbl {
-  font-size: 0.65625rem;
+  font-family: var(--font-ui);
+  font-size: 0.625rem;
   font-weight: 600;
   color: var(--color-text-tertiary);
   margin-top: 3px;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.1em;
 }
 
 /* Legacy/Helper fallbacks */
@@ -539,18 +552,18 @@ img {
 }
 
 .stations-tag {
-  font-family: var(--font-cinzel);
+  font-family: var(--font-ui);
   font-size: 0.65625rem;
   font-weight: 700;
   color: var(--color-gold-deep);
-  letter-spacing: 1.4px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .stations-heading {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
   color: var(--color-obsidian);
   line-height: 1.2;
 }
@@ -650,11 +663,11 @@ img {
 }
 
 .station-card-title {
-  font-family: var(--font-serif);
-  font-size: 0.9375rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
   color: var(--color-obsidian);
-  line-height: 1.25;
+  line-height: 1.2;
   margin-bottom: 3px;
 }
 
@@ -709,11 +722,11 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  font-family: var(--font-cinzel);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 1.2px;
+  gap: 12px;
+  font-family: var(--font-ui);
+  font-size: 0.65625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
 }
 
 .tasting-tag {
@@ -784,10 +797,10 @@ img {
 }
 
 .sheet-badge {
-  font-family: var(--font-cinzel);
-  font-size: 0.65625rem;
+  font-family: var(--font-ui);
+  font-size: 0.625rem;
   font-weight: 700;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.1em;
   color: var(--color-gold-deep);
   background: var(--color-gold-soft);
   border: 1px solid var(--color-gold-border);
@@ -852,11 +865,11 @@ img {
 }
 
 .sheet-title {
-  font-family: var(--font-serif);
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 400;
   color: var(--color-obsidian);
-  line-height: 1.25;
+  line-height: 1.2;
   margin-bottom: 2px;
 }
 
@@ -1171,27 +1184,27 @@ img {
 
 .section-eyebrow {
   display: block;
-  font-family: var(--font-cinzel);
+  font-family: var(--font-ui);
   font-size: 0.6875rem;
   font-weight: 700;
   color: var(--color-gold-deep);
-  letter-spacing: 1.8px;
+  letter-spacing: 0.16em;
   margin-bottom: 6px;
   text-transform: uppercase;
 }
 
 .section-title {
-  font-family: var(--font-serif);
-  font-size: 1.55rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 400;
   color: var(--color-obsidian);
-  letter-spacing: -0.2px;
-  line-height: 1.25;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
 @media (min-width: 860px) {
   .section-title {
-    font-size: 2.1rem;
+    font-size: 2.35rem;
   }
 }
 
@@ -2047,9 +2060,10 @@ img {
 }
 
 .footer-title {
-  font-family: var(--font-cinzel);
-  font-size: 0.9375rem;
-  letter-spacing: 1px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   color: var(--color-gold-light);
   margin-bottom: 4px;
 }
@@ -2260,9 +2274,9 @@ img {
 }
 
 .share-modal-header h3 {
-  font-family: var(--font-cinzel);
-  font-size: 0.9375rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
   color: var(--color-obsidian);
 }
 
