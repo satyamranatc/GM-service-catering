@@ -6,7 +6,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initVCardDownloader();
   initDualNavScrollSpy();
-  initEventPlannerCalculator();
   initFeastFilters();
   initStoryHighlights();
   initDirectWhatsappInput();
@@ -17,97 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyableElements();
 });
 
-/**
- * 1. BESPOKE FEAST PLANNER & ESTIMATOR CALCULATOR (The Showstopper Widget)
- */
-function initEventPlannerCalculator() {
-  const occasionChips = document.querySelectorAll('#occasionChips .occasion-chip');
-  const slider = document.getElementById('guestSlider');
-  const guestDisplay = document.getElementById('guestCountDisplay');
-  const titleDisplay = document.getElementById('plannerRecommendationTitle');
-  const metricChefs = document.getElementById('metricChefs');
-  const metricCounters = document.getElementById('metricCounters');
-  const metricCourses = document.getElementById('metricCourses');
-  const stationLabels = document.querySelectorAll('#stationBoxes .station-checkbox-pill');
-  const btnSendWa = document.getElementById('btnSendCustomPlanWa');
-
-  if (!slider || !btnSendWa) return;
-
-  let currentOccasion = 'Grand Royal Wedding';
-  let currentGuests = parseInt(slider.value, 10) || 450;
-
-  // Occasion selection
-  occasionChips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      occasionChips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      currentOccasion = chip.getAttribute('data-occasion') || chip.textContent.trim();
-      updateEstimator();
-    });
-  });
-
-  // Slider change
-  slider.addEventListener('input', () => {
-    currentGuests = parseInt(slider.value, 10);
-    if (guestDisplay) guestDisplay.textContent = `${currentGuests.toLocaleString()} Guests`;
-    updateEstimator();
-  });
-
-  // Station checkbox toggle visual feedback
-  stationLabels.forEach(label => {
-    const input = label.querySelector('input');
-    if (!input) return;
-    input.addEventListener('change', () => {
-      label.classList.toggle('active', input.checked);
-      updateEstimator();
-    });
-  });
-
-  function updateEstimator() {
-    // Dynamic calculation formula based on guest count & selected live stations
-    const activeStations = Array.from(document.querySelectorAll('#stationBoxes input:checked')).map(i => i.value);
-    const stationCount = activeStations.length;
-
-    // Chef brigade: base 10 + 1 chef per 18 guests + 3 per active live station
-    const chefCount = Math.max(8, Math.round(10 + (currentGuests / 18) + (stationCount * 3)));
-    
-    // Total courses: 14 base + 2 per station
-    const coursesCount = Math.min(38, Math.max(16, 14 + (stationCount * 2)));
-
-    if (titleDisplay) {
-      titleDisplay.textContent = `${currentOccasion} Feast — ${currentGuests.toLocaleString()} Guests`;
-    }
-
-    if (metricChefs) metricChefs.textContent = `${chefCount} Chefs`;
-    if (metricCounters) metricCounters.textContent = `${stationCount} Live Stations`;
-    if (metricCourses) metricCourses.textContent = `${coursesCount} Delicacies`;
-  }
-
-  // Initial calculation
-  updateEstimator();
-
-  // WhatsApp Blueprint Dispatch
-  btnSendWa.addEventListener('click', () => {
-    const activeStations = Array.from(document.querySelectorAll('#stationBoxes input:checked')).map(i => i.value);
-    const stationsText = activeStations.length > 0 ? activeStations.map(s => `  • ${s}`).join('\n') : '  • Standard Royal Spread';
-
-    const waText = [
-      `*BESPOKE CATERING INQUIRY — GM CUISINE FACTORY*`,
-      `---------------------------------------`,
-      `👑 *Event Occasion:* ${currentOccasion}`,
-      `👥 *Estimated Guests:* ${currentGuests.toLocaleString()}`,
-      `✨ *Selected Stations & Styles:*`,
-      `${stationsText}`,
-      `---------------------------------------`,
-      `Please share customized menu options, chef availability, and quotation for Indore.`,
-      `Sent via Official GM Cuisine Factory Portal`
-    ].join('\n');
-
-    const waUrl = `https://wa.me/919399231772?text=${encodeURIComponent(waText)}`;
-    window.open(waUrl, '_blank');
-    showToast('Event blueprint prepared! Opening WhatsApp...');
-  });
-}
 
 /**
  * 2. SIGNATURE FEASTS CATEGORY FILTER TABS
@@ -167,7 +75,7 @@ function initDualNavScrollSpy() {
   const desktopLinks = document.querySelectorAll('.nav-desktop-links .nav-link');
   const mobileLinks = document.querySelectorAll('.footer-menu-link');
 
-  const sectionIds = ['homesection', 'ProductsServicesSection', 'eventPlannerSection', 'AboutUsSection', 'gallerysection', 'feedbacksection', 'PaymentOptionsSection', 'enquirysection'];
+  const sectionIds = ['homesection', 'ProductsServicesSection', 'AboutUsSection', 'gallerysection', 'feedbacksection', 'PaymentOptionsSection', 'enquirysection'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
   const onScroll = () => {
@@ -203,8 +111,8 @@ function initDualNavScrollSpy() {
  * 5. ONE-TAP VCARD (.VCF) GENERATOR & DOWNLOADER
  */
 function initVCardDownloader() {
-  const saveBtn = document.getElementById('save-vcard-btn');
-  if (!saveBtn) return;
+  const saveBtns = document.querySelectorAll('#save-vcard-btn, .save-vcard-trigger');
+  if (!saveBtns.length) return;
 
   const vCardContent = [
     'BEGIN:VCARD',
@@ -218,29 +126,31 @@ function initVCardDownloader() {
     'ADR;TYPE=WORK,PREF:;;Indore;Madhya Pradesh;;India',
     'X-SOCIALPROFILE;type=instagram:https://www.instagram.com/gm_service_caterers/',
     'URL:https://www.justdial.com/Indore/GM-service-catering/0731PX731-X731-241208154150-I9E8_BZDET',
-    'NOTE:GM Cuisine Factory by GM Service Caterers Indore. Ordinary food has no place in extraordinary moments. Luxury Pure Veg Catering for Royal Weddings, Grand Banquets & Events. Call/WhatsApp: +91 9399231772 / 9425410558.',
+    'NOTE:GM Cuisine Factory by GM Service Caterers Indore. Extraordinary moments deserve extraordinary food. Luxury Pure Veg Catering for Royal Weddings, Grand Banquets & Events. Call/WhatsApp: +91 9399231772 / 9425410558.',
     'CATEGORIES:Catering,Event Services,Pure Vegetarian,Wedding Caterer,Indore',
     'END:VCARD'
   ].join('\r\n');
 
-  saveBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    try {
-      const blob = new Blob([vCardContent], { type: 'text/vcard;charset=utf-8' });
-      const downloadUrl = URL.createObjectURL(blob);
-      const tempLink = document.createElement('a');
-      tempLink.href = downloadUrl;
-      tempLink.download = 'GM_Cuisine_Factory_Indore.vcf';
-      document.body.appendChild(tempLink);
-      tempLink.click();
-      document.body.removeChild(tempLink);
-      URL.revokeObjectURL(downloadUrl);
+  saveBtns.forEach(saveBtn => {
+    saveBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      try {
+        const blob = new Blob([vCardContent], { type: 'text/vcard;charset=utf-8' });
+        const downloadUrl = URL.createObjectURL(blob);
+        const tempLink = document.createElement('a');
+        tempLink.href = downloadUrl;
+        tempLink.download = 'GM_Cuisine_Factory_Indore.vcf';
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
+        URL.revokeObjectURL(downloadUrl);
 
-      showToast('GM Cuisine Factory contact card saved to phone!');
-    } catch (err) {
-      console.error('vCard download fallback:', err);
-      window.location.href = 'tel:9399231772';
-    }
+        showToast('GM Cuisine Factory contact card saved to phone!');
+      } catch (err) {
+        console.error('vCard download fallback:', err);
+        window.location.href = 'tel:9399231772';
+      }
+    });
   });
 }
 
@@ -439,6 +349,9 @@ function initShareModal() {
 
   if (openBtn1) openBtn1.addEventListener('click', handleShareTrigger);
   if (openBtn2) openBtn2.addEventListener('click', handleShareTrigger);
+  document.querySelectorAll('.open-share-modal-trigger').forEach(btn => {
+    btn.addEventListener('click', handleShareTrigger);
+  });
 
   const btnWa = document.getElementById('shareBtnWhatsapp');
   const btnSms = document.getElementById('shareBtnSms');
