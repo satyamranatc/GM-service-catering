@@ -165,77 +165,109 @@
         </div>
       </div>
 
-      <!-- ==================== INTERACTIVE STORY HIGHLIGHTS REEL ==================== -->
-      <div class="story-highlights-container">
-        <div class="story-highlights-header">
-          <span class="story-title-tag">EXPLORE SIGNATURE STATIONS</span>
-          <span class="story-swipe-hint">Tap to view</span>
+      <!-- ==================== SIGNATURE LIVE STATIONS CAROUSEL ==================== -->
+      <div class="signature-stations-container">
+        <div class="stations-header">
+          <div class="stations-title-group">
+            <span class="stations-tag">EXPERIENTIAL LIVE STATIONS</span>
+            <h2 class="stations-heading">Signature Counters</h2>
+          </div>
+          <span class="stations-swipe-hint">Swipe to explore</span>
         </div>
-        <div class="story-bubbles-scroll" id="storyReel">
 
-          <a href="#ProductsServicesSection" class="story-bubble-item" data-filter="banquet">
-            <div class="story-circle-ring">
-              <img src="assets/images/instagram/insta_08.jpg" alt="Royal Wedding Banquet" class="story-thumb">
-            </div>
-            <span class="story-label">Royal Banquets</span>
-          </a>
+        <div class="stations-snap-carousel" id="stationsCarousel" role="region" aria-label="Signature Live Stations Carousel">
 
-          <a href="#ProductsServicesSection" class="story-bubble-item" data-filter="lounge">
-            <div class="story-circle-ring">
-              <img src="assets/images/instagram/insta_04_4x5.jpg" alt="Smoke Paan Lounge" class="story-thumb">
+          <!-- Card 1: Indori Chaat -->
+          <div class="station-swipe-card" data-station="chaat" role="button" tabindex="0" aria-label="Explore Indori Chaat Station">
+            <div class="station-card-img-wrap">
+              <img src="assets/images/instagram/insta_05.jpg" alt="Indori Chaat & Dosa Live Counters" class="station-card-img" loading="lazy">
+              <span class="station-badge">CROWD FAVORITE</span>
             </div>
-            <span class="story-label">Smoke Paan</span>
-          </a>
+            <div class="station-card-body">
+              <h3 class="station-card-title">Indori Chaat</h3>
+              <p class="station-card-sub">Pani Puri, Dahi Vada & Live Dosa</p>
+              <span class="station-explore-cta">Explore station <span>→</span></span>
+            </div>
+          </div>
 
-          <a href="#ProductsServicesSection" class="story-bubble-item" data-filter="chaat">
-            <div class="story-circle-ring">
-              <img src="assets/images/instagram/insta_05.jpg" alt="Indori Chaat & Dosa" class="story-thumb">
+          <!-- Card 2: Royal Tandoor -->
+          <div class="station-swipe-card" data-station="tandoor" role="button" tabindex="0" aria-label="Explore Royal Tandoor Station">
+            <div class="station-card-img-wrap">
+              <img src="assets/images/instagram/insta_08.jpg" alt="Royal Tandoor & Wedding Banquet" class="station-card-img" loading="lazy">
+              <span class="station-badge">ROYAL SIGNATURE</span>
             </div>
-            <span class="story-label">Indori Chaat</span>
-          </a>
+            <div class="station-card-body">
+              <h3 class="station-card-title">Royal Tandoor</h3>
+              <p class="station-card-sub">Paneer Tikka, Naan & Sizzlers</p>
+              <span class="station-explore-cta">Explore station <span>→</span></span>
+            </div>
+          </div>
 
-          <a href="#ProductsServicesSection" class="story-bubble-item" data-filter="mithai">
-            <div class="story-circle-ring">
-              <img src="assets/images/instagram/insta_10.jpg" alt="Desi Ghee Mithai" class="story-thumb">
+          <!-- Card 3: Live Desserts & Shahi Mithai -->
+          <div class="station-swipe-card" data-station="mithai" role="button" tabindex="0" aria-label="Explore Live Desserts & Mithai Station">
+            <div class="station-card-img-wrap">
+              <img src="assets/images/instagram/insta_10.jpg" alt="Pure Desi Ghee Shahi Mithai" class="station-card-img" loading="lazy">
+              <span class="station-badge">100% DESI GHEE</span>
             </div>
-            <span class="story-label">Royal Mithai</span>
-          </a>
+            <div class="station-card-body">
+              <h3 class="station-card-title">Live Desserts</h3>
+              <p class="station-card-sub">Hot Jalebi Rabdi & Shahi Mithai</p>
+              <span class="station-explore-cta">Explore station <span>→</span></span>
+            </div>
+          </div>
 
-          <a href="#ProductsServicesSection" class="story-bubble-item" data-filter="continental">
-            <div class="story-circle-ring">
-              <img src="assets/images/instagram/insta_09.jpg" alt="Continental Live" class="story-thumb">
+          <!-- Card 4: Smoke Paan Lounge -->
+          <div class="station-swipe-card" data-station="paan" role="button" tabindex="0" aria-label="Explore Smoke Paan Lounge">
+            <div class="station-card-img-wrap">
+              <img src="assets/images/instagram/insta_04_4x5.jpg" alt="Molecular Smoke Paan Lounge" class="station-card-img" loading="lazy">
+              <span class="station-badge">EXPERIENTIAL</span>
             </div>
-            <span class="story-label">Continental</span>
-          </a>
+            <div class="station-card-body">
+              <h3 class="station-card-title">Smoke Paan</h3>
+              <p class="station-card-sub">Liquid Nitrogen Mist & Fire Paan</p>
+              <span class="station-explore-cta">Explore station <span>→</span></span>
+            </div>
+          </div>
 
-          <a href="#ProductsServicesSection" class="story-bubble-item" data-filter="thali">
-            <div class="story-circle-ring">
-              <img src="assets/images/instagram/insta_19.jpg" alt="Maharaja Thali" class="story-thumb">
+          <!-- Card 5: Continental Live -->
+          <div class="station-swipe-card" data-station="continental" role="button" tabindex="0" aria-label="Explore Continental Live Station">
+            <div class="station-card-img-wrap">
+              <img src="assets/images/instagram/insta_09.jpg" alt="Continental Pasta and Pizza Live" class="station-card-img" loading="lazy">
+              <span class="station-badge">GLOBAL FUSION</span>
             </div>
-            <span class="story-label">Maharaja Thali</span>
-          </a>
+            <div class="station-card-body">
+              <h3 class="station-card-title">Continental Live</h3>
+              <p class="station-card-sub">Artisanal Pizza & Tossed Pasta</p>
+              <span class="station-explore-cta">Explore station <span>→</span></span>
+            </div>
+          </div>
+
+          <!-- Card 6: Maharaja Wedding Thali -->
+          <div class="station-swipe-card" data-station="thali" role="button" tabindex="0" aria-label="Explore Maharaja Wedding Thali">
+            <div class="station-card-img-wrap">
+              <img src="assets/images/instagram/insta_19.jpg" alt="Maharaja Wedding Thali Feast" class="station-card-img" loading="lazy">
+              <span class="station-badge">GRAND WEDDING</span>
+            </div>
+            <div class="station-card-body">
+              <h3 class="station-card-title">Maharaja Thali</h3>
+              <p class="station-card-sub">56-Bhog Royal Banquet Feast</p>
+              <span class="station-explore-cta">Explore station <span>→</span></span>
+            </div>
+          </div>
 
         </div>
       </div>
 
-      <!-- ==================== CONTINUOUS GOLDEN TASTING MARQUEE ==================== -->
-      <div class="tasting-marquee-wrapper" aria-hidden="true">
-        <div class="tasting-marquee-track">
-          <span>✦ ROYAL SHAHI PANEER</span>
-          <span>✦ LIQUID NITROGEN SMOKE PAAN</span>
-          <span>✦ DAL MAKHANI SHAHI</span>
-          <span>✦ PURE DESI GHEE KAJU KATLI</span>
-          <span>✦ CRISPY INDORI PANI PURI</span>
-          <span>✦ LIVE HOT JALEBI RABDI</span>
-          <span>✦ SIZZLING TANDOORI NAAN</span>
-          <span>✦ ARTISANAL THIN-CRUST PIZZA</span>
-          <span>✦ 100% PURE JAIN DELICACIES</span>
-          <span>✦ ROYAL SHAHI PANEER</span>
-          <span>✦ LIQUID NITROGEN SMOKE PAAN</span>
-          <span>✦ DAL MAKHANI SHAHI</span>
-          <span>✦ PURE DESI GHEE KAJU KATLI</span>
-          <span>✦ CRISPY INDORI PANI PURI</span>
-          <span>✦ LIVE HOT JALEBI RABDI</span>
+      <!-- ==================== CURATED TASTING HALLMARK BAR ==================== -->
+      <div class="curated-tasting-bar" aria-label="Key Culinary Hallmarks">
+        <div class="tasting-bar-inner">
+          <span class="tasting-tag">✦ ROYAL SHAHI PANEER</span>
+          <span class="tasting-sep">·</span>
+          <span class="tasting-tag">✦ PURE DESI GHEE SWEETS</span>
+          <span class="tasting-sep">·</span>
+          <span class="tasting-tag">✦ SMOKE PAAN LOUNGE</span>
+          <span class="tasting-sep">·</span>
+          <span class="tasting-tag">✦ 100% JAIN KITCHENS</span>
         </div>
       </div>
 
@@ -339,7 +371,7 @@
     </section>
 
     <!-- ==================== SECTION 2: HERITAGE & LUXURY STANDARDS ==================== -->
-    <section class="section-container" id="AboutUsSection">
+    <section class="section-container reveal-on-scroll" id="AboutUsSection">
       <div class="section-header">
         <span class="section-eyebrow">OUR CULINARY PHILOSOPHY</span>
         <h2 class="section-title">The GM Heritage & Standards</h2>
@@ -425,7 +457,7 @@
     </section>
 
     <!-- ==================== SECTION 3: SIGNATURE FEASTS & MENUS ==================== -->
-    <section class="section-container" id="ProductsServicesSection">
+    <section class="section-container reveal-on-scroll" id="ProductsServicesSection">
       <div class="section-header">
         <span class="section-eyebrow">CURATED BANQUET PORTFOLIO</span>
         <h2 class="section-title">Signature Feasts & Menus</h2>
@@ -649,7 +681,7 @@
 
 
     <!-- ==================== SECTION 5: VIP PAYMENT & UPI CONCIERGE ==================== -->
-    <section class="section-container" id="PaymentOptionsSection">
+    <section class="section-container reveal-on-scroll" id="PaymentOptionsSection">
       <div class="section-header">
         <span class="section-eyebrow">DIGITAL SETTLEMENT & BOOKING ADVANCE</span>
         <h2 class="section-title">VIP Payment Concierge</h2>
@@ -699,7 +731,7 @@
     </section>
 
     <!-- ==================== SECTION 6: HIGH-RES PHOTO GALLERY ==================== -->
-    <section class="section-container" id="gallerysection">
+    <section class="section-container reveal-on-scroll" id="gallerysection">
       <div class="section-header">
         <span class="section-eyebrow">VISUAL FEAST PORTFOLIO</span>
         <h2 class="section-title">Culinary Gallery</h2>
@@ -782,7 +814,7 @@
     </section>
 
     <!-- ==================== SECTION 7: CLIENT FEEDBACK & REVIEWS ==================== -->
-    <section class="section-container" id="feedbacksection">
+    <section class="section-container reveal-on-scroll" id="feedbacksection">
       <div class="section-header">
         <span class="section-eyebrow">WORDS OF SATISFACTION</span>
         <h2 class="section-title">Client Feedback & Ratings</h2>
@@ -836,7 +868,7 @@
     </section>
 
     <!-- ==================== SECTION 8: QUICK VIP ENQUIRY ==================== -->
-    <section class="section-container" id="enquirysection">
+    <section class="section-container reveal-on-scroll" id="enquirysection">
       <div class="section-header">
         <span class="section-eyebrow">DIRECT CONCIERGE</span>
         <h2 class="section-title">Reserve Your Event Date</h2>
@@ -1045,6 +1077,55 @@
             <span>Copy Link</span>
           </button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. iOS Bottom Sheet: Station Details Modal -->
+  <div id="stationBottomSheet" class="app-modal sheet-modal" aria-hidden="true">
+    <div class="modal-scrim" data-close-sheet></div>
+    <div class="bottom-sheet-surface" role="dialog" aria-modal="true" aria-labelledby="sheetStationTitle">
+      <div class="sheet-drag-handle-wrap" data-close-sheet>
+        <span class="sheet-drag-handle"></span>
+      </div>
+
+      <div class="sheet-header">
+        <div class="sheet-badge-row">
+          <span id="sheetBadge" class="sheet-badge">ROYAL SIGNATURE</span>
+          <span class="veg-badge-mini">
+            <span class="veg-box"><span class="veg-dot"></span></span>
+            <span>100% Pure Veg</span>
+          </span>
+        </div>
+        <button type="button" class="sheet-close-btn" data-close-sheet aria-label="Close details">✕</button>
+      </div>
+
+      <div class="sheet-body-scroll">
+        <div class="sheet-hero-image-wrap">
+          <img id="sheetImage" src="assets/images/instagram/insta_05.jpg" alt="Station Preview" class="sheet-hero-img">
+        </div>
+
+        <h3 id="sheetStationTitle" class="sheet-title">Station Name</h3>
+        <p id="sheetSubtitle" class="sheet-subtitle">Station Subtitle</p>
+
+        <p id="sheetDescription" class="sheet-desc">Station Description</p>
+
+        <div class="sheet-highlights-box">
+          <h4 class="sheet-highlights-label">Station Signature Inclusions:</h4>
+          <ul id="sheetHighlightsList" class="sheet-highlights-list">
+            <!-- Populated dynamically via JS -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="sheet-footer">
+        <a id="sheetWaCta" href="https://wa.me/919399231772" target="_blank" rel="noopener" class="btn-royal-cta sheet-cta-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.51-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.3z" />
+          </svg>
+          <span>Inquire for This Station on WhatsApp</span>
+        </a>
       </div>
     </div>
   </div>

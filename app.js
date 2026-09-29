@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initVCardDownloader();
   initDualNavScrollSpy();
   initFeastFilters();
-  initStoryHighlights();
+  initSignatureStationsBottomSheet();
+  initScrollRevealObserver();
   initDirectWhatsappInput();
   initEnquiryForm();
   initStarRating();
@@ -15,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initShareModal();
   initCopyableElements();
 });
-
 
 /**
  * 2. SIGNATURE FEASTS CATEGORY FILTER TABS
@@ -48,24 +48,182 @@ function initFeastFilters() {
 }
 
 /**
- * 3. INTERACTIVE STORY HIGHLIGHTS
+ * 3. SIGNATURE STATIONS DATA & iOS BOTTOM SHEET CONTROLLER
  */
-function initStoryHighlights() {
-  const storyBubbles = document.querySelectorAll('.story-bubble-item');
-  if (!storyBubbles.length) return;
+const STATIONS_DATA = {
+  chaat: {
+    title: 'Indori Chaat & Live Counters',
+    badge: 'CROWD FAVORITE',
+    subtitle: 'Authentic Sarafa & Chhappan Flavors',
+    image: 'assets/images/instagram/insta_05.jpg',
+    description: 'Experience Indore\'s legendary street food culture elevated to royal banquet standards. Crafted with mineral water, artisanal chutneys, and live interactive chef stations.',
+    highlights: [
+      'Crispy Indori Pani Puri with 5 signature herbal waters',
+      'Live Khomcha & Golden Dahi Vada with roasted cumin & saunth',
+      'Sizzling Aloo Tikki & Chole with pomegranate pearls',
+      'Interactive Live Mysore & Cheese Dosa counter'
+    ],
+    waText: 'Hello GM Cuisine Factory, I want to include the Indori Chaat & Live Counters station in my upcoming event.'
+  },
+  tandoor: {
+    title: 'Royal Tandoor & Banquet Counters',
+    badge: 'ROYAL SIGNATURE',
+    subtitle: 'Charcoal Roasted Delicacies',
+    image: 'assets/images/instagram/insta_08.jpg',
+    description: 'Direct from traditional clay tandoors to your guests\' plates. Fresh artisanal paneer, marinades infused with saffron and hand-ground spices.',
+    highlights: [
+      'Angari Paneer Tikka & Malai Soya Chaap',
+      'Tandoori Stuffed Mushroom & Herb Paneer Kebabs',
+      'Crispy Chur Chur Naan & Laccha Paratha counter',
+      '100% Dedicated Jain & Pure Veg preparation'
+    ],
+    waText: 'Hello GM Cuisine Factory, I am interested in booking the Royal Tandoor Station for my event.'
+  },
+  mithai: {
+    title: 'Pure Desi Ghee Shahi Mithai',
+    badge: '100% PURE DESI GHEE',
+    subtitle: 'Artisanal Heritage Confections',
+    image: 'assets/images/instagram/insta_10.jpg',
+    description: 'Centuries-old royal confectionery traditions made strictly with farm-fresh milk and 100% pure Desi Ghee. No compromises on purity and richness.',
+    highlights: [
+      'Live Crispy Kesariya Jalebi with Slow-Simmered Rabdi',
+      'Desi Ghee Moong Dal Halwa & Gajar Halwa',
+      'Signature Silver-Leaf Kaju Katli & Dry Fruit Ladoos',
+      'Chilled Malai Kulfi & Matka Rabdi Falooda'
+    ],
+    waText: 'Hello GM Cuisine Factory, I want to inquire about the Pure Desi Ghee Shahi Mithai station.'
+  },
+  paan: {
+    title: 'Molecular Liquid Nitrogen Smoke Paan',
+    badge: 'EXPERIENTIAL LOUNGE',
+    subtitle: 'The Ultimate Royal Event Finale',
+    image: 'assets/images/instagram/insta_04_4x5.jpg',
+    description: 'A theatrical digestive lounge that delights guests of all ages. Sub-zero molecular nitrogen mist combined with classic Banarasi and Calcutta betel leaves.',
+    highlights: [
+      'Dramatic Sub-Zero Smoke Mist clouds',
+      'Zero-tobacco, 100% organic mukhwas & gulkand',
+      'Chocolate, Strawberry, and Fire Paan variations',
+      'Exclusive Instagram-worthy guest photo station'
+    ],
+    waText: 'Hello GM Cuisine Factory, I want to book the Liquid Nitrogen Smoke Paan lounge for my event.'
+  },
+  continental: {
+    title: 'Artisanal Continental & Global Live',
+    badge: 'GLOBAL FUSION',
+    subtitle: 'Wood-Fired & Handcrafted Delights',
+    image: 'assets/images/instagram/insta_09.jpg',
+    description: 'Modern global gastronomy designed for cosmopolitan palates. Live pasta tossing, wood-fired thin crust pizzas, and Mexican fiesta counters.',
+    highlights: [
+      'Hand-tossed thin-crust Neapolitan Pizzas',
+      'Live Pasta Station (Alfredo, Arbiatta, Pesto Genovese)',
+      'Mexican Nacho Bar with Fresh Guacamole & Salsa',
+      'Crispy Baked Garlic Herbed Breads'
+    ],
+    waText: 'Hello GM Cuisine Factory, I want to include the Continental Live station in our catering menu.'
+  },
+  thali: {
+    title: 'Maharaja Royal Wedding Thali',
+    badge: 'GRAND WEDDING FEAST',
+    subtitle: '56-Bhog Regal Hospitality',
+    image: 'assets/images/instagram/insta_19.jpg',
+    description: 'The epitome of Malwa hospitality. Silver and brass royal service with complete curated courses from welcome sherbets to royal curries and breads.',
+    highlights: [
+      'Shahi Paneer, Dal Makhani & Special Subzis',
+      'Assorted Indian Breads & Dum Biryani',
+      'Welcome Coolers, Chaats, Salads & Papad Platters',
+      'Strict Jain separation with zero onion/garlic counters'
+    ],
+    waText: 'Hello GM Cuisine Factory, I want a customized quotation for the Maharaja Royal Wedding Thali feast.'
+  }
+};
 
-  storyBubbles.forEach(bubble => {
-    bubble.addEventListener('click', (e) => {
-      const filter = bubble.getAttribute('data-filter');
-      if (filter) {
-        // Activate matching filter chip in feasts section
-        const targetChip = document.querySelector(`#feastsFilterBar [data-filter="${filter}"]`);
-        if (targetChip) {
-          targetChip.click();
-        }
+function initSignatureStationsBottomSheet() {
+  const cards = document.querySelectorAll('.station-swipe-card');
+  const sheet = document.getElementById('stationBottomSheet');
+  if (!cards.length || !sheet) return;
+
+  const titleEl = document.getElementById('sheetStationTitle');
+  const subEl = document.getElementById('sheetSubtitle');
+  const descEl = document.getElementById('sheetDescription');
+  const badgeEl = document.getElementById('sheetBadge');
+  const imgEl = document.getElementById('sheetImage');
+  const listEl = document.getElementById('sheetHighlightsList');
+  const waCta = document.getElementById('sheetWaCta');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const stationKey = card.getAttribute('data-station');
+      const data = STATIONS_DATA[stationKey];
+      if (!data) return;
+
+      if (titleEl) titleEl.textContent = data.title;
+      if (subEl) subEl.textContent = data.subtitle;
+      if (descEl) descEl.textContent = data.description;
+      if (badgeEl) badgeEl.textContent = data.badge;
+      if (imgEl) {
+        imgEl.src = data.image;
+        imgEl.alt = data.title;
+      }
+
+      if (listEl) {
+        listEl.innerHTML = data.highlights.map(item => `
+          <li class="sheet-highlight-item">
+            <span class="sheet-check">✓</span>
+            <span>${item}</span>
+          </li>
+        `).join('');
+      }
+
+      if (waCta) {
+        const encoded = encodeURIComponent(data.waText);
+        waCta.href = `https://wa.me/919399231772?text=${encoded}`;
+      }
+
+      openModal(sheet);
+    });
+
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.click();
       }
     });
   });
+
+  sheet.querySelectorAll('[data-close-sheet], [data-close-modal]').forEach(btn => {
+    btn.addEventListener('click', () => closeModal(sheet));
+  });
+}
+
+/**
+ * 4. GENTLE SCROLL REVEALS (Intersection Observer - Mobile Motion Budget: 400–600ms)
+ */
+function initScrollRevealObserver() {
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  if (!revealElements.length) return;
+
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    revealElements.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -35px 0px',
+      threshold: 0.06
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('is-revealed'));
+  }
 }
 
 /**
