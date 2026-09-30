@@ -431,7 +431,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: #0E0E12;
+  background: #141510;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.06);
@@ -545,7 +545,7 @@ img {
 }
 
 .contact-details-card {
-  background-color: #0E0E12;
+  background-color: #141510;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -606,7 +606,7 @@ img {
 }
 
 .direct-whatsapp-box {
-  background-color: #0E0E12;
+  background-color: #141510;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -786,7 +786,7 @@ img {
    SECTION 2: ABOUT US & HERITAGE
    ========================================================================== */
 .about-card {
-  background-color: #0A0A0E;
+  background-color: #141510;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.06);
@@ -887,7 +887,7 @@ img {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  background-color: #121217;
+  background-color: #1B1C15;
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: var(--radius-md);
   padding: 14px;
@@ -914,7 +914,7 @@ img {
 }
 
 .team-highlight-box {
-  background: #121217;
+  background: #1B1C15;
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: var(--radius-md);
   padding: 14px 16px;
@@ -959,7 +959,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #121217;
+  background: #1B1C15;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   padding: 12px 16px;
@@ -1073,7 +1073,7 @@ img {
 }
 
 .product-card {
-  background-color: #0E0E12;
+  background-color: #141510;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -1245,7 +1245,7 @@ img {
    SECTION 5: VIP PAYMENT & UPI CONCIERGE
    ========================================================================== */
 .payment-card {
-  background-color: #0A0A0E;
+  background-color: #141510;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
   padding: 24px;
@@ -1272,7 +1272,7 @@ img {
   display: inline-block;
   position: relative;
   padding: 14px;
-  background: #000000;
+  background: #0C0D08;
   border-radius: 20px;
   border: 2px solid rgba(212, 175, 55, 0.55);
   box-shadow: 0 0 35px rgba(212, 175, 55, 0.2), 0 16px 48px rgba(0, 0, 0, 0.95);
@@ -1375,7 +1375,7 @@ img {
   font-weight: 600;
   padding: 7px 16px;
   border-radius: var(--radius-full);
-  background: #14141A;
+  background: #1B1C15;
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--color-text-primary);
   text-decoration: none;
@@ -1385,14 +1385,14 @@ img {
 }
 
 .qr-btn-action:hover {
-  background: #1E1E26;
+  background: #24261D;
   border-color: var(--color-gold-border);
   color: var(--color-gold-burnished);
   transform: translateY(-1px);
 }
 
 .payment-details-list {
-  background: #121217;
+  background: #1B1C15;
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: var(--radius-md);
   padding: 16px;
@@ -1424,7 +1424,7 @@ img {
 .pay-highlight {
   font-weight: 600;
   color: var(--color-text-primary);
-  background-color: #1C1C24;
+  background-color: #24261D;
   padding: 5px 12px;
   border-radius: var(--radius-xs);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1471,7 +1471,7 @@ img {
   font-size: 0.65625rem;
   font-weight: 600;
   color: var(--color-text-secondary);
-  background: #1C1C24;
+  background: #24261D;
   padding: 5px 12px;
   border-radius: var(--radius-xs);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1507,7 +1507,7 @@ img {
 }
 
 .review-card {
-  background: #0A0A0E;
+  background: #141510;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   padding: 20px;
@@ -1537,7 +1537,7 @@ img {
 }
 
 .rate-us-box {
-  background: #0A0A0E;
+  background: #141510;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
   padding: 24px;
@@ -1606,7 +1606,7 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-sm);
   outline: none;
-  background: #14141A;
+  background: #1B1C15;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -1617,7 +1617,7 @@ img {
 
 .feedback-form input:focus,
 .feedback-form textarea:focus {
-  background: #181822;
+  background: #24261D;
   border-color: var(--color-gold);
   box-shadow: 0 0 0 3px var(--color-gold-glow);
 }
@@ -1626,7 +1626,7 @@ img {
    SECTION 8: DIRECT ENQUIRY FORM
    ========================================================================== */
 .enquiry-card {
-  background-color: #0A0A0E;
+  background-color: #141510;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -1676,7 +1676,7 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-sm);
   outline: none;
-  background-color: #14141A;
+  background-color: #1B1C15;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -1686,7 +1686,7 @@ img {
 }
 
 .form-group select option {
-  background-color: #14141A;
+  background-color: #1B1C15;
   color: #F5F5F7;
 }
 
@@ -1699,7 +1699,7 @@ img {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  background-color: #181822;
+  background-color: #24261D;
   border-color: var(--color-gold);
   box-shadow: 0 0 0 3px var(--color-gold-glow);
 }
@@ -1800,7 +1800,7 @@ img {
   transform: translateX(-50%);
   width: 100%;
   max-width: 480px;
-  background: rgba(8, 8, 11, 0.88);
+  background: rgba(12, 13, 8, 0.92);
   backdrop-filter: blur(24px) saturate(190%);
   -webkit-backdrop-filter: blur(24px) saturate(190%);
   border-top: 1px solid rgba(255, 255, 255, 0.09);
@@ -1868,7 +1868,7 @@ img {
 }
 
 /* ==========================================================================
-   MODALS: LIGHTBOX & SHARE (Apple Dark Glass OLED Sheet)
+   MODALS: LIGHTBOX & SHARE (Warm Obsidian Sheet)
    ========================================================================== */
 .app-modal {
   position: fixed;
@@ -1891,7 +1891,7 @@ img {
 .modal-scrim {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.82);
+  background: rgba(12, 13, 8, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
@@ -1954,7 +1954,7 @@ img {
 .share-card-modal {
   position: relative;
   z-index: 2;
-  background: #0E0E14;
+  background: #141510;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-lg);
   width: 100%;
@@ -1969,7 +1969,7 @@ img {
   justify-content: space-between;
   padding: 16px 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: #14141C;
+  background: #1B1C15;
 }
 
 .share-modal-header h3 {
@@ -2029,7 +2029,7 @@ img {
 .bg-wa { background-color: #25D366; }
 .bg-sms { background-color: #2563EB; }
 .bg-fb { background-color: #1877F2; }
-.bg-copy { background-color: #1E1E26; border: 1px solid rgba(255, 255, 255, 0.14); color: #FFFFFF; }
+.bg-copy { background-color: #24261D; border: 1px solid rgba(255, 255, 255, 0.14); color: #FFFFFF; }
 
 /* ==========================================================================
    CANVAS TOAST
