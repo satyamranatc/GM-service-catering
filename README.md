@@ -1,6 +1,6 @@
 # GM Cuisine Factory Indore — Official Digital Visiting Card & Portal
 
-A modern, luxury **Digital Visiting Card & Mini-Website** engineered for **GM Cuisine Factory (GM Service Caterers Indore)**.
+A modern, luxury **Digital Visiting Card & Mini-Website** engineered for **GM Cuisine Factory**.
 
 Inspired by the comprehensive multi-section digital card format (similar to Jainshree Digital / Smart vCard), elevated with high-end luxury aesthetics: **Deep Obsidian (#0D0C08)**, **Burnished Gold (#DFA753 / #CB9837)**, and **Warm Champagne Linen (#FAF7F2 / #F3ECE1)**.
 
@@ -17,7 +17,7 @@ Inspired by the comprehensive multi-section digital card format (similar to Jain
    - **Tactile Action Buttons:** "Add to Phone Book" (.vcf export) and "Share Profile".
 
 2. **About Us (`#AboutUsSection`):**
-   - Brand story of GM Cuisine Factory and GM Service Caterers Indore.
+   - Brand story of GM Cuisine Factory.
    - 100% Pure Vegetarian & strict Jain preparation commitment.
    - Core value cards: dedicated Jain cookware, live counters, royal hammered copper presentation, and uncompromised hygiene.
    - Executive Banquet Management contact line.

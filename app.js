@@ -1,5 +1,5 @@
 /**
- * GM CUISINE FACTORY & GM SERVICE CATERERS INDORE
+ * GM CUISINE FACTORY INDORE
  * Award-Winning Luxury Catering Landing Page & Interactive Concierge Controller
  */
 
@@ -276,14 +276,14 @@ function initVCardDownloader() {
     'BEGIN:VCARD',
     'VERSION:3.0',
     'N:Cuisine Factory;GM;;;',
-    'FN:GM Cuisine Factory (GM Caterers Indore)',
-    'ORG:GM Cuisine Factory · GM Service Caterers Indore',
+    'FN:GM Cuisine Factory',
+    'ORG:GM Cuisine Factory',
     'TITLE:Luxury Pure Vegetarian Catering & Royal Feasts',
     'TEL;TYPE=CELL,VOICE,PREF:+919399231772',
     'ADR;TYPE=WORK,PREF:;;8, Akhand Nagar, Airport Road;Indore;Madhya Pradesh;452006;India',
     'X-SOCIALPROFILE;type=instagram:https://www.instagram.com/gmcuisinefactory?stkn=bDNrbWNlYnNnanQx&utm_source=qr',
     'URL:https://www.justdial.com/Indore/GM-service-catering/0731PX731-X731-241208154150-I9E8_BZDET',
-    'NOTE:GM Cuisine Factory by GM Service Caterers Indore. Extraordinary moments deserve extraordinary food. Luxury Pure Veg Catering for Royal Weddings, Grand Banquets & Events. Call/WhatsApp: +91 9399231772.',
+    'NOTE:GM Cuisine Factory. Extraordinary moments deserve extraordinary food. Luxury Pure Veg Catering for Royal Weddings, Grand Banquets & Events. Call/WhatsApp: +91 9399231772.',
     'CATEGORIES:Catering,Event Services,Pure Vegetarian,Wedding Caterer,Indore',
     'END:VCARD'
   ].join('\r\n');
@@ -330,7 +330,7 @@ function initDirectWhatsappInput() {
     const phone = rawVal.slice(-10);
     const cardUrl = window.location.href;
     const msg = encodeURIComponent(
-      `Hello! Experience the Luxury Pure Vegetarian Catering & Royal Feasts of GM Cuisine Factory (GM Service Caterers Indore):\n\n${cardUrl}\n\nCall/WhatsApp: +91 9399231772`
+      `Hello! Experience the Luxury Pure Vegetarian Catering & Royal Feasts of GM Cuisine Factory:\n\n${cardUrl}\n\nCall/WhatsApp: +91 9399231772`
     );
 
     window.open(`https://wa.me/91${phone}?text=${msg}`, '_blank');
@@ -496,7 +496,7 @@ function initShareModal() {
   const openBtn2 = document.getElementById('shareVCardBtn');
 
   const cardTitle = 'GM Cuisine Factory Indore';
-  const cardText = 'GM Cuisine Factory (GM Service Caterers Indore) — Luxury Pure Vegetarian Catering for Royal Weddings, Live Paan Lounges & Events. Call/WhatsApp: +91 9399231772.';
+  const cardText = 'GM Cuisine Factory — Luxury Pure Vegetarian Catering for Royal Weddings, Live Paan Lounges & Events. Call/WhatsApp: +91 9399231772.';
   const cardUrl = window.location.href;
 
   const handleShareTrigger = async () => {
