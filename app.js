@@ -233,7 +233,7 @@ function initDualNavScrollSpy() {
   const desktopLinks = document.querySelectorAll('.nav-desktop-links .nav-link');
   const mobileLinks = document.querySelectorAll('.footer-menu-link');
 
-  const sectionIds = ['homesection', 'ProductsServicesSection', 'AboutUsSection', 'gallerysection', 'feedbacksection', 'PaymentOptionsSection', 'enquirysection'];
+  const sectionIds = ['homesection', 'ProductsServicesSection', 'AboutUsSection', 'feedbacksection', 'PaymentOptionsSection', 'enquirysection'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
   const onScroll = () => {
