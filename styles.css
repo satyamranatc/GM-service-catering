@@ -16,14 +16,14 @@
   --font-cinzel: var(--font-ui);
 
   /* ==========================================================================
-     APPLE-INSPIRED OLED BLACK PALETTE & DEPTH SYSTEM
+     ROYAL WARM OBSIDIAN (#0C0D08) PALETTE & APPLE DEPTH SYSTEM
      ========================================================================== */
-  --color-canvas-bg: #000000;
-  --color-card-bg: #08080A;
-  --color-surface-subtle: #101014;
-  --color-surface-card: #15151A;
-  --color-surface-elevated: #1C1C22;
-  --color-surface-hover: #22222A;
+  --color-canvas-bg: #0C0D08;
+  --color-card-bg: #0C0D08;
+  --color-surface-subtle: #141510;
+  --color-surface-card: #1B1C15;
+  --color-surface-elevated: #24261D;
+  --color-surface-hover: #2D3024;
   --color-surface-white: #FFFFFF;
 
   /* Apple High-Contrast Crisp Typography */
@@ -31,11 +31,11 @@
   --color-text-secondary: #A1A1A6;
   --color-text-tertiary: #6E6E73;
 
-  /* Brand Obsidian & Space Black */
-  --color-obsidian: #000000;
-  --color-obsidian-subtle: #101013;
-  --color-obsidian-surface: #18181D;
-  --color-obsidian-card: #08080A;
+  /* Brand Obsidian & Warm Dark Tone */
+  --color-obsidian: #0C0D08;
+  --color-obsidian-subtle: #141510;
+  --color-obsidian-surface: #1B1C15;
+  --color-obsidian-card: #0C0D08;
 
   /* Royal Champagne Gold (Apple Edition Accent) */
   --color-gold: #D4AF37;
@@ -48,8 +48,8 @@
 
   --gradient-gold: linear-gradient(135deg, #F5E6BE 0%, #D4AF37 50%, #A87C1D 100%);
   --gradient-gold-metallic: linear-gradient(135deg, #FFF6D6 0%, #D4AF37 50%, #8C6414 100%);
-  --gradient-obsidian: linear-gradient(145deg, #1C1C22 0%, #08080A 100%);
-  --gradient-obsidian-hover: linear-gradient(145deg, #2A2A32 0%, #101014 100%);
+  --gradient-obsidian: linear-gradient(145deg, #1B1C15 0%, #0C0D08 100%);
+  --gradient-obsidian-hover: linear-gradient(145deg, #24261D 0%, #141510 100%);
 
   /* Hallmark Functional Accents */
   --color-green: #22C55E;
@@ -1202,24 +1202,32 @@ img {
 }
 
 .product-action-row {
-  margin-top: 8px;
+  margin-top: auto;
+  padding-top: 10px;
 }
 
 .product-enquire-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   width: 100%;
   background: #FFFFFF;
   color: #000000;
   border: 1px solid #FFFFFF;
-  padding: 13px 20px;
-  border-radius: var(--radius-full);
-  font-size: 0.82rem;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
   font-weight: 600;
   text-decoration: none;
   box-shadow: 0 4px 18px rgba(255, 255, 255, 0.2);
   transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.product-enquire-btn svg {
+  color: #128C7E;
+  flex-shrink: 0;
 }
 
 .product-enquire-btn:hover {
@@ -1227,6 +1235,10 @@ img {
   color: #000000;
   box-shadow: 0 8px 28px rgba(255, 255, 255, 0.35);
   transform: translateY(-2px);
+}
+
+.product-enquire-btn:active {
+  transform: scale(0.98);
 }
 
 /* ==========================================================================
