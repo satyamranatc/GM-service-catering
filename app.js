@@ -80,18 +80,18 @@ const STATIONS_DATA = {
     waText: 'Hello GM Cuisine Factory, I am interested in booking the Royal Tandoor Station for my event.'
   },
   mithai: {
-    title: 'Pure Desi Ghee Shahi Mithai',
-    badge: '100% PURE DESI GHEE',
+    title: 'Royal Shahi Mithai & Live Desserts',
+    badge: 'ARTISANAL DESSERTS',
     subtitle: 'Artisanal Heritage Confections',
     image: 'assets/images/instagram/insta_10.jpg',
-    description: 'Centuries-old royal confectionery traditions made strictly with farm-fresh milk and 100% pure Desi Ghee. No compromises on purity and richness.',
+    description: 'Centuries-old royal confectionery traditions made strictly with farm-fresh milk and finest traditional recipes. No compromises on taste and richness.',
     highlights: [
       'Live Crispy Kesariya Jalebi with Slow-Simmered Rabdi',
-      'Desi Ghee Moong Dal Halwa & Gajar Halwa',
+      'Rich Shahi Moong Dal Halwa & Gajar Halwa',
       'Signature Silver-Leaf Kaju Katli & Dry Fruit Ladoos',
       'Chilled Malai Kulfi & Matka Rabdi Falooda'
     ],
-    waText: 'Hello GM Cuisine Factory, I want to inquire about the Pure Desi Ghee Shahi Mithai station.'
+    waText: 'Hello GM Cuisine Factory, I want to inquire about the Royal Shahi Mithai & Live Desserts station.'
   },
   paan: {
     title: 'Molecular Liquid Nitrogen Smoke Paan',
@@ -281,8 +281,8 @@ function initVCardDownloader() {
     'TITLE:Luxury Pure Vegetarian Catering & Royal Feasts',
     'TEL;TYPE=CELL,VOICE,PREF:+919399231772',
     'TEL;TYPE=WORK,VOICE:+919425410558',
-    'ADR;TYPE=WORK,PREF:;;Indore;Madhya Pradesh;;India',
-    'X-SOCIALPROFILE;type=instagram:https://www.instagram.com/gm_service_caterers/',
+    'ADR;TYPE=WORK,PREF:;;8, Akhand Nagar, Airport Road;Indore;Madhya Pradesh;452006;India',
+    'X-SOCIALPROFILE;type=instagram:https://www.instagram.com/gmcuisinefactory?stkn=bDNrbWNlYnNnanQx&utm_source=qr',
     'URL:https://www.justdial.com/Indore/GM-service-catering/0731PX731-X731-241208154150-I9E8_BZDET',
     'NOTE:GM Cuisine Factory by GM Service Caterers Indore. Extraordinary moments deserve extraordinary food. Luxury Pure Veg Catering for Royal Weddings, Grand Banquets & Events. Call/WhatsApp: +91 9399231772 / 9425410558.',
     'CATEGORIES:Catering,Event Services,Pure Vegetarian,Wedding Caterer,Indore',
