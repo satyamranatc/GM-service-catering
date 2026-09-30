@@ -234,13 +234,14 @@ img {
   transform: scale(0.95);
 }
 
-/* Wide Luxury Logo Masthead (OLED Black Edition) */
+/* Wide Luxury Logo Masthead */
 .hero-brand-masthead {
   position: relative;
   width: 100%;
-  padding: 12px 0 4px;
-  background-color: #000000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0;
+  background-color: #EFE4D2;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
   overflow: hidden;
   display: block;
 }
@@ -251,7 +252,7 @@ img {
   height: auto;
   max-width: 100%;
   max-height: none;
-  object-fit: contain;
+  object-fit: cover;
   margin: 0 auto;
 }
 
