@@ -472,6 +472,20 @@ function initGalleryLightbox() {
       openModal(modal);
     });
   });
+
+  const zoomQrBtn = document.getElementById('zoomQrBtn');
+  if (zoomQrBtn) {
+    zoomQrBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const qrEl = document.querySelector('.qr-frame-gold');
+      const src = qrEl?.getAttribute('data-src') || 'assets/images/phonepe_payment_qr.jpg';
+      const caption = qrEl?.getAttribute('data-caption') || 'PhonePe Official UPI QR — SHIVAM KUMAWAT';
+      imgEl.src = src;
+      imgEl.alt = caption;
+      if (capEl) capEl.textContent = caption;
+      openModal(modal);
+    });
+  }
 }
 
 /**

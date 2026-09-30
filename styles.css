@@ -242,10 +242,11 @@ img {
 .hero-brand-masthead {
   position: relative;
   width: 100%;
-  padding: 10px 20px 12px;
-  background-color: #F4ECDF;
-  border-top: 1px solid rgba(197, 153, 66, 0.16);
-  border-bottom: 1px solid rgba(197, 153, 66, 0.2);
+  padding: 12px 20px 14px;
+  background-color: #ECE0CD;
+  background: linear-gradient(180deg, #F2E8D7 0%, #ECE0CD 50%, #E6D9C2 100%);
+  border-top: 1px solid rgba(197, 153, 66, 0.18);
+  border-bottom: 1px solid rgba(197, 153, 66, 0.24);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -254,9 +255,9 @@ img {
 
 .hero-brand-logo {
   display: block;
-  max-height: 98px;
+  max-height: 106px;
   width: auto;
-  max-width: 82%;
+  max-width: 86%;
   object-fit: contain;
   margin: 0 auto;
 }
@@ -1243,13 +1244,20 @@ img {
 
 .about-brand-hero {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+  padding: 12px 16px;
+  background: linear-gradient(180deg, #F2E8D7 0%, #ECE0CD 100%);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(197, 153, 66, 0.22);
 }
 
 .about-logo-banner {
-  max-width: 220px;
+  max-width: 240px;
+  width: 100%;
+  height: auto;
   margin: 0 auto;
-  border-radius: var(--radius-sm);
+  display: block;
+  border-radius: var(--radius-xs);
 }
 
 .about-text-content {
@@ -1631,21 +1639,78 @@ img {
 }
 
 .qr-display-box {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .qr-frame-gold {
   display: inline-block;
-  padding: 12px;
-  background: #FFFFFF;
-  border-radius: var(--radius-md);
+  position: relative;
+  padding: 8px;
+  background: #0D0D0D;
+  border-radius: 14px;
   border: 1.5px solid var(--color-gold);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 8px 24px rgba(13, 12, 8, 0.14), 0 0 0 1px rgba(197, 153, 66, 0.2);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: zoom-in;
+  max-width: 240px;
+  width: 100%;
 }
 
-.qr-image {
+.qr-frame-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(13, 12, 8, 0.22), 0 0 0 1.5px var(--color-gold);
+}
+
+.qr-standee-img {
   display: block;
-  border-radius: var(--radius-xs);
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.qr-zoom-hint {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(13, 12, 8, 0.8);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.65625rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  pointer-events: none;
+}
+
+.qr-merchant-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(22, 101, 52, 0.08);
+  border: 1px solid rgba(22, 101, 52, 0.2);
+  color: #15803D;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  margin-top: 12px;
+}
+
+.qr-merchant-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #16A34A;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
 }
 
 .qr-caption {
@@ -1654,6 +1719,36 @@ img {
   font-weight: 600;
   color: var(--color-text-secondary);
   margin-top: 8px;
+}
+
+.qr-actions-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.qr-btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.71875rem;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: var(--radius-full);
+  background: #FAF7F2;
+  border: 1px solid rgba(197, 153, 66, 0.3);
+  color: var(--color-obsidian);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.qr-btn-action:hover {
+  background: #FFFFFF;
+  border-color: var(--color-gold);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-xs);
 }
 
 .payment-details-list {
@@ -1737,6 +1832,13 @@ img {
   padding: 4px 10px;
   border-radius: var(--radius-xs);
   border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.pay-badge-phonepe {
+  background: rgba(95, 37, 159, 0.08);
+  border-color: rgba(95, 37, 159, 0.25);
+  color: #5F259F;
+  font-weight: 700;
 }
 
 .mt-10 {
