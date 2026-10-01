@@ -1,886 +1,1036 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>GM Cuisine Factory | Luxury Catering & Royal Banquets Indore</title>
+<head id="Head">
+    <title>GM Cuisine Factory | Luxury Pure Vegetarian Catering & Royal Banquets</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <meta name="description"
-    content="GM Cuisine Factory — Award-winning luxury pure vegetarian catering for royal weddings, grand banquets, live paan lounges, Indori chaat & elite celebrations. Call +91 9399231772.">
-  <meta name="theme-color" content="#F8F5EE">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="GM Cuisine Factory Indore — Luxury Catering & Royal Banquets">
-  <meta property="og:description"
-    content="Ordinary food has no place in extraordinary moments. Award-winning luxury pure vegetarian catering in Indore.">
-  <meta property="og:image" content="assets/images/gm_cuisine_factory_logo.png">
-  <link rel="icon" type="image/png" href="assets/images/gm_crest_square.png">
-  <link rel="apple-touch-icon" href="assets/images/gm_crest_square.png">
 
-  <!-- Google Fonts: Inter (Clean Modern Sans-Serif) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+    <link id="shadowsintolight" rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Shadows+Into Light&amp;display=swap" media="all" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+    <link href="css/style.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css">
+    
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CateringService",
-    "name": "GM Cuisine Factory",
-    "alternateName": "GM Cuisine Factory Indore",
-    "image": "assets/images/gm_cuisine_factory_logo.png",
-    "telephone": "+91-9399231772",
-    "url": "https://www.instagram.com/gmcuisinefactory/",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Akhand Nagar, 8, Airport Road",
-      "addressLocality": "Indore",
-      "addressRegion": "Madhya Pradesh",
-      "postalCode": "452006",
-      "addressCountry": "IN"
-    },
-    "servesCuisine": ["Pure Vegetarian", "North Indian", "Indori Chaat", "Jain", "Artisanal Sweets", "Continental"],
-    "description": "Serving taste & tradition since day one. Luxury pure vegetarian catering for weddings, royal banquets, and celebrations in Indore."
-  }
-  </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <script>
+        function ColorLuminance(hex, lum) {
+            // validate hex string
+            hex = String(hex).replace(/[^0-9a-f]/gi, '');
+            if (hex.length < 6) {
+                hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+            }
+            lum = lum || 0;
+
+            // convert to decimal and change luminosity
+            var rgb = "#", c, i;
+            for (i = 0; i < 3; i++) {
+                c = parseInt(hex.substr(i * 2, 2), 16);
+                c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+                rgb += ("00" + c).substr(c.length);
+            }
+
+            return rgb;
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            var themeElem = document.getElementById("themeColor");
+            var themecolor = themeElem ? themeElem.value : "#141210";
+            var themeElem1 = document.getElementById("themeColor1");
+            var themeColor1 = themeElem1 ? themeElem1.value : "#fdfaf3";
+            document.documentElement.style.setProperty("--theme-color", themecolor);
+            document.documentElement.style.setProperty("--theme-color-light", themeColor1);
+            document.documentElement.style.setProperty("--theme-color-gold", "#cba46b");
+            document.documentElement.style.setProperty("--theme-color-gold-light", "#ddbe90");
+            document.documentElement.style.setProperty("--theme-color-bronze", "#8e6328");
+            document.documentElement.style.setProperty("--theme-color-dark1", "#1a1714");
+            document.documentElement.style.setProperty("--theme-color-dark2", "#221e1a");
+            document.documentElement.style.setProperty("--theme-color-dark3", "#2a2520");
+        });
+    </script>
+
+    <meta property="og:image" content="images/gm_logo_full.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description"
+        content="GM Cuisine Factory — Award-winning luxury pure vegetarian catering for royal weddings, grand banquets, live paan lounges, Indori chaat &amp; elite celebrations in Indore. Call +91 9399231772 / +91 8817335591." />
+    
 </head>
 
-<body class="theme-white">
-
-
-
-  <!-- Main Luxury Page Wrapper (Fluid Responsive Container) -->
-  <div class="page-wrapper" id="mainCard">
-
-    <!-- ==================== SECTION 1: EXECUTIVE DIGITAL CARD ==================== -->
-    <section class="card-hero-block" id="homesection">
-
-      <!-- Top Utility Bar -->
-      <div class="card-top-nav">
-        <a href="https://www.google.com/maps/search/?api=1&query=Akhand+nagar+,8+,+airport+road+indore+madhya+pradesh+452006"
-          target="_blank" rel="noopener" class="location-chip" title="Akhand Nagar, 8, Airport Road, Indore 452006">
-          <span class="pulse-dot"></span>
-          <span>Airport Rd, Indore</span>
-        </a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Akhand+nagar+,8+,+airport+road+indore+madhya+pradesh+452006"
-          target="_blank" rel="noopener" class="top-icon-btn" aria-label="Open Location Map" title="Akhand Nagar, 8, Airport Road, Indore 452006">
-          <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-              clip-rule="evenodd" />
-          </svg>
-        </a>
-      </div>
-
-      <!-- Wide Executive Luxury Logo Masthead -->
-      <div class="hero-brand-masthead">
-        <img src="assets/images/gm_cuisine_factory_logo.png" alt="GM Cuisine Factory Official Luxury Logo" class="hero-brand-logo"
-          width="480" height="232">
-      </div>
-
-      <!-- Screen 1: Brand, Core Promise & One Primary Action -->
-      <div class="profile-upper">
-
-        <div class="profile-identity">
-          <h1 class="firmname">Extraordinary moments deserve extraordinary food.</h1>
-          <p class="brand-subline">Luxury Catering · Indore</p>
-          <div class="brand-pill-row">
-            <span class="veg-badge" title="100% Pure Vegetarian &amp; Dedicated Jain Kitchens">
-              <span class="veg-box"><span class="veg-dot"></span></span>
-              <span class="veg-txt">100% Pure Veg &amp; Dedicated</span>
-            </span>
-          </div>
+<body>
+    <!-- Luxury Brand Curtain Intro -->
+    <div id="brandCurtain" class="brand-curtain" style="display:none !important;" aria-hidden="true">
+        <div class="brand-curtain-content">
+            <div class="curtain-crest-ring">
+                <img fetchpriority="high" src="images/gm_crest_diamond.png" alt="GM Cuisine Factory Crest" class="curtain-logo" />
+            </div>
+            <div class="curtain-title">GM CUISINE FACTORY</div>
+            <div class="curtain-subtitle">Luxury Pure Veg Catering · Indore</div>
+            <div class="curtain-shimmer-line"></div>
         </div>
-
-        <!-- Singular Prominent Primary Action -->
-        <div class="hero-primary-cta-wrap">
-          <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20reserve%20a%20date%20for%20my%20event."
-            target="_blank" rel="noopener" class="btn-royal-cta">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-              <path
-                d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.51-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.3z" />
-            </svg>
-            <span>Reserve on WhatsApp</span>
-          </a>
-        </div>
-
-        <!-- Consolidated 4-Action Secondary Utility Grid -->
-        <div class="executive-action-grid">
-          <a href="tel:9399231772" class="action-tile-btn" aria-label="Call Executive Line">
-            <div class="action-icon-circle">
-              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
-                <path
-                  d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z" />
-              </svg>
-            </div>
-            <span class="action-tile-label">Call</span>
-          </a>
-
-          <a href="https://www.instagram.com/gmcuisinefactory?stkn=bDNrbWNlYnNnanQx&utm_source=qr" target="_blank" rel="noopener" class="action-tile-btn"
-            aria-label="Instagram">
-            <div class="action-icon-circle">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
-            </div>
-            <span class="action-tile-label">Instagram</span>
-          </a>
-
-          <a href="https://www.google.com/maps/search/?api=1&query=Akhand+nagar+,8+,+airport+road+indore+madhya+pradesh+452006"
-            target="_blank" rel="noopener" class="action-tile-btn" aria-label="View Location on Google Maps"
-            title="Akhand Nagar, 8, Airport Road, Indore 452006">
-            <div class="action-icon-circle">
-              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                  clip-rule="evenodd" />
-              </svg>
-            </div>
-            <span class="action-tile-label">Location</span>
-          </a>
-
-          <button type="button" class="action-tile-btn save-vcard-trigger" aria-label="Save Contact to Phone">
-            <div class="action-icon-circle">
-              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
-                <path
-                  d="M10 2a4 4 0 00-4 4v1H5a2 2 0 00-2 2v8a2 2 0 002 2h10a2 2 0 002-2V9a2 2 0 00-2-2h-1V6a4 4 0 00-4-4zm-2 5V6a2 2 0 114 0v1H8zm2 4a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
-              </svg>
-            </div>
-            <span class="action-tile-label">Save</span>
-          </button>
-        </div>
-
-      </div>
-
-      <!-- Progressive Exploration: Trust & Scale Highlights -->
-      <div class="hero-stats-row">
-        <div class="stat-pill">
-          <span class="stat-num">15+</span>
-          <span class="stat-lbl">Years Heritage</span>
-        </div>
-        <div class="stat-pill">
-          <span class="stat-num">1,500+</span>
-          <span class="stat-lbl">Royal Banquets</span>
-        </div>
-        <div class="stat-pill">
-          <span class="stat-num">100%</span>
-          <span class="stat-lbl">Pure Vegetarian</span>
-        </div>
-      </div>
-
-
-
-      <!-- Lower Contact Details List -->
-      <div class="profile-lower">
-        <div class="contact-details-card">
-          <a href="tel:9399231772" class="contact-row">
-            <div class="row-icon-badge">
-              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
-                <path
-                  d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z" />
-              </svg>
-            </div>
-            <div class="row-text">
-              <span class="row-label">Executive Booking Line</span>
-              <span class="row-val">+91 93992 31772</span>
-            </div>
-          </a>
-
-          <a href="https://www.google.com/maps/search/?api=1&query=Akhand+nagar+,8+,+airport+road+indore+madhya+pradesh+452006"
-            target="_blank" rel="noopener" class="contact-row" title="Open in Google Maps">
-            <div class="row-icon-badge">
-              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                  clip-rule="evenodd" />
-              </svg>
-            </div>
-            <div class="row-text">
-              <span class="row-label">Catering Headquarters (Tap for Map)</span>
-              <span class="row-val">Akhand Nagar, 8, Airport Road, Indore, MP 452006</span>
-            </div>
-          </a>
-
-          <a href="https://www.justdial.com/Indore/GM-service-catering/0731PX731-X731-241208154150-I9E8_BZDET"
-            target="_blank" rel="noopener" class="contact-row">
-            <div class="row-icon-badge">
-              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
-                  clip-rule="evenodd" />
-              </svg>
-            </div>
-            <div class="row-text">
-              <span class="row-label">Verified Caterer Badge</span>
-              <span class="row-val">Justdial Verified 5-Star — GM Cuisine Factory</span>
-            </div>
-          </a>
-        </div>
-
-        <!-- Direct WhatsApp Quick-Share / Inquire Input -->
-        <div class="direct-whatsapp-box">
-          <label for="whatsappShareNumber" class="wa-box-label">Share Card or Inquire directly on WhatsApp</label>
-          <div class="wa-input-group">
-            <span class="country-prefix">+91</span>
-            <input type="tel" id="whatsappShareNumber" placeholder="Enter 10-digit Phone Number" maxlength="10">
-            <button type="button" class="btn-wa-share" id="btnSendWaCard">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                <path
-                  d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.51-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.3z" />
-              </svg>
-              <span>Share</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Action Buttons Row -->
-        <div class="shadow-buttons-row">
-          <button type="button" class="btn-luxury-action" id="save-vcard-btn" title="Save Contact to Phone">
-            <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                clip-rule="evenodd" />
-            </svg>
-            <span>Save Contact Card</span>
-          </button>
-
-          <a href="https://www.google.com/maps/search/?api=1&query=Akhand+nagar+,8+,+airport+road+indore+madhya+pradesh+452006"
-            target="_blank" rel="noopener" class="btn-luxury-action btn-secondary-action"
-            title="Navigate on Google Maps">
-            <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                clip-rule="evenodd" />
-            </svg>
-            <span>Open Location Map</span>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==================== SECTION 2: HERITAGE & LUXURY STANDARDS ==================== -->
-    <section class="section-container reveal-on-scroll" id="AboutUsSection">
-      <div class="section-header">
-        <span class="section-eyebrow">OUR CULINARY PHILOSOPHY</span>
-        <h2 class="section-title">The GM Heritage & Standards</h2>
-      </div>
-
-      <div class="about-card">
-        <div class="about-brand-hero">
-          <div class="about-crest-showcase">
-            <img src="assets/images/gm_crest_square.png" alt="GM Royal Crest Emblem" class="about-crest-img" width="76" height="76">
-            <div class="about-crest-info">
-              <span class="about-crest-tag">ROYAL HERITAGE · ESTD. 2008</span>
-              <h3 class="about-crest-title">Pure Vegetarian Catering Atelier</h3>
-              <p class="about-crest-sub">Indore · Madhya Pradesh · Central India</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-text-content">
-          <p class="about-lead">Serving taste & tradition since day one. At <strong>GM Cuisine Factory</strong>, we craft gastronomic spectacles where ordinary food has no place in
-            extraordinary moments.</p>
-          <p>We are Central India’s premier luxury vegetarian catering atelier, designing bespoke banquets for royal
-            weddings, silver jubilee anniversaries, high-profile corporate galas, and strict Jain religious ceremonies.
-          </p>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-item">
-            <div class="feature-icon-wrap">🥬</div>
-            <div>
-              <strong>100% Pure Veg & Dedicated</strong>
-              <p>Strict onion-garlic free Jain preparation zones with dedicated cookware, pure cold-pressed oils & fresh
-                ingredients.</p>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon-wrap">🔥</div>
-            <div>
-              <strong>Live Interactive Culinary Theatres</strong>
-              <p>Liquid nitrogen smoke shots, Fire Paan, crisp Indori Pani Puri fountains & sizzling live wok counters.
-              </p>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon-wrap">👑</div>
-            <div>
-              <strong>Royal Banquet Table Architecture</strong>
-              <p>Hand-hammered brass chafers, royal copper handis, fine linen, and silver-gilt service accessories.</p>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon-wrap">✨</div>
-            <div>
-              <strong>Executive Uniformed Butler Brigade</strong>
-              <p>Polite, turbaned captains and white-gloved culinary artisans trained for 5-star hospitality.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-highlight-box">
-          <div class="team-mini-row">
-            <img src="assets/images/instagram/insta_17.jpg" alt="Executive Chef Crew" class="team-round-thumb"
-              width="60" height="60">
-            <div>
-              <strong>Master Chefs & Banquet Operations Team</strong>
-              <span>Head chefs, banquet supervisors & specialized regional halwais</span>
-            </div>
-          </div>
-          <a href="tel:9399231772" class="call-team-link">Direct Line: +91 93992 31772</a>
-        </div>
-
-        <!-- Official Instagram Connect Card -->
-        <a href="https://www.instagram.com/gmcuisinefactory?stkn=bDNrbWNlYnNnanQx&utm_source=qr" target="_blank" rel="noopener"
-          class="insta-social-banner">
-          <div class="insta-banner-left">
-            <img src="assets/images/instagram/insta_01.jpg" alt="@gmcuisinefactory" class="insta-avatar" width="46"
-              height="46">
-            <div>
-              <span class="insta-tag">Follow Live Weddings on Instagram</span>
-              <strong class="insta-handle">@gmcuisinefactory</strong>
-            </div>
-          </div>
-          <span class="insta-follow-btn">Follow &rarr;</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ==================== SECTION 3: WEDDING, CORPORATE EVENT & BANQUETS ==================== -->
-    <section class="section-container reveal-on-scroll" id="ProductsServicesSection">
-      <div class="section-header">
-        <span class="section-eyebrow">LUXURY INDIAN EVENT CATERING</span>
-        <h2 class="section-title">Wedding Corporate Event Banquet</h2>
-      </div>
-
-      <!-- Filter Tabs -->
-      <div class="feasts-filter-bar" id="feastsFilterBar">
-        <button type="button" class="filter-chip active" data-filter="all">All Events (4)</button>
-        <button type="button" class="filter-chip" data-filter="wedding">Weddings</button>
-        <button type="button" class="filter-chip" data-filter="corporate">Corporate Events</button>
-        <button type="button" class="filter-chip" data-filter="banquet">Grand Banquets</button>
-        <button type="button" class="filter-chip" data-filter="live">Live Counters</button>
-      </div>
-
-      <div class="products-grid" id="productsGrid">
-
-        <!-- Product 1: Royal Wedding Banquet -->
-        <div class="product-card" data-category="wedding">
-          <div class="product-img-wrap" data-src="assets/images/wedding_banquet_ultra.jpg"
-            data-caption="Grand Royal Wedding Banquets — Ultra HD Palace Catering by GM Cuisine Factory"
-            title="Tap to view Ultra HD photo">
-            <img src="assets/images/wedding_banquet_ultra.jpg" alt="Grand Royal Wedding Banquet Catering in India"
-              class="product-thumb" width="400" height="500" loading="lazy">
-            <span class="product-badge">Royal Weddings</span>
-            <span class="product-zoom-hint" aria-hidden="true">
-              <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                  clip-rule="evenodd" />
-              </svg>
-            </span>
-          </div>
-          <div class="product-info">
-            <div class="product-meta-row">
-              <span class="feast-tag">Wedding Specialist</span>
-              <span class="feast-serving">300 – 3,000+ Guests</span>
-            </div>
-            <h3 class="product-name">Grand Royal Wedding Banquets</h3>
-            <p class="product-desc">Opulent palace banquet setups featuring golden chandeliers, velvet linens, and ornate hammered brass & copper chafing dishes. Bespoke multi-course vegetarian royal spreads with dedicated Jain zones, crafted for India’s grandest celebrations.</p>
-            <div class="product-action-row">
-              <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20enquire%20about%20Royal%20Wedding%20Banquet%20Catering."
-                target="_blank" rel="noopener" class="product-enquire-btn">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                  <path
-                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.51-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.3z" />
-                </svg>
-                <span>Inquire on WhatsApp</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 2: Executive Corporate Event Catering -->
-        <div class="product-card" data-category="corporate">
-          <div class="product-img-wrap" data-src="assets/images/corporate_event_ultra.jpg"
-            data-caption="Corporate Galas & Executive Events — 5-Star Conference Catering by GM Cuisine Factory"
-            title="Tap to view Ultra HD photo">
-            <img src="assets/images/corporate_event_ultra.jpg" alt="Corporate Gala Dinner Catering in India" class="product-thumb"
-              width="400" height="500" loading="lazy">
-            <span class="product-badge">Corporate Galas</span>
-            <span class="product-zoom-hint" aria-hidden="true">
-              <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                  clip-rule="evenodd" />
-              </svg>
-            </span>
-          </div>
-          <div class="product-info">
-            <div class="product-meta-row">
-              <span class="feast-tag">Executive Hospitality</span>
-              <span class="feast-serving">50 – 1,500+ Delegates</span>
-            </div>
-            <h3 class="product-name">Corporate Galas & Executive Events</h3>
-            <p class="product-desc">Modern luxury conference dining, corporate milestone galas, and executive business dinners. Sleek dark marble & copper buffet lines, architectural spotlighting, artisanal live counters, gourmet canapés, and white-glove professional hospitality.</p>
-            <div class="product-action-row">
-              <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20enquire%20about%20Corporate%20Event%20Catering."
-                target="_blank" rel="noopener" class="product-enquire-btn">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                  <path
-                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.51-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.3z" />
-                </svg>
-                <span>Inquire on WhatsApp</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 3: Grand Milestone Banquets & Anniversaries -->
-        <div class="product-card" data-category="banquet">
-          <div class="product-img-wrap" data-src="assets/images/grand_event_banquet_ultra.jpg"
-            data-caption="Luxury Banquet Celebrations & Anniversaries — Grand Ballroom Catering by GM Cuisine Factory"
-            title="Tap to view Ultra HD photo">
-            <img src="assets/images/grand_event_banquet_ultra.jpg" alt="Grand Banquet Hall Celebration Dinner in India"
-              class="product-thumb" width="400" height="500" loading="lazy">
-            <span class="product-badge">Grand Banquets</span>
-            <span class="product-zoom-hint" aria-hidden="true">
-              <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                  clip-rule="evenodd" />
-              </svg>
-            </span>
-          </div>
-          <div class="product-info">
-            <div class="product-meta-row">
-              <span class="feast-tag">Milestone Occasions</span>
-              <span class="feast-serving">100 – 2,500+ Guests</span>
-            </div>
-            <h3 class="product-name">Luxury Banquet Celebrations & Anniversaries</h3>
-            <p class="product-desc">Majestic ballroom setups featuring golden Chiavari seating, lavish floral archways, multi-tiered dessert islands, and live tawa stations. Perfect for silver & golden jubilees, high-profile birthday galas, and religious ceremonies.</p>
-            <div class="product-action-row">
-              <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20enquire%20about%20Grand%20Banquet%20Celebration%20Catering."
-                target="_blank" rel="noopener" class="product-enquire-btn">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                  <path
-                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.51-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.3z" />
-                </svg>
-                <span>Inquire on WhatsApp</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 4: Gourmet Live Tawa, Chaat & Liquid Nitrogen Lounge -->
-        <div class="product-card" data-category="live">
-          <div class="product-img-wrap" data-src="assets/images/live_counter_banquet_ultra.jpg"
-            data-caption="Gourmet Live Tawa, Chaat & Liquid Nitrogen Lounge — Live Counters by GM Cuisine Factory"
-            title="Tap to view Ultra HD photo">
-            <img src="assets/images/live_counter_banquet_ultra.jpg" alt="Live Cooking Counter with Master Chefs in India" class="product-thumb"
-              width="400" height="500" loading="lazy">
-            <span class="product-badge">Live Counters</span>
-            <span class="product-zoom-hint" aria-hidden="true">
-              <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                  clip-rule="evenodd" />
-              </svg>
-            </span>
-          </div>
-          <div class="product-info">
-            <div class="product-meta-row">
-              <span class="feast-tag">Live Gastronomy</span>
-              <span class="feast-serving">Interactive Stalls</span>
-            </div>
-            <h3 class="product-name">Gourmet Live Tawa, Chaat & Liquid Nitrogen Lounge</h3>
-            <p class="product-desc">Uniformed executive master chefs in high chef hats operating sizzling live tawa stations, Indori Pani Puri fountains, crispy butter dosas, and molecular liquid nitrogen smoke shots & Fire Paan that leave your guests spellbound.</p>
-            <div class="product-action-row">
-              <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20enquire%20about%20Live%20Food%20Counters%20and%20Lounge."
-                target="_blank" rel="noopener" class="product-enquire-btn">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                  <path
-                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.51-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.3z" />
-                </svg>
-                <span>Inquire on WhatsApp</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-
-    <!-- ==================== SECTION 5: VIP PAYMENT & UPI CONCIERGE ==================== -->
-    <section class="section-container reveal-on-scroll" id="PaymentOptionsSection">
-      <div class="section-header">
-        <span class="section-eyebrow">DIGITAL SETTLEMENT & BOOKING ADVANCE</span>
-        <h2 class="section-title">VIP Payment Concierge</h2>
-      </div>
-
-      <div class="payment-card">
-        <div class="qr-display-box">
-          <div class="qr-frame-gold gallery-item" data-src="assets/images/phonepe_payment_qr.jpg"
-            data-caption="PhonePe Official UPI QR — SHIVAM KUMAWAT (GM Cuisine Factory)"
-            title="Tap to zoom scannable PhonePe QR">
-            <img src="assets/images/phonepe_standee_card.png"
-              alt="PhonePe Payment QR Code for GM Cuisine Factory - Shivam Kumawat" class="qr-standee-img" width="280"
-              height="386">
-            <span class="qr-zoom-hint">
-              <svg viewBox="0 0 20 20" width="12" height="12" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                  clip-rule="evenodd" />
-              </svg>
-              Tap to Expand
-            </span>
-          </div>
-
-          <div class="qr-merchant-tag">
-            <span class="qr-merchant-dot"></span>
-            <span>Verified PhonePe Merchant: <strong>SHIVAM KUMAWAT</strong></span>
-          </div>
-
-          <span class="qr-caption">Scan with any UPI App (PhonePe, Google Pay, Paytm, BHIM)</span>
-
-          <div class="qr-actions-row">
-            <button type="button" class="qr-btn-action" id="zoomQrBtn" aria-label="Open Fullscreen QR">
-              <svg viewBox="0 0 20 20" width="13" height="13" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l3.293 3.293a1 1 0 01-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-3.293 3.293a1 1 0 11-1.414-1.414L13.586 5H12a1 1 0 01-1-1zM5 13.586l3.293-3.293a1 1 0 011.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4a1 1 0 012 0v1.586zm9.707-3.293a1 1 0 011.414 0L19.414 13H18a1 1 0 000 2h4a1 1 0 001-1v-4a1 1 0 10-2 0v1.586l-3.293-3.293a1 1 0 01-1.414 0z"
-                  clip-rule="evenodd" />
-              </svg>
-              <span>Full View</span>
-            </button>
-            <a href="assets/images/phonepe_payment_qr.jpg" download="GM_Catering_PhonePe_QR.jpg" class="qr-btn-action"
-              aria-label="Download QR Code">
-              <svg viewBox="0 0 20 20" width="13" height="13" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                  clip-rule="evenodd" />
-              </svg>
-              <span>Save QR</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="payment-details-list">
-          <div class="payment-line">
-            <span class="pay-title">Account Holder / Merchant:</span>
-            <span class="pay-val-strong">SHIVAM KUMAWAT (GM Cuisine Factory)</span>
-          </div>
-          <div class="payment-line">
-            <span class="pay-title">UPI Number / PhonePe / GPay:</span>
-            <span class="pay-highlight copyable-val" data-copy="9399231772" title="Tap to copy UPI Number">
-              9399231772 <span class="copy-badge">Copy</span>
-            </span>
-          </div>
-          <div class="payment-line">
-            <span class="pay-title">UPI ID:</span>
-            <span class="pay-highlight copyable-val" data-copy="9399231772@upi" title="Tap to copy UPI ID">
-              9399231772@upi <span class="copy-badge">Copy</span>
-            </span>
-          </div>
-          <div class="payment-badges-row">
-            <span class="pay-badge pay-badge-phonepe">PhonePe</span>
-            <span class="pay-badge">Google Pay</span>
-            <span class="pay-badge">Paytm</span>
-            <span class="pay-badge">BHIM UPI</span>
-            <span class="pay-badge">Bank Transfer / NEFT</span>
-          </div>
-        </div>
-
-        <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20have%20transferred%20an%20advance%20payment%20via%20PhonePe%2FUPI.%20Please%20find%20the%20details%20attached."
-          target="_blank" rel="noopener" class="btn-luxury-action mt-10">
-          <span>Confirm Advance Payment via WhatsApp</span>
-        </a>
-      </div>
-    </section>
-
-
-
-    <!-- ==================== SECTION 7: CLIENT FEEDBACK & REVIEWS ==================== -->
-    <section class="section-container reveal-on-scroll" id="feedbacksection">
-      <div class="section-header">
-        <span class="section-eyebrow">WORDS OF SATISFACTION</span>
-        <h2 class="section-title">Client Feedback & Ratings</h2>
-      </div>
-
-      <!-- Testimonials -->
-      <div class="testimonials-list">
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-quote">“Organized our 45-guest Kitty Party in Saket. The live Indore Chaat counter and
-            desserts were a massive hit! Very polite staff.”</p>
-          <span class="review-author">— Mrs. Meenakshi Agrawal, Saket Indore</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-quote">“Wedding banquet for 650 guests on Bypass Road. Shahi Paneer and hot Rabdi Jalebi
-            received endless compliments. Top-tier hygiene.”</p>
-          <span class="review-author">— Dr. Rajesh Sharma & Family, Bypass Road</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-quote">“Strict Jain catering for father's 70th milestone puja. Separate onion-garlic free
-            prep and authentic traditional purity. Excellent!”</p>
-          <span class="review-author">— Ankit & Sonal Jain, Vijay Nagar</span>
-        </div>
-      </div>
-
-      <!-- Interactive Rate Us Box -->
-      <div class="rate-us-box">
-        <h3 class="rate-heading">Rate Your Culinary Experience</h3>
-        <p class="rate-sub">Tap stars to share your experience with GM Cuisine Factory</p>
-
-        <div class="star-rating-widget" id="starWidget">
-          <span class="star-item active" data-val="1">★</span>
-          <span class="star-item active" data-val="2">★</span>
-          <span class="star-item active" data-val="3">★</span>
-          <span class="star-item active" data-val="4">★</span>
-          <span class="star-item active" data-val="5">★</span>
-        </div>
-        <div class="rating-feedback-msg" id="ratingFeedbackMsg">⭐⭐⭐⭐⭐ Outstanding Luxury Feast!</div>
-
-        <form id="feedbackForm" class="feedback-form">
-          <input type="text" id="feedbackName" placeholder="Your Name / City Area" required>
-          <textarea id="feedbackText" rows="3" placeholder="Write a short review..." required></textarea>
-          <button type="submit" class="btn-luxury-action">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-              <path
-                d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.51-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.3z" />
-            </svg>
-            <span>Submit Review on WhatsApp</span>
-          </button>
-        </form>
-      </div>
-    </section>
-
-    <!-- ==================== SECTION 8: QUICK VIP ENQUIRY ==================== -->
-    <section class="section-container reveal-on-scroll" id="enquirysection">
-      <div class="section-header">
-        <span class="section-eyebrow">DIRECT CONCIERGE</span>
-        <h2 class="section-title">Reserve Your Event Date</h2>
-      </div>
-
-      <div class="enquiry-card">
-        <p class="enquiry-hint">Fill in your event details below to receive an instant catering quote, availability
-          confirmation, and bespoke menu proposal via WhatsApp.</p>
-
-        <form id="cateringEnquiryForm" class="enquiry-form">
-          <div class="form-group">
-            <label for="enqName">Full Name *</label>
-            <input type="text" id="enqName" placeholder="e.g. Rahul Sharma" required>
-          </div>
-
-          <div class="form-group">
-            <label for="enqPhone">Phone Number *</label>
-            <input type="tel" id="enqPhone" placeholder="e.g. 9876543210" required>
-          </div>
-
-          <div class="form-row-2">
-            <div class="form-group">
-              <label for="enqEventType">Event Type</label>
-              <select id="enqEventType">
-                <option value="Royal Wedding / Reception">Royal Wedding / Reception</option>
-                <option value="Ring Ceremony / Sangeet">Ring Ceremony / Sangeet</option>
-                <option value="Kitty Party / High Tea">Kitty Party / High Tea</option>
-                <option value="Birthday / Anniversary">Birthday / Anniversary</option>
-                <option value="100% Jain Puja / Religious">100% Jain Puja / Religious</option>
-                <option value="Corporate Gala Dinner">Corporate Gala Dinner</option>
-                <option value="Other Bespoke Celebration">Other Bespoke Celebration</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="enqGuestCount">Guests Count</label>
-              <input type="number" id="enqGuestCount" placeholder="e.g. 250" min="20" max="5000">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="enqDate">Event Date</label>
-            <input type="date" id="enqDate">
-          </div>
-
-          <div class="form-group">
-            <label for="enqMessage">Special Requirements / Food Preferences</label>
-            <textarea id="enqMessage" rows="3"
-              placeholder="Tell us about food preferences (e.g., Pure Jain, Live Chaat, Smoke Paan, Live Counters)..."></textarea>
-          </div>
-
-          <button type="submit" class="btn-luxury-action btn-submit-enq">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-              <path
-                d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.51-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.3z" />
-            </svg>
-            <span>Send Enquiry via WhatsApp</span>
-          </button>
-        </form>
-      </div>
-    </section>
-
-    <!-- Footer Copyright -->
-    <footer class="page-footer">
-      <div class="footer-crest-wrap">
-        <img src="assets/images/gm_crest_square_oled.png" alt="GM Crest" width="48" height="48">
-      </div>
-      <p class="footer-title"><strong>GM CUISINE FACTORY</strong></p>
-      <p class="footer-tag">GM Cuisine Factory Indore · Serving Taste & Tradition Since Day One</p>
-      <p class="footer-links">
-        <a href="https://www.instagram.com/gmcuisinefactory?stkn=bDNrbWNlYnNnanQx&utm_source=qr" target="_blank" rel="noopener">Instagram</a> •
-        <a href="https://www.justdial.com/Indore/GM-service-catering/0731PX731-X731-241208154150-I9E8_BZDET"
-          target="_blank" rel="noopener">Justdial</a> •
-        <a href="tel:9399231772">+91 93992 31772</a>
-      </p>
-      <p class="footer-copy">© 2026 GM Cuisine Factory. All rights reserved. Indore, Madhya Pradesh.</p>
-    </footer>
-
-  </div> <!-- End .page-wrapper -->
-
-  <!-- ==================== FIXED BOTTOM MENU (For Mobile / Quick Thumb Navigation) ==================== -->
-  <nav class="footer-menu" role="navigation" aria-label="Bottom Navigation">
-    <ul class="footer-menu-items">
-      <li class="footer-menu-item">
-        <a href="#homesection" class="footer-menu-link active" data-nav="homesection">
-          <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor">
-            <path
-              d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-          </svg>
-          <span class="footer-menu-text">HOME</span>
-        </a>
-      </li>
-
-      <li class="footer-menu-item">
-        <a href="#ProductsServicesSection" class="footer-menu-link" data-nav="ProductsServicesSection">
-          <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
-              clip-rule="evenodd" />
-          </svg>
-          <span class="footer-menu-text">EVENTS</span>
-        </a>
-      </li>
-
-
-
-      <li class="footer-menu-item">
-        <a href="#PaymentOptionsSection" class="footer-menu-link" data-nav="PaymentOptionsSection">
-          <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"
-              clip-rule="evenodd" />
-          </svg>
-          <span class="footer-menu-text">VIP PAY</span>
-        </a>
-      </li>
-
-
-
-      <li class="footer-menu-item">
-        <a href="#enquirysection" class="footer-menu-link" data-nav="enquirysection">
-          <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
-              clip-rule="evenodd" />
-          </svg>
-          <span class="footer-menu-text">ENQUIRY</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- ==================== MODALS ==================== -->
-
-  <!-- 1. Image Lightbox Modal -->
-  <div id="imageModal" class="app-modal" aria-hidden="true">
-    <div class="modal-scrim" data-close-modal></div>
-    <div class="lightbox-container">
-      <button type="button" class="modal-close-circle" data-close-modal aria-label="Close">✕</button>
-      <img src="" alt="" id="lightboxImg" class="lightbox-image">
-      <div id="lightboxCaption" class="lightbox-caption"></div>
     </div>
-  </div>
+    
 
-  <!-- 2. Share Profile Modal -->
-  <div id="shareModal" class="app-modal" aria-hidden="true">
-    <div class="modal-scrim" data-close-modal></div>
-    <div class="share-card-modal">
-      <div class="share-modal-header">
-        <h3>Share Digital Profile</h3>
-        <button type="button" class="modal-close-circle" data-close-modal aria-label="Close">✕</button>
-      </div>
-      <div class="share-modal-body">
-        <p class="share-sub">Share GM Cuisine Factory visiting portal across your network:</p>
-
-        <div class="share-grid">
-          <a href="javascript:void(0);" id="shareBtnWhatsapp" class="share-tile">
-            <div class="share-icon-wrap bg-wa">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-                <path
-                  d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.51-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.3z" />
-              </svg>
+    <input type="hidden" name="themeColor" id="themeColor" value="#141210" />
+    <input type="hidden" name="themeColor1" id="themeColor1" value="#fdfaf3" />
+    <div id="homesection" class="page-wrapper">
+        <div class="corner"></div>
+        <!-- <div class="views-label"><i class="fas fa-eye"></i>Views: <b><span id="llbvisit">226</span></b></div> -->
+        <div class="upper">
+            <!-- User Profile Pic -->
+            <img fetchpriority="high" src="images/gm_logo_full.png" id="ProfileImage" class="profile-pic-img" alt="GM Cuisine Factory" />
+            <input type="hidden" name="cardid" id="cardid" value="gm-catering" />
+            <input type="hidden" name="emailId" id="emailId" value="gmcuisinefactory@gmail.com" />
+            <!-- User Company Name -->
+            <h1 class="firmname" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;"><span id="llbCompanyNameTop">GM Cuisine Factory | Luxury Catering & Royal Banquets Indore</span></h1>
+            <div id="div1"
+                style="width:35%;height:2px;margin:4px auto 12px;background:linear-gradient(90deg, transparent 0%, #8e6328 15%, #cba46b 50%, #ddbe90 70%, #8e6328 85%, transparent 100%);">
             </div>
-            <span>WhatsApp</span>
-          </a>
-
-          <a href="javascript:void(0);" id="shareBtnSms" class="share-tile">
-            <div class="share-icon-wrap bg-sms">
-              <svg viewBox="0 0 20 20" width="22" height="22" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zm-4 0H9v2h2V9z"
-                  clip-rule="evenodd" />
-              </svg>
+            <!-- User First Name and Last Name -->
+            <div class="name">
+                <span id="llbcompleteName">Luxury Pure Veg Catering</span>
+                <span style="margin-top: 5px; display: block">
+                    <i style="font-size: 14px;"><span id="llbDesignation"><b>Royal Banquets &amp; Gourmet Feasts ·
+                                Indore</b></span></i></span>
             </div>
-            <span>SMS</span>
-          </a>
+            <br>
 
-          <a href="javascript:void(0);" id="shareBtnFb" class="share-tile">
-            <div class="share-icon-wrap bg-fb">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-                <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-              </svg>
-            </div>
-            <span>Facebook</span>
-          </a>
 
-          <button type="button" id="shareBtnCopy" class="share-tile">
-            <div class="share-icon-wrap bg-copy">
-              <svg viewBox="0 0 20 20" width="22" height="22" fill="currentColor">
-                <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
-                <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
-              </svg>
+
+            <div class="contact-buttons">
+                <a href="tel:9399231772" id="hrefContact" class="contact-button contact-button-call" title="Call">
+                    <i class="fas fa-phone fa-flip-horizontal"></i>
+                </a>
+                <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20reserve%20a%20date%20for%20my%20event."
+                    id="whatappShare" class="contact-button contact-button-whatsapp" target="_blank" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.google.com/maps/place/GM+Cuisine+Factory/@22.7314627,75.7556346,13z/data=!4m10!1m2!2m1!1s8,+Akhand+Nagar,+Airport+Road,+Indore,+Madhya+Pradesh+452005!3m6!1s0x3962fd274d70ea0b:0x4f92477b6d976e6a!8m2!3d22.7314627!4d75.8277324!15sCjw4LCBBa2hhbmQgTmFnYXIsIEFpcnBvcnQgUm9hZCwgSW5kb3JlLCBNYWRoeWEgUHJhZGVzaCA0NTIwMDWSARBjYXRlcmluZ19zZXJ2aWNl4AEA!16s%2Fg%2F11p1b7b19q?entry=ttu&amp;g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+                    id="gmap1" class="contact-button contact-button-location" target="_blank" title="Location">
+                    <i class="fas fa-map-marker-alt fa-flip-horizontal"></i>
+                </a>
+                <a href="https://www.instagram.com/gmcuisinefactory?stkn=bDNrbWNlYnNnanQx&utm_source=qr" id="hyperEmail"
+                    class="contact-button contact-button-instagram" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/share/1E3VXoYWyv/?mibextid=wwXIfr" id="facebookTopBtn"
+                    class="contact-button contact-button-facebook" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
             </div>
-            <span>Copy Link</span>
-          </button>
         </div>
-      </div>
+        <div class="lower">
+            <table class="contact-action-table">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="trapezoid">
+                                <a href="tel:9399231772" id="HyperPhone" target="_blank"
+                                    class="contact-action-container-icon" title="Call">
+                                    <i class="fas fa-phone fa-flip-horizontal brand-call"></i>
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="display: flex; flex-direction: column; gap: 4px; padding: 4px 0;">
+                                <a href="tel:9399231772" id="hredCallContact" target="_blank"
+                                    class="contact-action-container-text" title="9399231772"
+                                    style="margin: 0; line-height: 1.3;">+91 93992 31772 <span
+                                        style="font-size: 11px; color: #141210; font-weight: 700; background: #fdf3d6; border: 1px solid rgba(203, 164, 107, 0.5); padding: 1px 7px; border-radius: 10px; margin-left: 4px;">Primary</span></a>
+                                <a href="tel:8817335591" id="hredCallContactAlt" target="_blank"
+                                    class="contact-action-container-text" title="8817335591"
+                                    style="margin: 0; line-height: 1.3;">+91 88173 35591 <span
+                                        style="font-size: 11px; color: #555; font-weight: 500; background: #f0f0f0; padding: 1px 7px; border-radius: 10px; margin-left: 4px;">Alternate</span></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="trapezoid">
+                                <a href="https://www.google.com/maps/place/GM+Cuisine+Factory/@22.7314627,75.7556346,13z/data=!4m10!1m2!2m1!1s8,+Akhand+Nagar,+Airport+Road,+Indore,+Madhya+Pradesh+452005!3m6!1s0x3962fd274d70ea0b:0x4f92477b6d976e6a!8m2!3d22.7314627!4d75.8277324!15sCjw4LCBBa2hhbmQgTmFnYXIsIEFpcnBvcnQgUm9hZCwgSW5kb3JlLCBNYWRoeWEgUHJhZGVzaCA0NTIwMDWSARBjYXRlcmluZ19zZXJ2aWNl4AEA!16s%2Fg%2F11p1b7b19q?entry=ttu&amp;g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+                                    id="gmap" target="_blank" class="contact-action-container-icon">
+                                    <i class="fas fa-map-marker-alt brand-location"></i>
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            <a href="https://www.google.com/maps/place/GM+Cuisine+Factory/@22.7314627,75.7556346,13z/data=!4m10!1m2!2m1!1s8,+Akhand+Nagar,+Airport+Road,+Indore,+Madhya+Pradesh+452005!3m6!1s0x3962fd274d70ea0b:0x4f92477b6d976e6a!8m2!3d22.7314627!4d75.8277324!15sCjw4LCBBa2hhbmQgTmFnYXIsIEFpcnBvcnQgUm9hZCwgSW5kb3JlLCBNYWRoeWEgUHJhZGVzaCA0NTIwMDWSARBjYXRlcmluZ19zZXJ2aWNl4AEA!16s%2Fg%2F11p1b7b19q?entry=ttu&amp;g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+                                id="address" target="_blank" class="contact-action-container-text address-text">
+                                8, Akhand Nagar, Airport Road, Indore, MP - 452005
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="trapezoid">
+                                <a href="https://wa.me/919399231772" id="emailId1" target="_blank"
+                                    class="contact-action-container-icon">
+                                    <i class="fab fa-whatsapp brand-whatsapp"></i>
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            <a href="https://wa.me/919399231772" id="emailId2" target="_blank"
+                                class="contact-action-container-text">+91 93992 31772 (WhatsApp)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="trapezoid">
+                                <a href="https://www.instagram.com/gmcuisinefactory?stkn=bDNrbWNlYnNnanQx&utm_source=qr"
+                                    id="website1" target="_blank" class="contact-action-container-icon">
+                                    <i class="fab fa-instagram brand-instagram"></i>
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            <a href="https://www.instagram.com/gmcuisinefactory?stkn=bDNrbWNlYnNnanQx&utm_source=qr"
+                                id="website2" target="_blank"
+                                class="contact-action-container-text">instagram.com/gmcuisinefactory</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="trapezoid">
+                                <a href="https://www.facebook.com/share/1E3VXoYWyv/?mibextid=wwXIfr"
+                                    id="facebookActionIcon" target="_blank" class="contact-action-container-icon"
+                                    title="Facebook">
+                                    <i class="fab fa-facebook-f brand-facebook"></i>
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            <a href="https://www.facebook.com/share/1E3VXoYWyv/?mibextid=wwXIfr" id="facebookActionText"
+                                target="_blank" class="contact-action-container-text">facebook.com/gmcuisinefactory</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!--  whatsapp -->
+            <div style="padding: 15px 15px 45px; position: relative; z-index: 2;">
+                <div class="p-30"></div>
+                <div class="whatsapp-input">
+                    <div class="input-wrapper">
+                        <label>+91</label>
+                        <input id="whatsapp-input" class="input" placeholder="Enter mobile number" maxlength="13"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+
+                    </div>
+                    <a class="whatsapp-button" id="whatsappShareDirectBtn" href="javascript:void(0);"
+                        onclick="handleCustomWhatsappShare()">
+                        <i class="fab fa-whatsapp brand-whatsapp"></i>Share on Whatsapp
+                    </a>
+                </div>
+                <div class="p-20"></div>
+                <div class="shadow-buttons">
+                    <a href="gm-service-catering.vcf" id="hyperCard" class="shadow-button"
+                        download="GM_Cuisine_Factory.vcf" title="Save Contact to Phone"><i
+                            class="fas fa-address-book shadow-button-icon"></i>Add to Phone Book</a>
+                    <a href="https://www.google.com/maps/place/GM+Cuisine+Factory/@22.7314627,75.7556346,13z/data=!4m10!1m2!2m1!1s8,+Akhand+Nagar,+Airport+Road,+Indore,+Madhya+Pradesh+452005!3m6!1s0x3962fd274d70ea0b:0x4f92477b6d976e6a!8m2!3d22.7314627!4d75.8277324!15sCjw4LCBBa2hhbmQgTmFnYXIsIEFpcnBvcnQgUm9hZCwgSW5kb3JlLCBNYWRoeWEgUHJhZGVzaCA0NTIwMDWSARBjYXRlcmluZ19zZXJ2aWNl4AEA!16s%2Fg%2F11p1b7b19q?entry=ttu&amp;g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+                        id="directionsButton" class="shadow-button" target="_blank"
+                        title="Get Directions to GM Cuisine Factory"><i class="fas fa-map-marker-alt shadow-button-icon"></i>Get Directions</a>
+                    <a href="#enquirysection" id="bookCateringButton" class="shadow-button"
+                        title="Book Catering for your event"><i
+                            class="fas fa-calendar-check shadow-button-icon"></i>Book Catering</a>
+                </div>
+
+                <p style="color:var(--theme-color); font-weight:800; margin:18px 0 10px;">Global Social Media Link</p>
+                <div class=""></div>
+                <ul class="inprofile share-buttons" style="position: relative; z-index: 2; margin-bottom: 8px;">
+                    <li class="share-button">
+                        <a href="https://www.facebook.com/share/1E3VXoYWyv/?mibextid=wwXIfr" id="facebookLink"
+                            target="_blank" title="Facebook"><i class="share-button-facebook fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="share-button">
+                        <a href="https://www.instagram.com/gmcuisinefactory?stkn=bDNrbWNlYnNnanQx&utm_source=qr"
+                            id="instagrams" target="_blank" title="Instagram"><i
+                                class="share-button-instagram fab fa-instagram"></i></a>
+                    </li>
+                    <li class="share-button">
+                        <a href="https://www.justdial.com/Indore/GM-service-catering/0731PX731-X731-241208154150-I9E8_BZDET"
+                            id="justdialLink" target="_blank" title="Justdial"><i
+                                class="share-button-justdial fas fa-star"></i></a>
+                    </li>
+                    <li class="share-button">
+                        <a href="https://wa.me/919399231772" id="whatsappLink" target="_blank" title="WhatsApp"><i
+                                class="share-button-whatsapp fab fa-whatsapp"></i></a>
+                    </li>
+                    <li class="share-button">
+                        <a href="https://www.google.com/maps/place/GM+Cuisine+Factory/@22.7314627,75.7556346,13z/data=!4m10!1m2!2m1!1s8,+Akhand+Nagar,+Airport+Road,+Indore,+Madhya+Pradesh+452005!3m6!1s0x3962fd274d70ea0b:0x4f92477b6d976e6a!8m2!3d22.7314627!4d75.8277324!15sCjw4LCBBa2hhbmQgTmFnYXIsIEFpcnBvcnQgUm9hZCwgSW5kb3JlLCBNYWRoeWEgUHJhZGVzaCA0NTIwMDWSARBjYXRlcmluZ19zZXJ2aWNl4AEA!16s%2Fg%2F11p1b7b19q?entry=ttu&amp;g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+                            id="LinkedInn" target="_blank" title="Google Maps"><i
+                                class="share-button-linkedin fab fa-google"></i></a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="corner-bottom"></div>
     </div>
-  </div>
+    <div id="AboutUsSection" class="section-container scroll-reveal">
+        <div class="corner"></div>
+        <h2 class="section-header">About Us</h2>
+        <div id="div2"
+            style="width:25%;height:2px;margin:0 auto 20px;background:linear-gradient(90deg, transparent 0%, #8e6328 15%, #cba46b 50%, #ddbe90 70%, #8e6328 85%, transparent 100%);">
+        </div>
+        <table class="about-us-table">
+            <tbody>
+            </tbody>
+        </table>
 
+        <!-- about us -->
 
-  <!-- Toast Notification -->
-  <div class="canvas-toast" id="canvas-toast" role="status" aria-live="polite" hidden>
-    Visiting portal link copied to clipboard!
-  </div>
+        <div id="aboutDesc" class="about-us-text">
+            <p id="AboutUsDesc"
+                style="color: #252525; font-family: 'Uniform Medium', sans-serif; font-size: 16px; text-align: justify;">
+                Serving taste &amp; tradition since day one. At <strong>GM Cuisine Factory</strong>, we craft
+                gastronomic spectacles where ordinary food has no place in extraordinary moments.
+                <br><br>
+                We are Central India's premier luxury pure vegetarian catering atelier, designing bespoke banquets for
+                royal weddings, silver jubilee anniversaries, high-profile corporate galas, and strict Jain religious
+                ceremonies across Indore and Madhya Pradesh.
+                <br><br>
+                <strong>Our Sacred Culinary Commitments:</strong><br>
+                • <strong>100% Pure Vegetarian &amp; Dedicated Jain Cookware:</strong> Absolute sanctity, separate
+                utensils, zero cross-contamination, pure cow ghee preparation, and strict onion-garlic-free choices upon
+                request.<br>
+                • <strong>Theatrical Live Culinary Stations:</strong> Uniformed executive chefs orchestrating sizzling
+                tawa delicacies, artisanal Indori Sarafa chaat, and molecular liquid nitrogen Smoke Paan.<br>
+                • <strong>Royal Presentation:</strong> Traditional hammered copper and brass chafing banquet displays
+                with white-glove professional hospitality.
+            </p>
+            <!-- Meaningful Milestone Statistics Grid -->
+            <div class="luxury-stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="15" data-suffix="+">15+</div>
+                    <div class="stat-label">Years Culinary Heritage</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="500" data-suffix="+">500+</div>
+                    <div class="stat-label">Royal Weddings &amp; Galas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="100" data-suffix="%">100%</div>
+                    <div class="stat-label">Pure Veg &amp; Jain Sanctity</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="50" data-suffix="k+">50k+</div>
+                    <div class="stat-label">Delighted Guests</div>
+                </div>
+            </div>
+        </div>
+        <div class="corner-bottom"></div>
+    </div>
+    <div id="ProductsServicesSection" class="section-container scroll-reveal">
+        <div class="corner"></div>
+        <h2 class="section-header">Our Signature Services &amp; Menus</h2>
+        <div id="div3"
+            style="width:25%;height:2px;margin:0 auto 20px;background:linear-gradient(90deg, transparent 0%, #8e6328 15%, #cba46b 50%, #ddbe90 70%, #8e6328 85%, transparent 100%);">
+        </div>
+        <div id="ProductGroup">
 
-  <script src="app.js"></script>
+            <!-- 1. Royal Gourmet Dinner & Handcrafted Feasts -->
+            <div class='card scroll-reveal'>
+                <h3 class='card-title'>Royal Gourmet Dinner &amp; Handcrafted Feasts</h3>
+                <div class='card-img-container'>
+                    <span class='img-glass-badge'><i class="fas fa-crown" style="color:#dfba73;"></i> Royal Spread ·
+                        Pure Veg</span>
+                    <img loading="lazy" decoding="async" onclick='openImageModal(this)' alt='Royal Gourmet Dinner & Handcrafted Feasts'
+                        src="images/royal_gourmet_feast.jpeg">
+                    <div class='img-overlay-caption'>
+                        <span class='caption-text'>Candlelit Royal Spread · Artisanal Gravies</span>
+                        <span class='zoom-hint'><i class="fas fa-search-plus"></i> View</span>
+                    </div>
+                </div>
+                <div class='product-description'>
+                    <p>Bespoke multi-course royal dinner spreads featuring artisanal paneer specialities, rich creamy
+                        gravies, slow-simmered dal makhani, candlelit table ambiance, and authentic Indori appetizers
+                        prepared under strict pure vegetarian &amp; Jain sanctity.</p>
+                </div>
+                <div class='product-enquiry-section'>
+                    <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20enquire%20about%20Royal%20Gourmet%20Dinner%20Feasts."
+                        target='_blank' class='product-enquiry-btn'><i class="fab fa-whatsapp"
+                            style="color: #25D366; font-size: 15px;"></i> Enquiry on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 2. Grand Royal Wedding Banquets -->
+            <div class='card scroll-reveal'>
+                <h3 class='card-title'>Grand Royal Wedding Banquets</h3>
+                <div class='card-img-container'>
+                    <span class='img-glass-badge'><i class="fas fa-ring" style="color:#dfba73;"></i> Grand Wedding
+                        Banquets</span>
+                    <img loading="lazy" decoding="async" onclick='openImageModal(this)' alt='Grand Royal Wedding Banquets'
+                        src="images/regal_live_tawa_counter.jpeg">
+                    <div class='img-overlay-caption'>
+                        <span class='caption-text'>Hammered Brass Chafers · 300 to 3,000+ Guests</span>
+                        <span class='zoom-hint'><i class="fas fa-search-plus"></i> View</span>
+                    </div>
+                </div>
+                <div class='product-description'>
+                    <p>Opulent palace banquet setups featuring master executive chefs in high chef toques, ornate
+                        hammered brass &amp; copper chafing dishes, red velvet drapes, and fresh rose garland accents
+                        crafted for India's grandest wedding celebrations (300 to 3,000+ guests).</p>
+                </div>
+                <div class='product-enquiry-section'>
+                    <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20enquire%20about%20Grand%20Royal%20Wedding%20Banquet%20Catering."
+                        target='_blank' class='product-enquiry-btn'><i class="fab fa-whatsapp"
+                            style="color: #25D366; font-size: 15px;"></i> Enquiry on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 3. 100-Foot Grand Palace Buffet Line -->
+            <div class='card scroll-reveal'>
+                <h3 class='card-title'>100-Foot Grand Palace Buffet Line</h3>
+                <div class='card-img-container'>
+                    <span class='img-glass-badge'><i class="fas fa-star" style="color:#dfba73;"></i> 100-Ft Open Lawn
+                        Showcase</span>
+                    <img loading="lazy" decoding="async" onclick='openImageModal(this)' alt='100-Foot Grand Palace Buffet Line'
+                        src="images/grand_100ft_banquet_line.jpeg">
+                    <div class='img-overlay-caption'>
+                        <span class='caption-text'>Illuminated Grand Buffet Line · Continuous Counter</span>
+                        <span class='zoom-hint'><i class="fas fa-search-plus"></i> View</span>
+                    </div>
+                </div>
+                <div class='product-description'>
+                    <p>Breathtaking continuous banquet counters spanning across vast open lawns with warm under-counter
+                        illumination, liveried culinary attendants, and panoramic selections of Indian, Continental, and
+                        regional delicacies.</p>
+                </div>
+                <div class='product-enquiry-section'>
+                    <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20enquire%20about%20100-Foot%20Grand%20Palace%20Buffet%20Line."
+                        target='_blank' class='product-enquiry-btn'><i class="fab fa-whatsapp"
+                            style="color: #25D366; font-size: 15px;"></i> Enquiry on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 4. Royal Victorian Carriage Buffet -->
+            <div class='card scroll-reveal'>
+                <h3 class='card-title'>Royal Victorian Carriage Buffet</h3>
+                <div class='card-img-container'>
+                    <span class='img-glass-badge'><i class="fas fa-gem" style="color:#dfba73;"></i> Victorian Golden
+                        Carriage</span>
+                    <img loading="lazy" decoding="async" onclick='openImageModal(this)' alt='Royal Victorian Carriage Buffet'
+                        src="images/victorian_carriage_buffet.jpeg">
+                    <div class='img-overlay-caption'>
+                        <span class='caption-text'>White & Gold Antique Carriage · Floral Accents</span>
+                        <span class='zoom-hint'><i class="fas fa-search-plus"></i> View</span>
+                    </div>
+                </div>
+                <div class='product-description'>
+                    <p>Signature antique white &amp; gold Victorian carriage banquet displays accented with lush
+                        cascading floral runners, live hot chafers, and golden tableware for prestigious outdoor wedding
+                        banquets.</p>
+                </div>
+                <div class='product-enquiry-section'>
+                    <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20enquire%20about%20Royal%20Victorian%20Carriage%20Buffet%20Setup."
+                        target='_blank' class='product-enquiry-btn'><i class="fab fa-whatsapp"
+                            style="color: #25D366; font-size: 15px;"></i> Enquiry on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 5. Luxury Palace Indoor Banquets -->
+            <div class='card scroll-reveal'>
+                <h3 class='card-title'>Luxury Palace Indoor Banquets</h3>
+                <div class='card-img-container'>
+                    <span class='img-glass-badge'><i class="fas fa-landmark" style="color:#dfba73;"></i> Palace Indoor
+                        Ballroom</span>
+                    <img loading="lazy" decoding="async" onclick='openImageModal(this)' alt='Luxury Palace Indoor Banquets'
+                        src="images/grand_palace_indoor_banquet.jpeg">
+                    <div class='img-overlay-caption'>
+                        <span class='caption-text'>Velvet Tufted Counters · Ambient Spotlights</span>
+                        <span class='zoom-hint'><i class="fas fa-search-plus"></i> View</span>
+                    </div>
+                </div>
+                <div class='product-description'>
+                    <p>Opulent indoor ballroom dining featuring warm velvet tufted counters, golden mirror frames,
+                        ambient spotlighting, and fine bone china dinnerware for elite anniversary galas and VIP
+                        receptions.</p>
+                </div>
+                <div class='product-enquiry-section'>
+                    <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20enquire%20about%20Luxury%20Palace%20Indoor%20Banquet%20Dining."
+                        target='_blank' class='product-enquiry-btn'><i class="fab fa-whatsapp"
+                            style="color: #25D366; font-size: 15px;"></i> Enquiry on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 6. Artisanal Live Pasta & Continental Lounge -->
+            <div class='card scroll-reveal'>
+                <h3 class='card-title'>Artisanal Live Pasta &amp; Continental Lounge</h3>
+                <div class='card-img-container'>
+                    <span class='img-glass-badge'><i class="fas fa-utensils" style="color:#dfba73;"></i> Live Italian
+                        Pasta Lounge</span>
+                    <img loading="lazy" decoding="async" onclick='openImageModal(this)' alt='Artisanal Live Pasta & Continental Lounge'
+                        src="images/artisanal_live_pasta_station.jpeg">
+                    <div class='img-overlay-caption'>
+                        <span class='caption-text'>Theatrical Live Tossing · Gourmet Sizzling Sauces</span>
+                        <span class='zoom-hint'><i class="fas fa-search-plus"></i> View</span>
+                    </div>
+                </div>
+                <div class='product-description'>
+                    <p>Theatrical live Italian station featuring customized handcrafted pastas tossed before your
+                        guests, rich sizzling sauces, fresh garden herbs, ornate canopied kiosks, and gold amphora
+                        displays.</p>
+                </div>
+                <div class='product-enquiry-section'>
+                    <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20enquire%20about%20Live%20Pasta%20and%20Continental%20Lounge."
+                        target='_blank' class='product-enquiry-btn'><i class="fab fa-whatsapp"
+                            style="color: #25D366; font-size: 15px;"></i> Enquiry on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 7. Colonnade Palace Archway Buffet Line -->
+            <div class='card scroll-reveal'>
+                <h3 class='card-title'>Colonnade Palace Archway Buffet Line</h3>
+                <div class='card-img-container'>
+                    <span class='img-glass-badge'><i class="fas fa-archway" style="color:#dfba73;"></i> Roman Colonnade
+                        Theme</span>
+                    <img loading="lazy" decoding="async" onclick='openImageModal(this)' alt='Colonnade Palace Archway Buffet Line'
+                        src="images/colonnade_archway_buffet.jpeg">
+                    <div class='img-overlay-caption'>
+                        <span class='caption-text'>Classical Pillars & Crystal Lantern Chandeliers</span>
+                        <span class='zoom-hint'><i class="fas fa-search-plus"></i> View</span>
+                    </div>
+                </div>
+                <div class='product-description'>
+                    <p>Classical illuminated Greek &amp; Roman colonnade archway counters with crystal lantern
+                        chandeliers, ornate warm under-counter lighting, and gleaming golden chafing dish presentations.
+                    </p>
+                </div>
+                <div class='product-enquiry-section'>
+                    <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20enquire%20about%20Colonnade%20Palace%20Archway%20Buffet."
+                        target='_blank' class='product-enquiry-btn'><i class="fab fa-whatsapp"
+                            style="color: #25D366; font-size: 15px;"></i> Enquiry on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 8. Royal Dessert, Mocktail & Canapé Island -->
+            <div class='card scroll-reveal'>
+                <h3 class='card-title'>Royal Dessert, Mocktail &amp; Canapé Island</h3>
+                <div class='card-img-container'>
+                    <span class='img-glass-badge'><i class="fas fa-cocktail" style="color:#dfba73;"></i> Dessert &
+                        Mocktail Island</span>
+                    <img loading="lazy" decoding="async" onclick='openImageModal(this)' alt='Royal Dessert, Mocktail & Canapé Island'
+                        src="images/royal_dessert_canape_island.jpeg">
+                    <div class='img-overlay-caption'>
+                        <span class='caption-text'>Tiered Wooden Pastry Towers & Craft Mocktails</span>
+                        <span class='zoom-hint'><i class="fas fa-search-plus"></i> View</span>
+                    </div>
+                </div>
+                <div class='product-description'>
+                    <p>Multi-tiered handcrafted wooden islands presenting artisanal miniature desserts, fresh fruit
+                        preserves, layered canapés, craft mocktail shots, and exquisite Indian sweet confections.</p>
+                </div>
+                <div class='product-enquiry-section'>
+                    <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20enquire%20about%20Royal%20Dessert%20and%20Mocktail%20Island."
+                        target='_blank' class='product-enquiry-btn'><i class="fab fa-whatsapp"
+                            style="color: #25D366; font-size: 15px;"></i> Enquiry on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 9. Luminous Glass & Botanical Lawn Buffet -->
+            <div class='card scroll-reveal'>
+                <h3 class='card-title'>Luminous Glass &amp; Botanical Buffet</h3>
+                <div class='card-img-container'>
+                    <span class='img-glass-badge'><i class="fas fa-leaf" style="color:#dfba73;"></i> Botanical Glass
+                        Lounge</span>
+                    <img loading="lazy" decoding="async" onclick='openImageModal(this)' alt='Luminous Glass & Botanical Buffet'
+                        src="images/luminous_glass_buffet.jpeg">
+                    <div class='img-overlay-caption'>
+                        <span class='caption-text'>Fluted Glass Counters & Lush Lawn Foliage</span>
+                        <span class='zoom-hint'><i class="fas fa-search-plus"></i> View</span>
+                    </div>
+                </div>
+                <div class='product-description'>
+                    <p>Modern illuminated fluted banquet counters with botanical fern foliage, crystal accents, and
+                        architectural under-lighting arranged seamlessly on lush manicured lawns.</p>
+                </div>
+                <div class='product-enquiry-section'>
+                    <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20enquire%20about%20Luminous%20Glass%20Buffet%20Setup."
+                        target='_blank' class='product-enquiry-btn'><i class="fab fa-whatsapp"
+                            style="color: #25D366; font-size: 15px;"></i> Enquiry on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 10. Impeccably Curated Live Culinary Stations -->
+            <div class='card scroll-reveal'>
+                <h3 class='card-title'>Impeccably Curated Live Culinary Stations</h3>
+                <div class='card-img-container'>
+                    <span class='img-glass-badge'><i class="fas fa-fire" style="color:#dfba73;"></i> Live Sizzling Tawa
+                        Station</span>
+                    <img loading="lazy" decoding="async" onclick='openImageModal(this)' alt='Impeccably Curated Live Culinary Stations'
+                        src="images/curated_culinary_station.jpeg">
+                    <div class='img-overlay-caption'>
+                        <span class='caption-text'>Fresh Tawa Delicacies · Overhead Warm Heat Lamps</span>
+                        <span class='zoom-hint'><i class="fas fa-search-plus"></i> View</span>
+                    </div>
+                </div>
+                <div class='product-description'>
+                    <p>Overhead warm heat lamps, artisanal fresh doughs, sizzling tawa delicacies, and pure vegetarian
+                        chef-crafted delicacies served piping hot for an effortless dining experience.</p>
+                </div>
+                <div class='product-enquiry-section'>
+                    <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20enquire%20about%20Curated%20Live%20Culinary%20Stations."
+                        target='_blank' class='product-enquiry-btn'><i class="fab fa-whatsapp"
+                            style="color: #25D366; font-size: 15px;"></i> Enquiry on WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="corner-bottom"></div>
+    </div>
+
+    <div id="PaymentOptionsSection" class="section-container scroll-reveal">
+        <div class="corner"></div>
+        <h2 class="section-header">Payment Options</h2>
+
+        <div id="div4"
+            style="width:25%;height:2px;margin:0 auto 20px;background:linear-gradient(90deg, transparent 0%, #8e6328 15%, #cba46b 50%, #ddbe90 70%, #8e6328 85%, transparent 100%);">
+        </div>
+        <table class="about-us-table" style="position: relative; z-index: 2;">
+            <tbody id="walletPay">
+                <tr>
+                    <td class='table-row-label'>
+                        <h3 class='table-row-label-text'>Beneficiary</h3>
+                        <b class='table-row-label-separator'>:</b>
+                    </td>
+                    <td></td>
+                    <td class='table-row-value'>SHIVAM KUMAWAT (GM Cuisine Factory)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class='table-row-label'>
+                        <h3 class='table-row-label-text'>UPI ID</h3>
+                        <b class='table-row-label-separator'>:</b>
+                    </td>
+                    <td></td>
+                    <td class='table-row-value'><a href="upi://pay?pa=9399231772@ybl&pn=SHIVAM%20KUMAWAT&cu=INR"
+                            style="color:var(--theme-color, #cba46b); font-weight:600; text-decoration:none;">9399231772@ybl</a>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class='table-row-label'>
+                        <h3 class='table-row-label-text'>UPI Number</h3>
+                        <b class='table-row-label-separator'>:</b>
+                    </td>
+                    <td></td>
+                    <td class='table-row-value'>9399231772</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class='table-row-label'>
+                        <h3 class='table-row-label-text'>Payment Modes</h3>
+                        <b class='table-row-label-separator'>:</b>
+                    </td>
+                    <td></td>
+                    <td class='table-row-value'>PhonePe, Google Pay, Paytm, BHIM UPI</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="h3Qr" style="position: relative; z-index: 2;">Official PhonePe / UPI QR Code:</h3>
+        <div id="QRGroup" style="position: relative; z-index: 2; margin-bottom: 10px;">
+            <div>
+                <img loading="lazy" decoding="async" onclick='openImageModal(this)'
+                    alt='PhonePe Official UPI QR (9399231772@ybl) - SHIVAM KUMAWAT (GM Cuisine Factory)'
+                    src='images/phonepe_payment_qr.jpg'
+                    style='width:100%; max-width:320px; margin:0 auto; display:block; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);'
+                    class='qr-image'>
+            </div>
+        </div>
+        <div class="corner-bottom"></div>
+    </div>
+    <div id="feedbacksection" class="section-container scroll-reveal">
+        <div class="corner"></div>
+        <h2 class="section-header">Rate Us</h2>
+        <div id="div6"
+            style="width:25%;height:2px;margin:0 auto 20px;background:linear-gradient(90deg, transparent 0%, #8e6328 15%, #cba46b 50%, #ddbe90 70%, #8e6328 85%, transparent 100%);">
+        </div>
+        <table id="feedback" class="about-us-table" style="position: relative; z-index: 2; margin-bottom: 10px;">
+            <tr>
+                <td class="table-row-label">
+                    <a href="https://www.google.com/maps/place/GM+Cuisine+Factory/@22.7314627,75.7556346,13z/data=!4m10!1m2!2m1!1s8,+Akhand+Nagar,+Airport+Road,+Indore,+Madhya+Pradesh+452005!3m6!1s0x3962fd274d70ea0b:0x4f92477b6d976e6a!8m2!3d22.7314627!4d75.8277324!15sCjw4LCBBa2hhbmQgTmFnYXIsIEFpcnBvcnQgUm9hZCwgSW5kb3JlLCBNYWRoeWEgUHJhZGVzaCA0NTIwMDWSARBjYXRlcmluZ19zZXJ2aWNl4AEA!16s%2Fg%2F11p1b7b19q?entry=ttu&amp;g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+                        id="gmbimage" target="_blank"><img loading="lazy" decoding="async" src="images/gmb.png" alt="Google Review"
+                            style="border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: block;" /></a>
+                </td>
+                <td class="table-row-value">
+                    <a href="https://www.google.com/maps/place/GM+Cuisine+Factory/@22.7314627,75.7556346,13z/data=!4m10!1m2!2m1!1s8,+Akhand+Nagar,+Airport+Road,+Indore,+Madhya+Pradesh+452005!3m6!1s0x3962fd274d70ea0b:0x4f92477b6d976e6a!8m2!3d22.7314627!4d75.8277324!15sCjw4LCBBa2hhbmQgTmFnYXIsIEFpcnBvcnQgUm9hZCwgSW5kb3JlLCBNYWRoeWEgUHJhZGVzaCA0NTIwMDWSARBjYXRlcmluZ19zZXJ2aWNl4AEA!16s%2Fg%2F11p1b7b19q?entry=ttu&amp;g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D"
+                        target="_blank" class="buttonstyle" id="btnreview">Review Us on Google</a>
+                </td>
+            </tr>
+            <tr id="trJustDial">
+                <td class="table-row-label">
+                    <a href="https://www.justdial.com/Indore/GM-service-catering/0731PX731-X731-241208154150-I9E8_BZDET"
+                        id="justdialImage" target="_blank">
+                        <img loading="lazy" decoding="async" src="images/Justdial.jpg" alt="Justdial Rating"
+                            style="border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: block;" />
+                    </a>
+                </td>
+                <td class="table-row-value">
+                    <a href="https://www.justdial.com/Indore/GM-service-catering/0731PX731-X731-241208154150-I9E8_BZDET"
+                        id="JustDialRateUs" target="_blank" class="buttonstyle">Rate on Justdial</a>
+                </td>
+            </tr>
+            <tr id="trInstagram">
+                <td class="table-row-label">
+                    <a href="https://www.instagram.com/gmcuisinefactory?stkn=bDNrbWNlYnNnanQx&utm_source=qr"
+                        id="Instagramimage" target="_blank"><img loading="lazy" decoding="async" src="images/Instagram.png" alt="Instagram Follow"
+                            style="border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: block;" /></a>
+                </td>
+                <td class="table-row-value">
+                    <a href="https://www.instagram.com/gmcuisinefactory?stkn=bDNrbWNlYnNnanQx&utm_source=qr"
+                        id="InstagramEngageUs" target="_blank" class="buttonstyle">Follow on Instagram</a>
+                </td>
+            </tr>
+        </table>
+        <div class="corner-bottom"></div>
+    </div>
+
+    <div id="enquirysection" class="section-container scroll-reveal">
+        <div class="corner"></div>
+
+        <h2 class="section-header">Quick Enquiry</h2>
+        <div id="div7"
+            style="width:25%;height:2px;margin:0 auto 20px;background:linear-gradient(90deg, transparent 0%, #8e6328 15%, #cba46b 50%, #ddbe90 70%, #8e6328 85%, transparent 100%);">
+        </div>
+        <form id="form1" style="position: relative; z-index: 2; margin-bottom: 25px;">
+            <input name="co_name" type="text" id="txtGuestName" class="inputtext" placeholder="Enter Full Name" aria-label="Full Name" autocomplete="name"
+                required />
+            <br>
+            <div class="flex">
+                <div class="enquiry-phoneNumber">
+                    <input name="co_num" type="tel" id="txtGuestphoneNumber" class="inputtext"
+                        placeholder="Enter Phone Number" aria-label="Phone Number" autocomplete="tel" required />
+                    <br>
+                </div>
+                <div class="enquiry-email">
+                    <input name="co_email" type="email" id="txtGuestEmailId" class="inputtext" placeholder="Enter Email" aria-label="Email Address" autocomplete="email"
+                        required />
+                    <br>
+                </div>
+            </div>
+            <textarea name="co_mesg" rows="2" cols="20" id="txtGuestmessage" class="inputtext"
+                placeholder="Enter Message"></textarea>
+            <br>
+            <input type="submit" value="Send on WhatsApp" id="BttnEnq" class="buttonstyle" />
+        </form>
+        <div class="corner-bottom"></div>
+
+        <script>
+            document.getElementById("form1").addEventListener("submit", function (e) {
+                e.preventDefault(); // Prevent form from submitting normally
+
+                const name = document.getElementById("txtGuestName").value.trim();
+                const phone = document.getElementById("txtGuestphoneNumber").value.trim();
+                const email = document.getElementById("txtGuestEmailId").value.trim();
+                const message = document.getElementById("txtGuestmessage").value.trim();
+
+                const fullMessage = `Hello GM Cuisine Factory,%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Event Requirements:* ${message}`;
+                const whatsappNumber = "919399231772";
+
+                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${fullMessage}`;
+
+                window.open(whatsappURL, "_blank");
+            });
+        </script>
+    </div>
+
+    <!-- create your digital card -->
+    <div id="refernearnsection" class="section-container scroll-reveal">
+        <div class="corner"></div>
+
+        <h2 class="section-header">Reserve Your Date</h2>
+        <div id="refearn"
+            style="width:25%;height:2px;margin:0 auto 20px;background:linear-gradient(90deg, transparent 0%, #8e6328 15%, #cba46b 50%, #ddbe90 70%, #8e6328 85%, transparent 100%);">
+        </div>
+        <div id="Div10" class="card scroll-reveal" style="margin-bottom: 25px; position: relative; z-index: 2;">
+            <div id="sliderFrame">
+                <div id="slifder" class="Adimg">
+                    <div class='image-wrapper'>
+                        <img loading="lazy" decoding="async" onclick='openImageModal(this)' alt='GM Cuisine Factory Luxury Catering'
+                            src='images/gm_logo_full.png'
+                            style='width:100%; max-width:320px; margin:0 auto; display:block; padding:10px; background:#fff; border-radius:6px; box-sizing:border-box;'>
+                        <a href="https://wa.me/919399231772?text=Hello%20GM%20Cuisine%20Factory%2C%20I%20want%20to%20reserve%20a%20catering%20date%20for%20my%20event."
+                            id="btnBookWhatsApp" target="_blank" class="buttonstyle"
+                            style="display:block; text-align:center; width:100%; box-sizing:border-box; text-decoration:none; margin-top:12px;">Book
+                            Catering on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="corner-bottom"></div>
+    </div>
+
+    <!-- Production Copyright Footer -->
+    <div class="copyright-wrapper">
+        <div class="copyright-wrapper-inner">
+            <div
+                style="font-weight: 700; color: #141210; font-size: 15px; margin-bottom: 4px; font-family: 'Uniform Medium', 'Roboto', sans-serif;">
+                GM Cuisine Factory</div>
+            <div style="font-size: 12px; color: #7a7065; line-height: 1.4;">Luxury Pure Vegetarian Catering &amp; Royal
+                Event Feasts · Indore</div>
+            <div style="font-size: 11px; color: #9c9184; margin-top: 8px;">© 2026 GM Cuisine Factory. All Rights
+                Reserved.</div>
+        </div>
+    </div>
+
+    <!-- The image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" id="imageModalClose">×</span>
+        <img loading="lazy" decoding="async" class="modal-content fadeIn" id="img01">
+        <div id="caption"></div>
+    </div>
+    <!-- The share Modal -->
+    <div id="shareModal" class="modal share-modal">
+        <div class="share-form fadeInUpBig">
+            <div class="share-form-header">
+                <h3 class="share-form-header-text">Share Profile</h3>
+                <span class="close" id="shareModalClose">×</span>
+            </div>
+            <div class="share-form-buttons-container">
+                <p>Share my Digital vCard in your network.</p>
+                <div class="share-buttons-heading">
+                    <img loading="lazy" decoding="async" src="css/tild-arrow.svg" alt="" class="share-buttons-arrow" />
+                    <div class="share-buttons-heading-text">Share my Digital vCard</div>
+                </div>
+                <ul class="share-buttons">
+                    <li class="share-button">
+                        <a href="javascript:;" onclick="handleDirectWhatsappShare(this)">
+                            <i class="share-button-whatsapp fab fa-whatsapp"></i>
+                        </a>
+                    </li>
+                    <li class="share-button">
+                        <a href="javascript:void(0);"
+                            onclick="window.open('sms:?body=' + encodeURIComponent('Please check GM Cuisine Factory digital card: ' + window.location.href))">
+                            <i class="share-button-sms fas fa-comment-dots"></i>
+                        </a>
+                    </li>
+                    <li class="share-button">
+                        <a href="javascript:void(0);"
+                            onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')">
+                            <i class="share-button-facebook fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="share-button">
+                        <a href="javascript:void(0);"
+                            onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('GM Cuisine Factory | Luxury Catering: ' + window.location.href), '_blank')">
+                            <i class="share-button-twitter fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="share-button">
+                        <a href="javascript:void(0);"
+                            onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href), '_blank')">
+                            <i class="share-button-linkedin fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li class="share-button">
+                        <a href="javascript:void(0);"
+                            onclick="window.open('mailto:?subject=' + encodeURIComponent('GM Cuisine Factory Luxury Catering') + '&body=' + encodeURIComponent('Please check out GM Cuisine Factory: ' + window.location.href))">
+                            <i class="share-button-mail fas fa-envelope"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="css/script.js"></script>
+    
+    <!-- Sticky Bottom Navigation Bar -->
+    <div class="footer" role="navigation" aria-label="Bottom Navigation">
+        <ul class="footer-menu">
+            <li>
+                <a href="#homesection" id="HomeUrl" class="footer-menu-link">
+                    <i class="footer-menu-icon fas fa-home"></i>
+                    <div class="footer-menu-text">HOME</div>
+                </a>
+            </li>
+            <li>
+                <a href="#AboutUsSection" id="AboutUsUrl" class="footer-menu-link">
+                    <i class="footer-menu-icon fas fa-briefcase"></i>
+                    <div class="footer-menu-text">ABOUT US</div>
+                </a>
+            </li>
+            <li>
+                <a href="#ProductsServicesSection" id="ProductUrl" class="footer-menu-link">
+                    <i class="footer-menu-icon fas fa-box-open"></i>
+                    <div class="footer-menu-text">SERVICES</div>
+                </a>
+            </li>
+            <li>
+                <a href="#PaymentOptionsSection" id="PaymentUrl" class="footer-menu-link">
+                    <i class="footer-menu-icon fas fa-money-bill-alt"></i>
+                    <div class="footer-menu-text">PAYMENT</div>
+                </a>
+            </li>
+            <li>
+                <a href="#feedbacksection" id="FeedbackUrl" class="footer-menu-link">
+                    <i class="footer-menu-icon fas fa-star"></i>
+                    <div class="footer-menu-text">FEEDBACK</div>
+                </a>
+            </li>
+            <li>
+                <a href="#enquirysection" id="EnquiryUrl" class="footer-menu-link">
+                    <i class="footer-menu-icon fas fa-comment-alt"></i>
+                    <div class="footer-menu-text">ENQUIRY</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Luxury Micro-Interactions & Animation Orchestrator -->
+    <script>
+        (function () {
+            // 1. Curtain Intro Controller
+            const curtain = document.getElementById('brandCurtain');
+            if (curtain) {
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (prefersReducedMotion) {
+                    curtain.remove();
+                } else {
+                    let dismissed = false;
+                    const dismissCurtain = () => {
+                        if (dismissed) return;
+                        dismissed = true;
+                        curtain.classList.add('curtain-dismissed');
+                        setTimeout(() => {
+                            if (curtain.parentNode) curtain.parentNode.removeChild(curtain);
+                        }, 600);
+                    };
+
+                    // Fast auto-dismiss: 750ms so user is never delayed
+                    const autoTimer = setTimeout(dismissCurtain, 750);
+
+                    // Or instantly on any touch / click / scroll
+                    window.addEventListener('touchstart', dismissCurtain, { passive: true, once: true });
+                    window.addEventListener('mousedown', dismissCurtain, { once: true });
+                    window.addEventListener('scroll', dismissCurtain, { passive: true, once: true });
+                }
+            }
+
+            // 2. Count-Up Statistics
+            const statCards = document.querySelectorAll('.stat-number');
+            if (statCards.length) {
+                const animateNumber = (el) => {
+                    const target = parseInt(el.getAttribute('data-target'), 10);
+                    const suffix = el.getAttribute('data-suffix') || '';
+                    const duration = 600;
+                    let startTime = null;
+
+                    const step = (currentTime) => {
+                        if (!startTime) startTime = currentTime;
+                        const elapsed = currentTime - startTime;
+                        if (elapsed >= duration) {
+                            el.textContent = target + suffix;
+                            return;
+                        }
+                        const progress = elapsed / duration;
+                        const easeProgress = 1 - Math.pow(1 - progress, 3); // cubic ease-out
+                        const currentVal = Math.floor(easeProgress * target);
+                        el.textContent = currentVal + suffix;
+                        requestAnimationFrame(step);
+                    };
+                    requestAnimationFrame(step);
+                };
+
+                if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    const statsObserver = new IntersectionObserver((entries, obs) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                animateNumber(entry.target);
+                                obs.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.25 });
+
+                    statCards.forEach(stat => statsObserver.observe(stat));
+                } else {
+                    statCards.forEach(stat => {
+                        stat.textContent = stat.getAttribute('data-target') + (stat.getAttribute('data-suffix') || '');
+                    });
+                }
+            }
+
+            // 3. Smooth Scroll-Reveal Animations
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+            if (revealElements.length) {
+                if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    const revealObserver = new IntersectionObserver((entries, obs) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('revealed');
+                                obs.unobserve(entry.target);
+                                setTimeout(() => {
+                                    entry.target.style.willChange = 'auto';
+                                }, 700);
+                            }
+                        });
+                    }, {
+                        threshold: 0.05,
+                        rootMargin: "0px 0px -30px 0px"
+                    });
+
+                    revealElements.forEach(el => revealObserver.observe(el));
+                } else {
+                    revealElements.forEach(el => el.classList.add('revealed'));
+                }
+            }
+
+            // 4. Active Tab Navigation Scroll Spy
+            const navLinks = document.querySelectorAll('.footer-menu .footer-menu-link');
+            const sections = [
+                document.getElementById('homesection'),
+                document.getElementById('AboutUsSection'),
+                document.getElementById('ProductsServicesSection'),
+                document.getElementById('PaymentOptionsSection'),
+                document.getElementById('feedbacksection'),
+                document.getElementById('enquirysection')
+            ].filter(Boolean);
+
+            function updateActiveNav() {
+                const scrollPos = window.scrollY + 180;
+                let activeId = 'homesection';
+
+                for (let i = 0; i < sections.length; i++) {
+                    const sec = sections[i];
+                    const top = sec.offsetTop;
+                    const height = sec.offsetHeight;
+                    if (scrollPos >= top && scrollPos < top + height) {
+                        activeId = sec.id;
+                    }
+                }
+
+                // If scrolled to bottom of document, activate enquiry
+                if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50) {
+                    activeId = 'enquirysection';
+                }
+
+                navLinks.forEach(link => {
+                    const targetHash = link.getAttribute('href') || '';
+                    if (targetHash === '#' + activeId) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveNav, { passive: true });
+            window.addEventListener('resize', updateActiveNav, { passive: true });
+            updateActiveNav();
+
+        })();
+    </script>
 </body>
 
 </html>
