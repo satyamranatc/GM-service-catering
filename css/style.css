@@ -1070,7 +1070,9 @@
         }
         .page-wrapper {
             background-color: #FAF6EE;
-            background-color: #FAF6EE;
+            background-image: linear-gradient(rgba(255, 253, 247, 0.45), rgba(255, 253, 247, 0.45)), url('../images/royal_damask_pattern.png');
+            background-repeat: repeat;
+            background-size: auto, 320px auto;
 
             border: 1.5px solid rgba(198, 152, 43, 0.4);
             box-shadow: 0 16px 44px rgba(100, 75, 30, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.95);
@@ -1104,7 +1106,9 @@
     font-size: 14px;
     position: relative;
     background-color: #FAF6EE;
-    background-color: #FAF6EE;
+            background-image: linear-gradient(rgba(255, 253, 247, 0.45), rgba(255, 253, 247, 0.45)), url('../images/royal_damask_pattern.png');
+            background-repeat: repeat;
+            background-size: auto, 320px auto;
 
     word-break: break-word;
     border: 1.5px solid rgba(198, 152, 43, 0.4);
@@ -1119,7 +1123,9 @@
         .card {
             text-align: left;
             background-color: #FAF6EE;
-            background-color: #FAF6EE;
+            background-image: linear-gradient(rgba(255, 253, 247, 0.45), rgba(255, 253, 247, 0.45)), url('../images/royal_damask_pattern.png');
+            background-repeat: repeat;
+            background-size: auto, 320px auto;
 
             border: 1.5px solid rgba(198, 152, 43, 0.4);
             padding: 18px;
