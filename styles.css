@@ -98,8 +98,11 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background-color: #12100E;
-  background-image: radial-gradient(circle at 50% 20%, #241E18 0%, #0D0B09 100%);
+  background-color: #F8F5EE;
+  background-image: url('assets/images/royal_damask_pattern.png');
+  background-repeat: repeat;
+  background-size: 320px auto;
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 
@@ -173,7 +176,7 @@ img {
   margin: 0 auto;
   min-height: 100vh;
   background-color: #FAF6EE;
-  background-image: linear-gradient(rgba(254, 251, 244, 0.78), rgba(254, 251, 244, 0.78)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-image: linear-gradient(rgba(255, 253, 247, 0.45), rgba(255, 253, 247, 0.45)), url('assets/images/royal_damask_pattern.png');
   background-repeat: repeat;
   background-size: auto, 320px auto;
   padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px));
@@ -198,7 +201,7 @@ img {
 .card-hero-block {
   position: relative;
   background-color: #FAF6EE;
-  background-image: linear-gradient(rgba(254, 251, 244, 0.82), rgba(254, 251, 244, 0.82)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-image: linear-gradient(rgba(255, 253, 247, 0.45), rgba(255, 253, 247, 0.45)), url('assets/images/royal_damask_pattern.png');
   background-repeat: repeat;
   background-size: auto, 320px auto;
   border-bottom: 1px solid rgba(198, 152, 43, 0.28);
@@ -469,7 +472,7 @@ img {
   align-items: center;
   justify-content: space-around;
   background-color: #FAF6EE;
-  background-image: linear-gradient(rgba(254, 251, 244, 0.85), rgba(254, 251, 244, 0.85)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-image: linear-gradient(rgba(255, 253, 247, 0.45), rgba(255, 253, 247, 0.45)), url('assets/images/royal_damask_pattern.png');
   background-repeat: repeat;
   background-size: auto, 320px auto;
   border: 1px solid rgba(198, 152, 43, 0.32);
@@ -586,7 +589,7 @@ img {
 
 .contact-details-card {
   background-color: #FAF6EE;
-  background-image: linear-gradient(rgba(254, 251, 244, 0.85), rgba(254, 251, 244, 0.85)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-image: linear-gradient(rgba(255, 253, 247, 0.45), rgba(255, 253, 247, 0.45)), url('assets/images/royal_damask_pattern.png');
   background-repeat: repeat;
   background-size: auto, 320px auto;
   border: 1px solid rgba(198, 152, 43, 0.28);
@@ -650,7 +653,7 @@ img {
 
 .direct-whatsapp-box {
   background-color: #FAF6EE;
-  background-image: linear-gradient(rgba(254, 251, 244, 0.85), rgba(254, 251, 244, 0.85)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-image: linear-gradient(rgba(255, 253, 247, 0.45), rgba(255, 253, 247, 0.45)), url('assets/images/royal_damask_pattern.png');
   background-repeat: repeat;
   background-size: auto, 320px auto;
   border: 1px solid rgba(198, 152, 43, 0.28);
@@ -835,7 +838,7 @@ img {
    ========================================================================== */
 .about-card {
   background-color: #FAF6EE;
-  background-image: linear-gradient(rgba(254, 251, 244, 0.82), rgba(254, 251, 244, 0.82)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-image: linear-gradient(rgba(255, 253, 247, 0.45), rgba(255, 253, 247, 0.45)), url('assets/images/royal_damask_pattern.png');
   background-repeat: repeat;
   background-size: auto, 320px auto;
   border: 1px solid rgba(198, 152, 43, 0.32);
@@ -1128,7 +1131,7 @@ img {
 
 .product-card {
   background-color: #FAF6EE;
-  background-image: linear-gradient(rgba(254, 251, 244, 0.85), rgba(254, 251, 244, 0.85)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-image: linear-gradient(rgba(255, 253, 247, 0.45), rgba(255, 253, 247, 0.45)), url('assets/images/royal_damask_pattern.png');
   background-repeat: repeat;
   background-size: auto, 320px auto;
   border: 1px solid rgba(198, 152, 43, 0.32);
@@ -1305,7 +1308,7 @@ img {
    ========================================================================== */
 .payment-card {
   background-color: #FAF6EE;
-  background-image: linear-gradient(rgba(254, 251, 244, 0.82), rgba(254, 251, 244, 0.82)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-image: linear-gradient(rgba(255, 253, 247, 0.45), rgba(255, 253, 247, 0.45)), url('assets/images/royal_damask_pattern.png');
   background-repeat: repeat;
   background-size: auto, 320px auto;
   border: 1px solid rgba(198, 152, 43, 0.32);
@@ -1586,7 +1589,7 @@ img {
 
 .review-card {
   background-color: #FAF6EE;
-  background-image: linear-gradient(rgba(254, 251, 244, 0.85), rgba(254, 251, 244, 0.85)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-image: linear-gradient(rgba(255, 253, 247, 0.45), rgba(255, 253, 247, 0.45)), url('assets/images/royal_damask_pattern.png');
   background-repeat: repeat;
   background-size: auto, 320px auto;
   border: 1px solid rgba(198, 152, 43, 0.3);
@@ -1619,7 +1622,7 @@ img {
 
 .rate-us-box {
   background-color: #FAF6EE;
-  background-image: linear-gradient(rgba(254, 251, 244, 0.82), rgba(254, 251, 244, 0.82)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-image: linear-gradient(rgba(255, 253, 247, 0.45), rgba(255, 253, 247, 0.45)), url('assets/images/royal_damask_pattern.png');
   background-repeat: repeat;
   background-size: auto, 320px auto;
   border: 1px solid rgba(198, 152, 43, 0.32);
@@ -1711,7 +1714,7 @@ img {
    ========================================================================== */
 .enquiry-card {
   background-color: #FAF6EE;
-  background-image: linear-gradient(rgba(254, 251, 244, 0.82), rgba(254, 251, 244, 0.82)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-image: linear-gradient(rgba(255, 253, 247, 0.45), rgba(255, 253, 247, 0.45)), url('assets/images/royal_damask_pattern.png');
   background-repeat: repeat;
   background-size: auto, 320px auto;
   border: 1px solid rgba(198, 152, 43, 0.32);
