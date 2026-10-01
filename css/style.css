@@ -1524,30 +1524,30 @@
         .footer-menu .footer-menu-icon {
             font-size: 18px;
             margin-bottom: 4px;
-            color: #141210;
+            color: #8C7E72;
             display: block;
-            transition: transform 0.2s ease, color 0.2s ease;
+            transition: transform 0.22s ease, color 0.22s ease;
         }
 
         .footer-menu .footer-menu-text {
             font-size: 9.5px;
-            font-weight: 600;
+            font-weight: 500;
             white-space: nowrap;
             letter-spacing: 0.4px;
             font-family: 'Uniform Medium', 'Roboto', sans-serif;
-            color: #2c2825;
-            transition: color 0.2s ease;
+            color: #7D7065;
+            transition: color 0.22s ease, font-weight 0.22s ease;
         }
 
         .footer-menu .footer-menu-link:hover .footer-menu-icon,
         .footer-menu .footer-menu-link:active .footer-menu-icon {
-            color: #b8860b;
-            transform: scale(1.12);
+            color: #C6982B;
+            transform: scale(1.1);
         }
 
         .footer-menu .footer-menu-link:hover .footer-menu-text,
         .footer-menu .footer-menu-link:active .footer-menu-text {
-            color: #b8860b;
+            color: #9E741D;
         }
 
         /* Active Navigation Tab Highlighting */
