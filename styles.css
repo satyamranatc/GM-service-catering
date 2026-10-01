@@ -98,11 +98,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background-color: #F8F5EE;
-  background-image: url('assets/images/luxury_neoclassical_pattern.jpg');
-  background-repeat: repeat;
-  background-size: 320px auto;
-  background-attachment: fixed;
+  background-color: #12100E;
+  background-image: radial-gradient(circle at 50% 20%, #241E18 0%, #0D0B09 100%);
   overflow-x: hidden;
 }
 
@@ -112,10 +109,6 @@ body {
   font-family: var(--font-ui);
   color: var(--color-text-primary);
   background-color: transparent;
-  background-image: url('assets/images/luxury_neoclassical_pattern.jpg');
-  background-repeat: repeat;
-  background-size: 320px auto;
-  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
@@ -179,10 +172,10 @@ img {
   max-width: 480px;
   margin: 0 auto;
   min-height: 100vh;
-  background-color: rgba(254, 252, 248, 0.96);
-  background-image: url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-color: #FAF6EE;
+  background-image: linear-gradient(rgba(254, 251, 244, 0.78), rgba(254, 251, 244, 0.78)), url('assets/images/luxury_neoclassical_pattern.jpg');
   background-repeat: repeat;
-  background-size: 320px auto;
+  background-size: auto, 320px auto;
   padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px));
   display: flex;
   flex-direction: column;
@@ -204,10 +197,11 @@ img {
    ========================================================================== */
 .card-hero-block {
   position: relative;
-  background-color: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(198, 152, 43, 0.22);
+  background-color: #FAF6EE;
+  background-image: linear-gradient(rgba(254, 251, 244, 0.82), rgba(254, 251, 244, 0.82)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-repeat: repeat;
+  background-size: auto, 320px auto;
+  border-bottom: 1px solid rgba(198, 152, 43, 0.28);
 }
 
 /* Card Top Navigation / Utility Bar */
@@ -474,10 +468,13 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: #FFFFFF;
-  border: 1px solid rgba(198, 152, 43, 0.28);
+  background-color: #FAF6EE;
+  background-image: linear-gradient(rgba(254, 251, 244, 0.85), rgba(254, 251, 244, 0.85)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-repeat: repeat;
+  background-size: auto, 320px auto;
+  border: 1px solid rgba(198, 152, 43, 0.32);
   border-radius: var(--radius-md);
-  box-shadow: 0 8px 24px rgba(100, 75, 30, 0.07);
+  box-shadow: 0 8px 24px rgba(100, 75, 30, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.95);
   padding: 14px 10px;
   margin: 10px 18px 18px;
   max-width: 440px;
@@ -588,8 +585,11 @@ img {
 }
 
 .contact-details-card {
-  background-color: #FFFFFF;
-  border: 1px solid rgba(198, 152, 43, 0.25);
+  background-color: #FAF6EE;
+  background-image: linear-gradient(rgba(254, 251, 244, 0.85), rgba(254, 251, 244, 0.85)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-repeat: repeat;
+  background-size: auto, 320px auto;
+  border: 1px solid rgba(198, 152, 43, 0.28);
   border-radius: var(--radius-md);
   box-shadow: 0 6px 20px rgba(100, 75, 30, 0.06);
   overflow: hidden;
@@ -612,7 +612,7 @@ img {
 }
 
 .contact-row:hover {
-  background-color: #FAF7F0;
+  background-color: rgba(198, 152, 43, 0.08);
 }
 
 .row-icon-badge {
@@ -649,8 +649,11 @@ img {
 }
 
 .direct-whatsapp-box {
-  background-color: #FFFFFF;
-  border: 1px solid rgba(198, 152, 43, 0.25);
+  background-color: #FAF6EE;
+  background-image: linear-gradient(rgba(254, 251, 244, 0.85), rgba(254, 251, 244, 0.85)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-repeat: repeat;
+  background-size: auto, 320px auto;
+  border: 1px solid rgba(198, 152, 43, 0.28);
   border-radius: var(--radius-md);
   box-shadow: 0 6px 20px rgba(100, 75, 30, 0.06);
   padding: 16px;
@@ -831,10 +834,13 @@ img {
    SECTION 2: ABOUT US & HERITAGE
    ========================================================================== */
 .about-card {
-  background-color: #FFFFFF;
-  border: 1px solid rgba(198, 152, 43, 0.28);
+  background-color: #FAF6EE;
+  background-image: linear-gradient(rgba(254, 251, 244, 0.82), rgba(254, 251, 244, 0.82)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-repeat: repeat;
+  background-size: auto, 320px auto;
+  border: 1px solid rgba(198, 152, 43, 0.32);
   border-radius: var(--radius-lg);
-  box-shadow: 0 16px 44px rgba(100, 75, 30, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 44px rgba(100, 75, 30, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
   padding: 22px;
 }
 
@@ -1121,11 +1127,14 @@ img {
 }
 
 .product-card {
-  background-color: #FFFFFF;
-  border: 1px solid rgba(198, 152, 43, 0.28);
+  background-color: #FAF6EE;
+  background-image: linear-gradient(rgba(254, 251, 244, 0.85), rgba(254, 251, 244, 0.85)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-repeat: repeat;
+  background-size: auto, 320px auto;
+  border: 1px solid rgba(198, 152, 43, 0.32);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 12px 36px rgba(100, 75, 30, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 36px rgba(100, 75, 30, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
   display: flex;
   flex-direction: column;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
@@ -1209,7 +1218,7 @@ img {
   flex-direction: column;
   flex: 1;
   gap: 8px;
-  background-color: #FFFFFF;
+  background-color: transparent;
 }
 
 .product-meta-row {
@@ -1295,12 +1304,15 @@ img {
    SECTION 5: VIP PAYMENT & UPI CONCIERGE
    ========================================================================== */
 .payment-card {
-  background-color: #FFFFFF;
-  border: 1px solid rgba(198, 152, 43, 0.28);
+  background-color: #FAF6EE;
+  background-image: linear-gradient(rgba(254, 251, 244, 0.82), rgba(254, 251, 244, 0.82)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-repeat: repeat;
+  background-size: auto, 320px auto;
+  border: 1px solid rgba(198, 152, 43, 0.32);
   border-radius: var(--radius-lg);
   padding: 24px 16px;
   text-align: center;
-  box-shadow: 0 16px 44px rgba(100, 75, 30, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 44px rgba(100, 75, 30, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
 @media (min-width: 480px) {
@@ -1573,11 +1585,14 @@ img {
 }
 
 .review-card {
-  background: #FFFFFF;
-  border: 1px solid rgba(198, 152, 43, 0.28);
+  background-color: #FAF6EE;
+  background-image: linear-gradient(rgba(254, 251, 244, 0.85), rgba(254, 251, 244, 0.85)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-repeat: repeat;
+  background-size: auto, 320px auto;
+  border: 1px solid rgba(198, 152, 43, 0.3);
   border-radius: var(--radius-md);
   padding: 20px;
-  box-shadow: 0 8px 24px rgba(100, 75, 30, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 24px rgba(100, 75, 30, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
 .review-stars {
@@ -1603,12 +1618,15 @@ img {
 }
 
 .rate-us-box {
-  background: #FFFFFF;
-  border: 1px solid rgba(198, 152, 43, 0.28);
+  background-color: #FAF6EE;
+  background-image: linear-gradient(rgba(254, 251, 244, 0.82), rgba(254, 251, 244, 0.82)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-repeat: repeat;
+  background-size: auto, 320px auto;
+  border: 1px solid rgba(198, 152, 43, 0.32);
   border-radius: var(--radius-lg);
   padding: 24px;
   text-align: center;
-  box-shadow: 0 16px 44px rgba(100, 75, 30, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 44px rgba(100, 75, 30, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
 .rate-heading {
@@ -1692,10 +1710,13 @@ img {
    SECTION 8: DIRECT ENQUIRY FORM
    ========================================================================== */
 .enquiry-card {
-  background-color: #FFFFFF;
-  border: 1px solid rgba(198, 152, 43, 0.28);
+  background-color: #FAF6EE;
+  background-image: linear-gradient(rgba(254, 251, 244, 0.82), rgba(254, 251, 244, 0.82)), url('assets/images/luxury_neoclassical_pattern.jpg');
+  background-repeat: repeat;
+  background-size: auto, 320px auto;
+  border: 1px solid rgba(198, 152, 43, 0.32);
   border-radius: var(--radius-lg);
-  box-shadow: 0 16px 44px rgba(100, 75, 30, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 44px rgba(100, 75, 30, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
   padding: 24px;
 }
 
