@@ -439,7 +439,19 @@ function initStarRating() {
 
       if (!name || !text) return;
 
-      showToast(`Thank you ${name}! Your ${selectedScore}-star review was recorded.`);
+      const starIcons = '⭐'.repeat(selectedScore);
+      const ratingLabel = (scoreLabels[selectedScore] || `${selectedScore}/5 Stars`).replace(/⭐/g, '').trim();
+
+      const waText = `*New Culinary Review — GM Cuisine Factory*\n\n` +
+        `⭐ *Rating:* ${starIcons} (${selectedScore}/5 - ${ratingLabel})\n` +
+        `👤 *Client / Area:* ${name}\n` +
+        `💬 *Review:* "${text}"\n\n` +
+        `_Submitted via GM Cuisine Factory Web App_`;
+
+      const waUrl = `https://wa.me/919399231772?text=${encodeURIComponent(waText)}`;
+      window.open(waUrl, '_blank');
+
+      showToast(`Thank you ${name}! Opening WhatsApp to share your ${selectedScore}-star review.`);
       form.reset();
       selectedScore = 5;
       updateStarVisuals(5);
