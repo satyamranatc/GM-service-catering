@@ -1,69 +1,118 @@
-# GM Cuisine Factory Indore — Official Digital Visiting Card & Portal
+# 🍽️ GM Cuisine Factory — Luxury Catering & Royal Banquets
 
-A modern, luxury **Digital Visiting Card & Mini-Website** engineered for **GM Cuisine Factory**.
+> **Award-Winning Luxury Pure Vegetarian Catering & Royal Event Feasts**  
+> *Indore, Madhya Pradesh, India*
 
-Inspired by the comprehensive multi-section digital card format (similar to Jainshree Digital / Smart vCard), elevated with high-end luxury aesthetics: **Deep Obsidian (#0D0C08)**, **Burnished Gold (#DFA753 / #CB9837)**, and **Warm Champagne Linen (#FAF7F2 / #F3ECE1)**.
-
----
-
-## 📱 Page Architecture & Sections
-
-1. **Profile / Hero Card (`#homesection`):**
-   - High-resolution banquet cover photography with Indore live status badge.
-   - Official GM Cuisine Factory cutlery crest and Didone gold-framed emblem.
-   - 5-button direct contact quick bar (Call, WhatsApp, Alt Line, QR Pay, Instagram).
-   - Detailed contact list with phone numbers, base location, and Justdial verification.
-   - **Direct WhatsApp Input:** Send the card or message instantly to any 10-digit number.
-   - **Tactile Action Buttons:** "Add to Phone Book" (.vcf export) and "Share Profile".
-
-2. **About Us (`#AboutUsSection`):**
-   - Brand story of GM Cuisine Factory.
-   - 100% Pure Vegetarian & strict Jain preparation commitment.
-   - Core value cards: dedicated Jain cookware, live counters, royal hammered copper presentation, and uncompromised hygiene.
-   - Executive Banquet Management contact line.
-
-3. **Signature Feasts & Menus (`#ProductsServicesSection`):**
-   - Royal Wedding Banquets (multi-course royal thalis, Shahi Paneer, Dal Makhani).
-   - Live Event Counters & Smoke Shot Pan.
-   - Indori Street Food & Regional Stalls (Pani Puri, Dahi Papdi, butter Dosas, Chhole Bhature).
-   - Royal Mithai & Artisanal Sweets (silver-leaf Kaju Katli, saffron Rasmalai, hot Jalebi Rabdi).
-   - 1-tap "Enquire on WhatsApp" on every feast card.
-
-4. **Payment Options (`#PaymentOptionsSection`):**
-   - Scannable UPI / WhatsApp QR code.
-   - UPI Number & ID: `9399231772` / `9399231772@upi`.
-   - Badges for Google Pay, PhonePe, Paytm, BHIM UPI, IMPS / NEFT, and Cash.
-
-5. **Photo Gallery (`#gallerysection`):**
-   - Interactive 6-photo masonry grid featuring real event setups and feasts.
-   - Tap-to-zoom Lightbox Image Modal (`#imageModal`) with high-resolution preview and captions.
-
-6. **Client Feedback & Reviews (`#feedbacksection`):**
-   - Real testimonials from Saket, Bypass Road, and Vijay Nagar clients.
-   - Interactive 5-star rating widget with review submission.
-
-7. **Quick Enquiry Form (`#enquirysection`):**
-   - Form fields: Name, Phone, Event Type, Guest Count, Event Date, Requirements.
-   - Instant WhatsApp dispatch with preformatted quote request sent directly to `+91 9399231772`.
-
-8. **Fixed Bottom Navigation Bar (`.footer-menu`):**
-   - App-like sticky bottom bar with 7 tabs: `HOME`, `ABOUT US`, `MENU`, `PAYMENT`, `GALLERY`, `FEEDBACK`, `ENQUIRY`.
-   - Smooth scroll with real-time active ScrollSpy indicators.
+[![Website Status](https://img.shields.io/badge/Status-Live%20on%20GitHub%20Pages-2ea44f?style=for-the-badge&logo=github)](https://satyamranatc.github.io/GM-Cuisine-Factory/)
+[![Pure Vegetarian](https://img.shields.io/badge/Cuisine-100%25%20Pure%20Vegetarian-198754?style=for-the-badge)](https://satyamranatc.github.io/GM-Cuisine-Factory/)
+[![Platform](https://img.shields.io/badge/Stack-Vanilla%20HTML5%20%7C%20CSS3%20%7C%20ES6+-black?style=for-the-badge)](https://satyamranatc.github.io/GM-Cuisine-Factory/)
 
 ---
 
-## ⚡ Direct Touch Actions & Modals
+## 📖 Overview
 
-- **Save Contact (.vcf):** Downloads `GM_Cuisine_Factory_Indore.vcf` formatted to Apple iOS & Android Contacts standards.
-- **Share Modal:** Web Share API with fallbacks to WhatsApp, SMS, Facebook, and clipboard copy.
-- **Image Lightbox:** Modal for viewing high-res gallery images.
+**GM Cuisine Factory** is a digital web showcase and digital business vCard for an elite, pure-vegetarian catering brand based in Indore. Designed with a royal Indian aesthetic, it features deep charcoal and warm gold gradients (`#C6982B`, `#9E741D`), authentic damask silk textures, smooth micro-interactions, live WhatsApp integrations, and high-performance mobile responsiveness.
 
 ---
 
-## 🚀 How to Run Locally
+## ✨ Key Features
+
+- **Royal Visual Identity**: Custom damask background texture, brushed gold accent lines, corner filigree wedges, and refined typography.
+- **Pure Vegetarian Luxury Showcase**:
+  - Grand 100ft+ Royal Banquet Lines
+  - Artisanal Live Pasta & Exotic Italian Stations
+  - Regal Live Tawa & Chaat Counters
+  - Victorian Carriage & Colonnade Buffet Concepts
+  - Luminous Glass Buffets & Royal Dessert Canape Islands
+- **Interactive Navigation & Scroll-Spy**: Sticky mobile navigation dock with dynamic gold active-tab tracking and underline indicator.
+- **One-Tap Actions**:
+  - Save to Contacts (`.vcf` card download)
+  - Google Maps & Turn-by-Turn Directions
+  - Instant WhatsApp Booking & Quick Enquiry Dispatcher
+  - Native Share Sheet & Social Links (Instagram, Facebook, Justdial)
+- **Zero-Dependency Architecture**: Built with 100% vanilla HTML5, CSS3, and JavaScript — lightning-fast load times with zero framework bloat.
+- **GitHub Pages Ready**: Fully static, cleanly organized, and optimized for free GitHub Pages hosting.
+
+---
+
+## 📁 Repository Structure
+
+```
+├── index.html                   # Main entry point (semantic HTML5, zero inline CSS/JS)
+├── gm-service-catering.vcf      # Contact vCard for one-tap address book import
+├── css/
+│   └── style.css                # Production stylesheet (design tokens, layout, responsive queries)
+├── js/
+│   └── main.js                  # Modular script suite (Theme, modals, WhatsApp enquiry, scroll-spy)
+├── images/                      # Optimized image assets, logos, and UI SVGs
+│   ├── gm_logo_full.png         # Primary brand insignia
+│   ├── gm_crest_diamond.png     # Diamond seal
+│   ├── royal_damask_pattern.png # Seamless royal silk background texture
+│   ├── phonepe_payment_qr.jpg   # Payment integration QR
+│   ├── tild-arrow.svg           # UI micro-asset
+│   └── ...                      # High-definition banquet & buffet gallery photos
+└── README.md                    # Project documentation
+```
+
+---
+
+## 🚀 Getting Started
+
+### Local Development
+
+No package managers or build steps required. Simply clone and open:
 
 ```bash
-cd "/Users/satyamrana/Desktop/GM service catering"
-python3 -m http.server 3000
+# Clone the repository
+git clone https://github.com/satyamranatc/GM-Cuisine-Factory.git
+
+# Navigate into the project directory
+cd GM-Cuisine-Factory
+
+# Open directly in browser or serve locally
+# Using Python:
+python3 -m http.server 8000
+
+# Or with VS Code / Live Server extension:
+open index.html
 ```
-Visit: `http://localhost:3000`
+
+Visit `http://localhost:8000` in your web browser.
+
+---
+
+## 🌐 Deploying to GitHub Pages
+
+This project is tailored specifically for **GitHub Pages**:
+
+1. Go to your GitHub repository: **Settings** > **Pages**.
+2. Under **Build and deployment** > **Source**, choose **Deploy from a branch**.
+3. Select the branch (`master` or `main`) and root folder (`/ (root)`).
+4. Click **Save**. Your site will be live within seconds.
+
+---
+
+## 🛠️ Technology Stack
+
+- **HTML5**: Semantic markup, accessible labels, schema-friendly tags, Open Graph meta.
+- **CSS3**: Custom properties (CSS variables), CSS Grid, Flexbox, glassmorphism, keyframe animations.
+- **Vanilla ES6+ JavaScript**: IntersectionObserver for viewport animations, passive scroll listeners, WhatsApp link encoders.
+- **Icons**: FontAwesome 5.0 (CDN).
+- **Fonts**: Google Fonts (`Roboto`, `Shadows Into Light`).
+
+---
+
+## 📞 Contact & Reservation
+
+- **Brand**: GM Cuisine Factory
+- **Cuisine**: 100% Luxury Pure Vegetarian
+- **Location**: 8, Akhand Nagar, Airport Road, Indore, MP - 452005
+- **Phone**: +91 93992 31772 / +91 88173 35591
+- **Instagram**: [@gmcuisinefactory](https://www.instagram.com/gmcuisinefactory)
+- **WhatsApp**: [+91 93992 31772](https://wa.me/919399231772)
+
+---
+
+## 📄 License
+
+© 2026 **GM Cuisine Factory**. All Rights Reserved.
