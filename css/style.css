@@ -588,7 +588,7 @@
             text-decoration: none;
             max-width: 480px;
             text-align: center;
-            padding-bottom: 90px;
+            padding-bottom: 30px;
             overflow-x: hidden;
             background-color: transparent;
             position: relative;
@@ -1580,8 +1580,8 @@
         /* Copyright css start */
         .copyright-wrapper {
             text-align: center;
-            margin-top: 24px;
-            margin-bottom: 20px;
+            margin-top: 20px;
+            margin-bottom: 8px;
             padding: 0 5px;
             position: relative;
             z-index: 2;

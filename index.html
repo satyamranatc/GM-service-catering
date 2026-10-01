@@ -24,40 +24,7 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
 
-    <script>
-        function ColorLuminance(hex, lum) {
-            // validate hex string
-            hex = String(hex).replace(/[^0-9a-f]/gi, '');
-            if (hex.length < 6) {
-                hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
-            }
-            lum = lum || 0;
-
-            // convert to decimal and change luminosity
-            var rgb = "#", c, i;
-            for (i = 0; i < 3; i++) {
-                c = parseInt(hex.substr(i * 2, 2), 16);
-                c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
-                rgb += ("00" + c).substr(c.length);
-            }
-
-            return rgb;
-        }
-        document.addEventListener("DOMContentLoaded", function () {
-            var themeElem = document.getElementById("themeColor");
-            var themecolor = themeElem ? themeElem.value : "#141210";
-            var themeElem1 = document.getElementById("themeColor1");
-            var themeColor1 = themeElem1 ? themeElem1.value : "#fdfaf3";
-            document.documentElement.style.setProperty("--theme-color", themecolor);
-            document.documentElement.style.setProperty("--theme-color-light", themeColor1);
-            document.documentElement.style.setProperty("--theme-color-gold", "#cba46b");
-            document.documentElement.style.setProperty("--theme-color-gold-light", "#ddbe90");
-            document.documentElement.style.setProperty("--theme-color-bronze", "#8e6328");
-            document.documentElement.style.setProperty("--theme-color-dark1", "#1a1714");
-            document.documentElement.style.setProperty("--theme-color-dark2", "#221e1a");
-            document.documentElement.style.setProperty("--theme-color-dark3", "#2a2520");
-        });
-    </script>
+    
 
     <meta property="og:image" content="images/gm_logo_full.png" />
     <meta property="og:type" content="website" />
@@ -726,23 +693,7 @@
         </form>
         <div class="corner-bottom"></div>
 
-        <script>
-            document.getElementById("form1").addEventListener("submit", function (e) {
-                e.preventDefault(); // Prevent form from submitting normally
-
-                const name = document.getElementById("txtGuestName").value.trim();
-                const phone = document.getElementById("txtGuestphoneNumber").value.trim();
-                const email = document.getElementById("txtGuestEmailId").value.trim();
-                const message = document.getElementById("txtGuestmessage").value.trim();
-
-                const fullMessage = `Hello GM Cuisine Factory,%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Event Requirements:* ${message}`;
-                const whatsappNumber = "919399231772";
-
-                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${fullMessage}`;
-
-                window.open(whatsappURL, "_blank");
-            });
-        </script>
+        
     </div>
 
     <!-- create your digital card -->
@@ -800,7 +751,7 @@
             <div class="share-form-buttons-container">
                 <p>Share my Digital vCard in your network.</p>
                 <div class="share-buttons-heading">
-                    <img loading="lazy" decoding="async" src="css/tild-arrow.svg" alt="" class="share-buttons-arrow" />
+                    <img loading="lazy" decoding="async" src="images/tild-arrow.svg" alt="" class="share-buttons-arrow" />
                     <div class="share-buttons-heading-text">Share my Digital vCard</div>
                 </div>
                 <ul class="share-buttons">
@@ -844,7 +795,7 @@
         </div>
     </div>
 
-    <script src="css/script.js"></script>
+    <script src="js/main.js" defer></script>
     
     <!-- Sticky Bottom Navigation Bar -->
     <div class="footer" role="navigation" aria-label="Bottom Navigation">
@@ -889,148 +840,7 @@
     </div>
 
     <!-- Luxury Micro-Interactions & Animation Orchestrator -->
-    <script>
-        (function () {
-            // 1. Curtain Intro Controller
-            const curtain = document.getElementById('brandCurtain');
-            if (curtain) {
-                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                if (prefersReducedMotion) {
-                    curtain.remove();
-                } else {
-                    let dismissed = false;
-                    const dismissCurtain = () => {
-                        if (dismissed) return;
-                        dismissed = true;
-                        curtain.classList.add('curtain-dismissed');
-                        setTimeout(() => {
-                            if (curtain.parentNode) curtain.parentNode.removeChild(curtain);
-                        }, 600);
-                    };
-
-                    // Fast auto-dismiss: 750ms so user is never delayed
-                    const autoTimer = setTimeout(dismissCurtain, 750);
-
-                    // Or instantly on any touch / click / scroll
-                    window.addEventListener('touchstart', dismissCurtain, { passive: true, once: true });
-                    window.addEventListener('mousedown', dismissCurtain, { once: true });
-                    window.addEventListener('scroll', dismissCurtain, { passive: true, once: true });
-                }
-            }
-
-            // 2. Count-Up Statistics
-            const statCards = document.querySelectorAll('.stat-number');
-            if (statCards.length) {
-                const animateNumber = (el) => {
-                    const target = parseInt(el.getAttribute('data-target'), 10);
-                    const suffix = el.getAttribute('data-suffix') || '';
-                    const duration = 600;
-                    let startTime = null;
-
-                    const step = (currentTime) => {
-                        if (!startTime) startTime = currentTime;
-                        const elapsed = currentTime - startTime;
-                        if (elapsed >= duration) {
-                            el.textContent = target + suffix;
-                            return;
-                        }
-                        const progress = elapsed / duration;
-                        const easeProgress = 1 - Math.pow(1 - progress, 3); // cubic ease-out
-                        const currentVal = Math.floor(easeProgress * target);
-                        el.textContent = currentVal + suffix;
-                        requestAnimationFrame(step);
-                    };
-                    requestAnimationFrame(step);
-                };
-
-                if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                    const statsObserver = new IntersectionObserver((entries, obs) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                animateNumber(entry.target);
-                                obs.unobserve(entry.target);
-                            }
-                        });
-                    }, { threshold: 0.25 });
-
-                    statCards.forEach(stat => statsObserver.observe(stat));
-                } else {
-                    statCards.forEach(stat => {
-                        stat.textContent = stat.getAttribute('data-target') + (stat.getAttribute('data-suffix') || '');
-                    });
-                }
-            }
-
-            // 3. Smooth Scroll-Reveal Animations
-            const revealElements = document.querySelectorAll('.scroll-reveal');
-            if (revealElements.length) {
-                if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                    const revealObserver = new IntersectionObserver((entries, obs) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add('revealed');
-                                obs.unobserve(entry.target);
-                                setTimeout(() => {
-                                    entry.target.style.willChange = 'auto';
-                                }, 700);
-                            }
-                        });
-                    }, {
-                        threshold: 0.05,
-                        rootMargin: "0px 0px -30px 0px"
-                    });
-
-                    revealElements.forEach(el => revealObserver.observe(el));
-                } else {
-                    revealElements.forEach(el => el.classList.add('revealed'));
-                }
-            }
-
-            // 4. Active Tab Navigation Scroll Spy
-            const navLinks = document.querySelectorAll('.footer-menu .footer-menu-link');
-            const sections = [
-                document.getElementById('homesection'),
-                document.getElementById('AboutUsSection'),
-                document.getElementById('ProductsServicesSection'),
-                document.getElementById('PaymentOptionsSection'),
-                document.getElementById('feedbacksection'),
-                document.getElementById('enquirysection')
-            ].filter(Boolean);
-
-            function updateActiveNav() {
-                const scrollPos = window.scrollY + 180;
-                let activeId = 'homesection';
-
-                for (let i = 0; i < sections.length; i++) {
-                    const sec = sections[i];
-                    const top = sec.offsetTop;
-                    const height = sec.offsetHeight;
-                    if (scrollPos >= top && scrollPos < top + height) {
-                        activeId = sec.id;
-                    }
-                }
-
-                // If scrolled to bottom of document, activate enquiry
-                if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50) {
-                    activeId = 'enquirysection';
-                }
-
-                navLinks.forEach(link => {
-                    const targetHash = link.getAttribute('href') || '';
-                    if (targetHash === '#' + activeId) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', updateActiveNav, { passive: true });
-            window.addEventListener('resize', updateActiveNav, { passive: true });
-            updateActiveNav();
-
-        })();
-    </script>
+    
 </body>
 
 </html>
